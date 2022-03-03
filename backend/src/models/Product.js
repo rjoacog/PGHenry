@@ -24,8 +24,9 @@ const ProductSchema = new Schema({
     },
     updated: Date,
     created: {
-        type: String,
-        
+        type: Date,
+        required: true,
+        default: Date.now()
     },
     brand:{
         type: String,
@@ -39,7 +40,15 @@ const ProductSchema = new Schema({
         type: String,
         required: true
     },
-
+    gender:{
+        type: String,
+        required: true,
+        enum: ['Men', 'Women']
+    },
+    size:{
+        type: Array,
+        required: true,
+    },
 });
 
 const Product = mongoose.model("Product", ProductSchema);

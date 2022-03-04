@@ -33,6 +33,10 @@ const ProductSchema = new Schema({
         type: String,
         required: true
     },
+    color:{
+        type: Array,
+        required: true
+    },
     model:{
         type: String,
         required: true

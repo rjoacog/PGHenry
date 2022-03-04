@@ -13,7 +13,7 @@ function Home() {
     dispatch(getProducts());
   }, [dispatch]);
 
-  return (
+  return (   
     <div className="containerHome">
         <div className="cards">
           {products ? (

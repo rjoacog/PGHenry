@@ -860,5 +860,5 @@ const products = [
         "category": "Running",
         "gender": "Men",
         "size": ["7", "7.5", "8", "8.5", "9", "10", "11", "12", "12.5"]
-    },
+    }
 ]

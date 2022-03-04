@@ -1,5 +1,6 @@
 const mongoose = require("mongoose");
 const { Schema } = mongoose;
+const bcrypt = require('bcrypt');   // Para encriptar contraseñas
 
 
 const UserSchema = new Schema({
@@ -51,6 +52,19 @@ const UserSchema = new Schema({
         }
     ]
 });
+
+//* Encriptamos las contraseñas antes de guardarlas:
+UserSchema.pre('save', async function(next) {
+    if( !this.isModified('password') ) {
+        next();
+    }
+    const salt = await bcrypt.genSalt(10);
+    this.password = await bcrypt.hash( this.password, salt )
+});
+//* Comprobar password:
+UserSchema.methods.comparePassword = async function( passwordForm ) {
+    return await bcrypt.compare( passwordForm, this.password );
+};
 
 const User = mongoose.model("User", UserSchema);
 module.exports = User;

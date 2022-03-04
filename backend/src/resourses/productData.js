@@ -1,4 +1,4 @@
-const categories = ["Running", "Lifestyle", "Básquetbol", "Entrenamiento"]
+const categories = ["Running", "Lifestyle", "Básquetbol", "Training"]
 
 // {
 //     "name": 
@@ -22,10 +22,11 @@ const products = [
         "stock": 10,
         "price": 90,
         "brand": "Reebok",
+        "color": ["yellow"],
         "model": "GZ5392",
-        "category": "Entrenamiento",
+        "category": "Training",
         "gender": "Women",
-        "size": ["23", "24", "25", "25.5"] 
+        "size": ["5", "6", "7", "8", "9", "10", "11", "12"] 
     },
     {
         "name": "Tenis Nano X3",
@@ -34,10 +35,11 @@ const products = [
         "stock": 15,
         "price": 90,
         "brand": "Reebok",
+        "color": ["yellow", "grey"],
         "model": "GZ8948",
-        "category": "Entrenamiento",
+        "category": "Training",
         "gender": "Women",
-        "size": ["23", "24", "25", "25.5"] 
+        "size": ["5", "6", "7", "8", "9", "10", "11", "12"] 
     },
     {
         "name": "Tenis Flexagon Energy Train 3",
@@ -46,10 +48,11 @@ const products = [
         "stock": 15,
         "price": 70,
         "brand": "Reebok",
+        "color": ["black", "white"],
         "model": "GZ0295",
-        "category": "Entrenamiento",
+        "category": "Training",
         "gender": "Women",
-        "size": ["23", "24", "25", "25.5"] 
+        "size": ["5", "6", "7", "8", "9", "10", "11", "12"] 
     },
     {
         "name": "Tenis Princess",
@@ -58,10 +61,11 @@ const products = [
         "stock": 15,
         "price": 70,
         "brand": "Reebok",
+        "color": ["white"],
         "model": "GY6182",
-        "category": "Entrenamiento",
+        "category": "Training",
         "gender": "Women",
-        "size": ["23", "24", "25", "25.5"] 
+        "size": ["5", "6", "7", "8", "9", "10", "11", "12"] 
     },
     {
         "name": "Tenis Reago Essential 2 Reebok",
@@ -70,10 +74,11 @@ const products = [
         "stock": 5,
         "price": 70,
         "brand": "Reebok",
+        "color": ["black", "white"],
         "model": "GZ8307",
-        "category": "Entrenamiento",
+        "category": "Training",
         "gender": "Women",
-        "size": ["23", "24", "25", "25.5"] 
+        "size": ["5", "6", "7", "8", "9", "10", "11", "12"] 
     },
     {
         "name": "Tenis Rider V",
@@ -82,10 +87,11 @@ const products = [
         "stock": 10,
         "price": 90,
         "brand": "Reebok",
+        "color": ["blue", "white"],
         "model": "GZ3109",
         "category": "Running",
         "gender": "Men",
-        "size": ["25", "25.5", "26", "26.5", "27", "27.5", "28"]
+        "size": ["7", "7.5", "8", "8.5", "9", "10", "11", "12", "12.5"]
     },
     {
         "name": "Tenis Zig Dynamica 3",
@@ -94,10 +100,11 @@ const products = [
         "stock": 5,
         "price": 90,
         "brand": "Reebok",
+        "color": ["black"],
         "model": "GY7706",
         "category": "Running",
         "gender": "Men",
-        "size": ["25", "25.5", "26", "26.5", "27", "27.5", "28"]
+        "size": ["7", "7.5", "8", "8.5", "9", "10", "11", "12", "12.5"]
     },
     {
         "name": "Tenis Reebok Royal Classic Jogger 3.0",
@@ -106,10 +113,11 @@ const products = [
         "stock": 8,
         "price": 80,
         "brand": "Reebok",
+        "color": ["white", "red", "blue"],
         "model": "GW7772",
         "category": "Running",
         "gender": "Men",
-        "size": ["25", "25.5", "26", "26.5", "27", "27.5", "28"]
+        "size": ["7", "7.5", "8", "8.5", "9", "10", "11", "12", "12.5"]
     },
     {
         "name": "Tenis Kamikaze II",
@@ -118,10 +126,11 @@ const products = [
         "stock": 10,
         "price": 110,
         "brand": "Reebok",
+        "color": ["red", "black", "yellow"],
         "model": "H01316",
         "category": "Básquetbol",
         "gender": "Men",
-        "size": ["25", "25.5", "26", "26.5", "27", "27.5", "28"]
+        "size": ["7", "7.5", "8", "8.5", "9", "10", "11", "12", "12.5"]
     },
     {
         "name": "Tenis Question Mid",
@@ -130,10 +139,11 @@ const products = [
         "stock": 10,
         "price": 110,
         "brand": "Reebok",
+        "color": ["white", "blue", "red"],
         "model": "H01281",
         "category": "Básquetbol",
         "gender": "Men",
-        "size": ["25", "25.5", "26", "26.5", "27", "27.5", "28"]
+        "size": ["7", "7.5", "8", "8.5", "9", "10", "11", "12", "12.5"]
     },
     
     {
@@ -143,10 +153,11 @@ const products = [
         "stock": 5,
         "price": 120,
         "brand": "Puma",
+        "color": ["beige", "light-blue"],
         "model": "381270_01",
         "category": "Lifestyle",
         "gender": "Men",
-        "size": ["25", "25.5", "26", "26.5", "27", "27.5", "28"]
+        "size": ["7", "7.5", "8", "8.5", "9", "10", "11", "12", "12.5"]
     },
     {
         "name": "Tenis CA Pro Classic",
@@ -155,10 +166,11 @@ const products = [
         "stock": 10,
         "price": 150,
         "brand": "Puma",
+        "color": ["black", "white"],
         "model": "380190_02",
         "category": "Lifestyle",
         "gender": "Men",
-        "size": ["25", "25.5", "26", "26.5", "27", "27.5", "28"]
+        "size": ["7", "7.5", "8", "8.5", "9", "10", "11", "12", "12.5"]
     },
     {
         "name": "Tenis Running Resolve para Hombre",
@@ -167,10 +179,11 @@ const products = [
         "stock": 6,
         "price": 130,
         "brand": "Puma",
+        "color": ["red"],
         "model": "194739_03",
         "category": "Running",
         "gender": "Men",
-        "size": ["25", "25.5", "26", "26.5", "27", "27.5", "28"]
+        "size": ["7", "7.5", "8", "8.5", "9", "10", "11", "12", "12.5"]
     },
     {
         "name": "Tenis de running para hombre Magnify Nitro",
@@ -179,10 +192,11 @@ const products = [
         "stock": 10,
         "price": 130,
         "brand": "Puma",
+        "color": ["grey", "yellow", "white"],
         "model": "195170_02",
         "category": "Running",
         "gender": "Men",
-        "size": ["25", "25.5", "26", "26.5", "27", "27.5", "28"]
+        "size": ["7", "7.5", "8", "8.5", "9", "10", "11", "12", "12.5"]
     },
     {
         "name": "Tenis Flyer Runner",
@@ -191,10 +205,11 @@ const products = [
         "stock": 10,
         "price": 130,
         "brand": "Puma",
+        "color": ["black", "white"],
         "model": "192257_02",
         "category": "Running",
         "gender": "Men",
-        "size": ["25", "25.5", "26", "26.5", "27", "27.5", "28"]
+        "size": ["7", "7.5", "8", "8.5", "9", "10", "11", "12", "12.5"]
     },
     {
         "name": "Tenis de running Mujer Magnify Nitro",
@@ -203,10 +218,11 @@ const products = [
         "stock": 20,
         "price": 100,
         "brand": "Puma",
+        "color": ["pink"],
         "model": "195172_05",
         "category": "Running",
         "gender": "Women",
-        "size": ["23", "24", "25", "25.5"]
+        "size": ["5", "6", "7", "8", "9", "10", "11", "12"]
     },
     {
         "name": "Tenis FLYER Runner Mesh Running",
@@ -215,10 +231,11 @@ const products = [
         "stock": 10,
         "price": 90,
         "brand": "Puma",
+        "color": ["red", "white"],
         "model": "195172_05",
         "category": "Running",
         "gender": "Women",
-        "size": ["23", "24", "25", "25.5"]
+        "size": ["5", "6", "7", "8", "9", "10", "11", "12"]
     },
     {
         "name": "Tenis Running COMET 2 ALT Beta",
@@ -227,10 +244,11 @@ const products = [
         "stock": 10,
         "price": 80,
         "brand": "Puma",
+        "color": ["pink", "white"],
         "model": "195109_13",
         "category": "Running",
         "gender": "Women",
-        "size": ["23", "24", "25", "25.5"]
+        "size": ["5", "6", "7", "8", "9", "10", "11", "12"]
     },
     {
         "name": "Tenis Cali Wedge Mix para Mujer",
@@ -239,24 +257,38 @@ const products = [
         "stock": 5,
         "price": 90,
         "brand": "Puma",
+        "color": ["white", "black", "beige"],
         "model": "373906_08",
         "category": "Lifestyle",
         "gender": "Women",
-        "size": ["23", "24", "25", "25.5"]
+        "size": ["5", "6", "7", "8", "9", "10", "11", "12"]
     },
     {
         "name": "Tenis Mujer Future Rider Soft",
-        "description": "https://images.puma.com/image/upload/f_auto,q_auto,b_rgb:fafafa,w_480,h_480/global/381141/03/sv01/fnd/MEX/",
-        "image": "Nacido en 1980, el Fast Rider se lanzó justo cuando la carrera comenzaba a moverse de la pista a las calles. Diseñado para terrenos más impredecibles, el zapato presentaba una parte superior de nailon acolchado ultraligero y nuestra suela Federbein suprema que absorbe los golpes. Este año, la versión icónica está de regreso, esta vez como Future Rider. Elegantes y deportivas, con líneas largas y limpias, combinaciones de colores geniales y una amortiguación cómoda, estas zapatillas clásicas están listas para sacudir la carretera.",
+        "description": "Nacido en 1980, el Fast Rider se lanzó justo cuando la carrera comenzaba a moverse de la pista a las calles. Diseñado para terrenos más impredecibles, el zapato presentaba una parte superior de nailon acolchado ultraligero y nuestra suela Federbein suprema que absorbe los golpes. Este año, la versión icónica está de regreso, esta vez como Future Rider. Elegantes y deportivas, con líneas largas y limpias, combinaciones de colores geniales y una amortiguación cómoda, estas zapatillas clásicas están listas para sacudir la carretera.",
+        "image": "https://images.puma.com/image/upload/f_auto,q_auto,b_rgb:fafafa,w_480,h_480/global/381141/03/sv01/fnd/MEX/",
         "stock": 8,
         "price": 90,
         "brand": "Puma",
+        "color": ["white", "light-blue", "pink", "black"],
         "model": "381141_03",
         "category": "Lifestyle",
         "gender": "Women",
-        "size": ["23", "24", "25", "25.5"]
+        "size": ["5", "6", "7", "8", "9", "10", "11", "12"]
     },             
-    
+    {
+        "name": "Tenis Hombre Flyer Runner",
+        "description": "El diseño superligero ofrece comodidad durante todo el día y una sensación sin restricciones, mientras que los surcos de flexión profunda en toda la suela proporcionan una gran sensación de flexibilidad y un movimiento natural del pie.",
+        "image": "https://solodeportes-9bvc3m9qgmf6g9x.stackpathdns.com/media/catalog/product/cache/7c4f9b393f0b8cb75f2b74fe5e9e52aa/z/a/zapatillas-running-puma-flyer-runner-azul-640010192740001-_2_-1.jpg",
+        "stock": 14,
+        "price": 80,
+        "brand": "Puma",
+        "color": ["blue", "white"],
+        "model": "640010192740001",
+        "category": "Running",
+        "gender": "Men",
+        "size": ["7", "7.5", "8", "8.5", "9", "10", "11", "12", "12.5"]
+    }, 
     {
         "name": "TENIS POSTMOVE MID",
         "description": "Inspirados en los archivos de adidas Basketball, estos tenis son la combinación perfecta entre deporte y estilo. Sus revestimientos icónicos les imprimen una estética tipo vintage a este modelo actualizado. Incorporan un panel Cloudfoam que ofrece una comodidad duradera y un diseño Geofit alrededor del tobillo que proporciona un ajuste ideal.",
@@ -264,10 +296,11 @@ const products = [
         "stock": 50,
         "price": 250,
         "brand": "Adidas",
+        "color": ["white", "black"],
         "model": "GZ1338",
         "category": "Básquetbol",
         "gender": "Men",
-        "size": ["25", "25.5", "26", "26.5", "27", "27.5", "28"]
+        "size": ["7", "7.5", "8", "8.5", "9", "10", "11", "12", "12.5"]
     },
     {
         "name": "TENIS DONOVAN MITCHELL D.O.N. ISSUE #3 - STARS OF UTAH",
@@ -276,10 +309,11 @@ const products = [
         "stock": 10,
         "price": 220,
         "brand": "Adidas",
+        "color": ["black", "light-blue"],
         "model": "GZ5526",
         "category": "Básquetbol",
         "gender": "Men",
-        "size": ["25", "25.5", "26", "26.5", "27", "27.5", "28"]
+        "size": ["7", "7.5", "8", "8.5", "9", "10", "11", "12", "12.5"]
     },
     {
         "name": "TENIS ULTRABOOST WEB DNA",
@@ -288,10 +322,11 @@ const products = [
         "stock": 5,
         "price": 200,
         "brand": "Adidas",
+        "color": ["white", "yellow"],
         "model": "GZ1594",
-        "category": "Entrenamiento",
+        "category": "Training",
         "gender": "Men",
-        "size": ["25", "25.5", "26", "26.5", "27", "27.5", "28"]
+        "size": ["7", "7.5", "8", "8.5", "9", "10", "11", "12", "12.5"]
     },
     {
         "name": "TENIS ASWEETRAIN",
@@ -300,10 +335,11 @@ const products = [
         "stock": 50,
         "price": 100,
         "brand": "Adidas",
+        "color": ["black", "white"],
         "model": "FW1669",
-        "category": "Entrenamiento",
+        "category": "Training",
         "gender": "Men",
-        "size": ["25", "25.5", "26", "26.5", "27", "27.5", "28"]
+        "size": ["7", "7.5", "8", "8.5", "9", "10", "11", "12", "12.5"]
     },    
     {
         "name": "TENIS SUPERSTAR",
@@ -312,10 +348,11 @@ const products = [
         "stock": 30,
         "price": 110,
         "brand": "Adidas",
+        "color": ["white", "orange"],
         "model": "GX6026",
         "category": "Lifestyle",
         "gender": "Men",
-        "size": ["25", "25.5", "26", "26.5", "27", "27.5", "28"]
+        "size": ["7", "7.5", "8", "8.5", "9", "10", "11", "12", "12.5"]
     },
     {
         "name": "TENIS ADIDAS GRAND COURT BASE",
@@ -324,10 +361,11 @@ const products = [
         "stock": 80,
         "price": 90,
         "brand": "Adidas",
+        "color": ["white", "silver"],
         "model": "EE7874",
         "category": "Lifestyle",
         "gender": "Women",
-        "size": ["23", "24", "25", "25.5"]
+        "size": ["5", "6", "7", "8", "9", "10", "11", "12"]
     },
     {
         "name": "TENIS ADIZERO ADIOS PRO 2.0",
@@ -336,10 +374,11 @@ const products = [
         "stock": 10,
         "price": 120,
         "brand": "Adidas",
+        "color": ["violet", "green", "white"],
         "model": "FY4082",
         "category": "Running",
         "gender": "Women",
-        "size": ["23", "24", "25", "25.5"]
+        "size": ["5", "6", "7", "8", "9", "10", "11", "12"]
     },
     {
         "name": "TENIS X9000L1",
@@ -348,10 +387,11 @@ const products = [
         "stock": 15,
         "price": 120,
         "brand": "Adidas",
+        "color": ["white", "grey", "light-blue"],
         "model": "H00578",
         "category": "Running",
         "gender": "Women",
-        "size": ["23", "24", "25", "25.5"]
+        "size": ["5", "6", "7", "8", "9", "10", "11", "12"]
     },
     {
         "name": "CALZADO DE FÚTBOL LIGRA 7 CANCHA CUBIERTA",
@@ -360,10 +400,11 @@ const products = [
         "stock": 20,
         "price": 90,
         "brand": "Adidas",
+        "color": ["black", "white"],
         "model": "GY7648",
-        "category": "Entrenamiento",
+        "category": "Training",
         "gender": "Women",
-        "size": ["23", "24", "25", "25.5"]
+        "size": ["5", "6", "7", "8", "9", "10", "11", "12"]
     },
     {
         "name": "TENIS STRUTTER",
@@ -372,12 +413,129 @@ const products = [
         "stock": 20,
         "price": 100,
         "brand": "Adidas",
+        "color": ["white", "pink", "blue"],
         "model": "H05127",
-        "category": "Entrenamiento",
+        "category": "Training",
         "gender": "Women",
-        "size": ["23", "24", "25", "25.5"]
-    },                    
-    
+        "size": ["5", "6", "7", "8", "9", "10", "11", "12"]
+    },                 
+    {
+        "name": "GALAXY 5",
+        "description": "La mediasuela CLOUDFOAM, confeccionada en EVA, fue modificada para obtener más propiedades de amortiguación y confort pisada tras pisada. La comodidad y el confort pueden ser el complemento perfecto en los entrenamientos para los atletas que van iniciando y/o son ocasionales. Diseñada para corredores con pisada neutra.",
+        "image": "https://solodeportes-9bvc3m9qgmf6g9x.stackpathdns.com/media/catalog/product/cache/7c4f9b393f0b8cb75f2b74fe5e9e52aa/z/a/zapatillas-running-adidas-galaxy-5-negra-100010h04597001-1.jpg",
+        "stock": 20,
+        "price": 95,
+        "brand": "Adidas",
+        "color": ["black", "green", "grey"],
+        "model": "100010H04597001",
+        "category": "Running",
+        "gender": "Men",
+        "size": ["7", "7.5", "8", "8.5", "9", "10", "11", "12", "12.5"]
+    },
+    {
+        "name": "SUPERNOVA",
+        "description": "La tecnología Bounce incorpora en la mediasuela un material más ligero que una mediasuela de EVA tradicional, está diseñada para adaptarse al impacto en la pisada y responder en cualquier tipo de movimiento que se pida. La tecnología Boost en el talón ofrece comodidad y un increíble retorno de energía.",
+        "image": "https://solodeportes-9bvc3m9qgmf6g9x.stackpathdns.com/media/catalog/product/cache/7c4f9b393f0b8cb75f2b74fe5e9e52aa/z/a/zapatillas-running-adidas-supernova-azul-100010s42725001-1.jpg",
+        "stock": 14,
+        "price": 170,
+        "brand": "Adidas",
+        "color": ["blue", "white", "yellow"],
+        "model": "100010S42725001",
+        "category": "Running",
+        "gender": "Men",
+        "size": ["7", "7.5", "8", "8.5", "9", "10", "11", "12", "12.5"]
+    },
+    {
+        "name": "RUNFALCON",
+        "description": "Acumulá kilómetros con estas zapatillas de running livianas, que te ofrecen una excelente comodidad y amortiguación mientras corrés en las calles o en el gimnasio.",
+        "image": "https://solodeportes-9bvc3m9qgmf6g9x.stackpathdns.com/media/catalog/product/cache/7c4f9b393f0b8cb75f2b74fe5e9e52aa/1/0/100010g28970001-1.jpg",
+        "stock": 8,
+        "price": 100,
+        "brand": "Adidas",
+        "color": ["black"],
+        "model": "100010G28970001",
+        "category": "Running",
+        "gender": "Men",
+        "size": ["7", "7.5", "8", "8.5", "9", "10", "11", "12", "12.5"]
+    },
+    {
+        "name": "90S VALASION",
+        "description": "Nostálgicos de los años 90, estas zapatillas urbanas inspiradas en el running agregan una amortiguación moderna superior a un aspecto clásico.",
+        "image": "https://solodeportes-9bvc3m9qgmf6g9x.stackpathdns.com/media/catalog/product/cache/7c4f9b393f0b8cb75f2b74fe5e9e52aa/z/a/zapatilla-adidas-90s-valasion-gris-100010eg8398001-1.jpg",
+        "stock": 6,
+        "price": 120,
+        "brand": "Adidas",
+        "color": ["black", "orange", "white"],
+        "model": "100010EG8398001",
+        "category": "Lifestyle",
+        "gender": "Men",
+        "size": ["7", "7.5", "8", "8.5", "9", "10", "11", "12", "12.5"]
+    },
+    {
+        "name": "COURT 80S",
+        "description": "Un guiño a los íconos del pasado, estas zapatillas traen una mirada retro de corte al presente.",
+        "image": "https://solodeportes-9bvc3m9qgmf6g9x.stackpathdns.com/media/catalog/product/cache/7c4f9b393f0b8cb75f2b74fe5e9e52aa/1/0/100010ee9674001-1.jpg",
+        "stock": 22,
+        "price": 105,
+        "brand": "Adidas",
+        "color": ["red", "white"],
+        "model": "100010EE9674001",
+        "category": "Lifestyle",
+        "gender": "Men",
+        "size": ["7", "7.5", "8", "8.5", "9", "10", "11", "12", "12.5"]
+    },
+    {
+        "name": "LITE RACER REBOLD",
+        "description": "Usalas para máxima comodidad mientras te enfrentás a tu día a día o con tu jean favorito para lucir un estilo deportivo único.",
+        "image": "https://solodeportes-9bvc3m9qgmf6g9x.stackpathdns.com/media/catalog/product/cache/7c4f9b393f0b8cb75f2b74fe5e9e52aa/z/a/zapatillas-adidas-lite-racer-rebold-gris-100010gv9982001-1.jpg",
+        "stock": 10,
+        "price": 140,
+        "brand": "Adidas",
+        "color": ["grey", "white"],
+        "model": "100010GV9982001",
+        "category": "Lifestyle",
+        "gender": "Men",
+        "size": ["7", "7.5", "8", "8.5", "9", "10", "11", "12", "12.5"]
+    },
+    {
+        "name": "ULTRABOOST 21",
+        "description": "Uníte a nosotros en la busqueda constante de maximizar y armonizar el peso, la comodidad y en rendimiento. Descubrí un retorno de energía increíble.",
+        "image": "https://solodeportes-9bvc3m9qgmf6g9x.stackpathdns.com/media/catalog/product/cache/7c4f9b393f0b8cb75f2b74fe5e9e52aa/z/a/zapatillas-running-adidas-ultraboost-21-blanca-100010fy0377001-1.jpg",
+        "stock": 15,
+        "price": 320,
+        "brand": "Adidas",
+        "color": ["white", "black", "yellow"],
+        "model": "100010FY0377001",
+        "category": "Running",
+        "gender": "Women",
+        "size": ["5", "6", "7", "8", "9", "10", "11", "12"]
+    },
+    {
+        "name": "RESPONSE SUPER 2.0",
+        "description": "Desde una salida a correr por la mañana en el parque a una tarde de entrenamiento en el gimnasio, sin importar lo que sea que tengás que hacer mantene siempre cómodos tus pies con estas zapatillas de running adidas versátiles.",
+        "image": "https://solodeportes-9bvc3m9qgmf6g9x.stackpathdns.com/media/catalog/product/cache/7c4f9b393f0b8cb75f2b74fe5e9e52aa/z/a/zapatillas-running-response-super-2-0-mujer-negra-100010h02027001-1_1.jpg",
+        "stock": 30,
+        "price": 170,
+        "brand": "Adidas",
+        "color": ["black", "pink", "orange"],
+        "model": "100010H02027001",
+        "category": "Running",
+        "gender": "Women",
+        "size": ["5", "6", "7", "8", "9", "10", "11", "12"]
+    },
+    {
+        "name": "ZONE DOX 2.0S",
+        "description": "La tecnología Continental, está compuesta de caucho que ofrece una mejor tracción en terrenos inclinados y en condiciones meteorológicas húmedas. Amortiguación Bounce flexible en la mediasuela, se adapta al impacto de la pisada.",
+        "image": "https://solodeportes-9bvc3m9qgmf6g9x.stackpathdns.com/media/catalog/product/cache/7c4f9b393f0b8cb75f2b74fe5e9e52aa/b/o/botines-de-hockey-adidas-zone-dox-2-0s-unisex-azul-100010fz5339001-1.jpg",
+        "stock": 6,
+        "price": 230,
+        "brand": "Adidas",
+        "color": ["blue", "orange", "violet"],
+        "model": "100010FZ5339001",
+        "category": "Training",
+        "gender": "Women",
+        "size": ["5", "6", "7", "8", "9", "10", "11", "12"]
+    },
     {
         "name": "Air Jordan 1 High '85" ,
         "description": "La carrera de MJ está llena de jugadas legendarias, pero la primera vez que saboreó la gloria fue a nivel universitario, el 29 de marzo de 1982. El Air Jordan 1 High '85, que ha regresado con su porte y forma en cuero premium, ahora debuta en el modelo “College Navy” para rendir homenaje al partido del campeonato universitario que MJ jugó aquel día. Conmemora el aniversario 40 del momento en que MJ ganó el título durante su época universitaria con este ícono original." ,
@@ -385,10 +543,11 @@ const products = [
         "stock": 5,
         "price": 215,
         "brand": "Nike",
+        "color": ["white", "black"],
         "model": "SGD-10",
         "category": "Lifestyle",
         "gender": "Men",
-        "size": ["25", "25.5", "26", "26.5", "27", "27.5", "28"]
+        "size": ["7", "7.5", "8", "8.5", "9", "10", "11", "12", "12.5"]
     },
     {
         "name": "Air Jordan XXXVI",
@@ -397,10 +556,11 @@ const products = [
         "stock": 3,
         "price": 200,
         "brand": "Nike",
+        "color": ["black", "orange", "white"],
         "model": "CZ2650-001",
         "category": "Básquetbol",
         "gender": "Men",
-        "size": ["25", "25.5", "26", "26.5", "27", "27.5", "28"]
+        "size": ["7", "7.5", "8", "8.5", "9", "10", "11", "12", "12.5"]
     },
     {
         "name": "LeBron 19",
@@ -409,10 +569,11 @@ const products = [
         "stock": 2,
         "price": 240,
         "brand": "Nike",
+        "color": ["white", "green", "light-blue"],
         "model": "DC9339-400",
         "category": "Básquetbol",
         "gender": "Men",
-        "size": ["25", "25.5", "26", "26.5", "27", "27.5", "28"]
+        "size": ["7", "7.5", "8", "8.5", "9", "10", "11", "12", "12.5"]
     },
     {
         "name": "Nike Air Max Alpha Trainer 4",
@@ -421,10 +582,11 @@ const products = [
         "stock": 5,
         "price": 200,
         "brand": "Nike",
+        "color": ["black", "white"],
         "model": "CW3396-004",
-        "category": "Entrenamiento",
+        "category": "Training",
         "gender": "Men",
-        "size": ["25", "25.5", "26", "26.5", "27", "27.5", "28"]
+        "size": ["7", "7.5", "8", "8.5", "9", "10", "11", "12", "12.5"]
     },
     {
         "name": "Nike SuperRep Go 2",
@@ -433,10 +595,11 @@ const products = [
         "stock": 10,
         "price": 180,
         "brand": "Nike",
+        "color": ["grey", "white", "black", "gold"],
         "model": "DH2728-091",
-        "category": "Entrenamiento",
+        "category": "Training",
         "gender": "Men",
-        "size": ["25", "25.5", "26", "26.5", "27", "27.5", "28"]
+        "size": ["7", "7.5", "8", "8.5", "9", "10", "11", "12", "12.5"]
     },
     {
         "name": "Nike Dunk High Up",
@@ -445,10 +608,11 @@ const products = [
         "stock": 10,
         "price": 199,
         "brand": "Nike",
+        "color": ["grey", "white"],
         "model": "DH3718-106",
         "category": "Lifestyle",
         "gender": "Women",
-        "size": ["23", "24", "25", "25.5"]
+        "size": ["5", "6", "7", "8", "9", "10", "11", "12"]
     },
     {
     "name": "Air Jordan 1 Mid",
@@ -457,10 +621,11 @@ const products = [
     "stock": 8,
     "price": 159,
     "brand": "Nike",
+    "color": ["light-blue", "white", "black"],
     "model": "BQ6472-300",
     "category": "Lifestyle",
     "gender": "Women",
-    "size": ["23", "24", "25", "25.5"]
+    "size": ["5", "6", "7", "8", "9", "10", "11", "12"]
     },
     {
     "name": "Nike Air Zoom Rival Fly 3",
@@ -469,10 +634,11 @@ const products = [
     "stock": 15,
     "price": 150,
     "brand": "Nike",
+    "color": ["green", "white", "yellow"],
     "model": "CT2406-700",
     "category": "Running",
     "gender": "Women",
-    "size": ["23", "24", "25", "25.5"]
+    "size": ["5", "6", "7", "8", "9", "10", "11", "12"]
     },
     {
     "name": "Nike React Miler 2",
@@ -481,10 +647,11 @@ const products = [
     "stock": 6,
     "price": 150,
     "brand": "Nike",
+    "color": ["pink", "white"],
     "model": "CW7136-500",
     "category": "Running",
     "gender": "Women",
-    "size": ["23", "24", "25", "25.5"]
+    "size": ["5", "6", "7", "8", "9", "10", "11", "12"]
     },
     {
     "name": "Nike Pegasus Trail 3",
@@ -493,9 +660,205 @@ const products = [
     "stock": 6,
     "price": 170,
     "brand": "Nike",
+    "color": ["violet", "orange"],
     "model": "DA8698-401",
     "category": "Running",
     "gender": "Women",
-    "size": ["23", "24", "25", "25.5"]
-    }
+    "size": ["5", "6", "7", "8", "9", "10", "11", "12"]
+    },
+    {
+        "name": "Nike Air Force 1 Fontanka",
+        "description": "Las Zapatillas Nike Air Force 1 Fontanka se inspiran en la escena underground rusa de los 90s para un diseño original y urbano. La parte superior en capas cuenta con perforaciones para favorecer la ventilación y la suela de goma suma tracción y durabilidad y brinda una sensación de confort en cada pisada. Luci un look único y moderno y combinalas con cualquiera de tus prendas sin perder la elegancia y el estilo que te caracterizan.",
+        "image": "https://www.moovbydexter.com.ar/on/demandware.static/-/Sites-dabra-catalog/default/dw1f1f8a33/products/NI_DA7024-601/NI_DA7024-601-1.JPG",
+        "stock": 9,
+        "price": 260,
+        "brand": "Nike",
+        "color": ["red", "white"],
+        "model": "NI_DA7024-601",
+        "category": "Lifestyle",
+        "gender": "Women",
+        "size": ["5", "6", "7", "8", "9", "10", "11", "12"]
+    },
+    {
+        "name": "Nike Air Force 1 '07 Lx",
+        "description": "No dejes los accesorios colgando en tu ropero, mostralos incluso en tu calzado con las Zapatillas Nike Air Force 1 '07 Lx. Este modelo inspirado en el básquet cuenta con un diseño liviano que se complementa con una cadena con accesorios que podes quitar y utilizar como prefieras. Llevate todas las miradas con un look tan único como vos.",
+        "image": "https://www.moovbydexter.com.ar/on/demandware.static/-/Sites-dabra-catalog/default/dwf8433542/products/NI_DD1525-001/NI_DD1525-001-1.JPG",
+        "stock": 5,
+        "price": 240,
+        "brand": "Nike",
+        "color": ["black", "white"],
+        "model": "NI_DD1525-001",
+        "category": "Lifestyle",
+        "gender": "Women",
+        "size": ["5", "6", "7", "8", "9", "10", "11", "12"]
+    },
+    {
+        "name": "Nike Air Force 1 '07 SE",
+        "description": "Las zapatillas Nike Air Force 1'07 SE pertenecen a la colección Worldwide que unifica el poder del deporte para darle más originalidad a tus pies sin descuidar lo clásico. Su exterior en cuero sintético los hacen más cómodos, elegantes y resistentes al usarlos, además del ajuste característico con cordones. La suela de goma con unidad Air Sole amortigua tus pasos durante todo el día, mientras que la identidad del calzado se lo da la historia que tiene Air Force a nivel internacional con una puntera reconocida hasta en la oscuridad.",
+        "image": "https://www.moovbydexter.com.ar/on/demandware.static/-/Sites-dabra-catalog/default/dw840c04d7/products/NI_CT1414-101/NI_CT1414-101-1.JPG",
+        "stock": 7,
+        "price": 210,
+        "brand": "Nike",
+        "color": ["white", "yellow", "light-blue"],
+        "model": "NI_CT1414-101",
+        "category": "Lifestyle",
+        "gender": "Women",
+        "size": ["5", "6", "7", "8", "9", "10", "11", "12"]
+    },
+    {
+        "name": "NIKE AIR MAX SASHA",
+        "description": "Te presentamos las NIKE Air Max Sasha para mujer, unas zapatillas cómodas y con el mejor diseño para el día a día.",
+        "image": "https://solodeportes-9bvc3m9qgmf6g9x.stackpathdns.com/media/catalog/product/cache/7c4f9b393f0b8cb75f2b74fe5e9e52aa/z/a/zapatillas-nike-air-max-sasha-mujer-gris-510010916783004-1.jpg",
+        "stock": 15,
+        "price": 80,
+        "brand": "Nike",
+        "color": ["grey", "red"],
+        "model": "510010916783004",
+        "category": "Running",
+        "gender": "Women",
+        "size": ["5", "6", "7", "8", "9", "10", "11", "12"]
+    },
+    {
+        "name": "NIKE MD RUNNER 2",
+        "description": "Debido a la naturaleza de exclusiva calidad de la piel y el ante, podría ocurrir que en algunos casos el producto destiñera levemente, sobre todo en condiciones de humedad. Mientras esté mojada, se aconseja que la zapatilla no entre en contacto con otras prendas claras hasta que no esté completamente seca.",
+        "image": "https://solodeportes-9bvc3m9qgmf6g9x.stackpathdns.com/media/catalog/product/cache/7c4f9b393f0b8cb75f2b74fe5e9e52aa/z/a/zapatillas-nike-md-runner-2-mujer-rosa-510010749869500-1-1.jpg",
+        "stock": 11,
+        "price": 140,
+        "brand": "Nike",
+        "color": ["pink", "white"],
+        "model": "510010749869500",
+        "category": "Running",
+        "gender": "Women",
+        "size": ["5", "6", "7", "8", "9", "10", "11", "12"]
+    },
+    {
+        "name": "NIKE AIR MAX COMMAND",
+        "description": "Las zapatillas NIKE Air Max Command para mujer ofrecen una comodidad informal perfecta para el día a día con el look Air Max clásico. Una entresuela de PU acolchada con Air Max ofrece comodidad y protección contra impactos. Suela de caucho waffle para una mayor durabilidad y tracción.",
+        "image": "https://solodeportes-9bvc3m9qgmf6g9x.stackpathdns.com/media/catalog/product/cache/7c4f9b393f0b8cb75f2b74fe5e9e52aa/z/a/zapatillas-nike-air-max-command-mujer-gris-510010397690018-1.jpg",
+        "stock": 3,
+        "price": 210,
+        "brand": "Nike",
+        "color": ["grey", "green"],
+        "model": "510010397690018",
+        "category": "Lifestyle",
+        "gender": "Women",
+        "size": ["5", "6", "7", "8", "9", "10", "11", "12"]
+    },
+    {
+        "name": "NIKE MD RUNNER 2",
+        "description": "Tu estilo urbano es único y las MD Runner de Nike también. Estas zapatillas Nike te ofrecen la comodidad y el diseño que buscás para tus paseos por la ciudad. ",
+        "image": "https://solodeportes-9bvc3m9qgmf6g9x.stackpathdns.com/media/catalog/product/cache/7c4f9b393f0b8cb75f2b74fe5e9e52aa/5/1/510010aq9121600-1.jpg",
+        "stock": 9,
+        "price": 120,
+        "brand": "Nike",
+        "color": ["pink", "white"],
+        "model": "510010AQ9121600",
+        "category": "Running",
+        "gender": "Women",
+        "size": ["5", "6", "7", "8", "9", "10", "11", "12"]
+    },
+    {
+        "name": "AIR MAX MOTION 2",
+        "description": "Lográ un estilo innovador con las Nike Air Max Motion 2. Su diseño y confección las convierte en tu calzado favorito, complementando tu outfit casual con un toque deportivo.",
+        "image": "https://solodeportes-9bvc3m9qgmf6g9x.stackpathdns.com/media/catalog/product/cache/7c4f9b393f0b8cb75f2b74fe5e9e52aa/5/1/510010ao0352600-1.jpg",
+        "stock": 12,
+        "price": 190,
+        "brand": "Nike",
+        "color": ["pink", "white"],
+        "model": "510010AO0352600",
+        "category": "Running",
+        "gender": "Women",
+        "size": ["5", "6", "7", "8", "9", "10", "11", "12"]
+    },
+    {
+        "name": "NIKE SB BLZR COURT",
+        "description": "Con su look minimalista y materiales clásicos, la NIKE SB BLZR Court lleva las vibras retro de la cancha a las calles. El cuello de corte bajo, el diseño impecable y los materiales como la lona y el cuero sintético crean un look clásico inspirado en el tenis.",
+        "image": "https://solodeportes-9bvc3m9qgmf6g9x.stackpathdns.com/media/catalog/product/cache/3cb7d75bc2a65211451e92c5381048e9/z/a/zapatillas-nike-sb-blzr-court-blanca-510010cv1658101-1.jpg",
+        "stock": 28,
+        "price": 100,
+        "brand": "Nike",
+        "color": ["white", "black"],
+        "model": "510010CV1658101",
+        "category": "Lifestyle",
+        "gender": "Men",
+        "size": ["7", "7.5", "8", "8.5", "9", "10", "11", "12", "12.5"]
+    },
+    {
+        "name": "NIKE AIR PEGASUS 92 LITE",
+        "description": "Las NIKE Air Pegasus 92 Lite ofrecen de regreso las Pegasus  en un modelo renovado. Con sus líneas de diseño y un patrón superior que se mantienen rasgos fieles a los originales, te ofrecen una comodidad en la que siempre podés confiar y el espíritu clásico de principios  de los 90.",
+        "image": "https://solodeportes-9bvc3m9qgmf6g9x.stackpathdns.com/media/catalog/product/cache/7c4f9b393f0b8cb75f2b74fe5e9e52aa/5/1/510010ci9138402-1.jpg",
+        "stock": 8,
+        "price": 140,
+        "brand": "Nike",
+        "color": ["blue", "orange", "black"],
+        "model": "510010CI9138402",
+        "category": "Lifestyle",
+        "gender": "Men",
+        "size": ["7", "7.5", "8", "8.5", "9", "10", "11", "12", "12.5"]
+    },
+    {
+        "name": "NIKE LEGEND 8 CLUB FG/MG",
+        "description": "El nuevo botin NIKE Tiempo Legend 8 Club FG/MG toma el toque de cuero sintético texturizado e incorpora una placa versátil de tapones multi-terreno para la tracción en superficies de césped natural y artificial.",
+        "image": "https://solodeportes-9bvc3m9qgmf6g9x.stackpathdns.com/media/catalog/product/cache/7c4f9b393f0b8cb75f2b74fe5e9e52aa/a/t/at6107010-1_1.jpg",
+        "stock": 7,
+        "price": 90,
+        "brand": "Nike",
+        "color": ["black"],
+        "model": "510010AT6107010",
+        "category": "Training",
+        "gender": "Men",
+        "size": ["7", "7.5", "8", "8.5", "9", "10", "11", "12", "12.5"]
+    },
+    {
+        "name": "NIKE MERCURIAL VAPOR 14 ACADEMY FG/MG",
+        "description": "El NIKE Mercurial Vapor 14 Academy te prepara para la máxima velocidad con tapones especialmente diseñados para los cortes rápidos y las paradas repentinas.",
+        "image": "https://solodeportes-9bvc3m9qgmf6g9x.stackpathdns.com/media/catalog/product/cache/7c4f9b393f0b8cb75f2b74fe5e9e52aa/b/o/botines-de-futbol-nike-mercurial-vapor-14-academy-fg-mg--510010cu5691600-1.jpg",
+        "stock": 12,
+        "price": 160,
+        "brand": "Nike",
+        "color": ["red", "green", "blue"],
+        "model": "510010CU5691600",
+        "category": "Training",
+        "gender": "Men",
+        "size": ["7", "7.5", "8", "8.5", "9", "10", "11", "12", "12.5"]
+    },
+    {
+        "name": "NIKE DOWNSHIFTER 7",
+        "description": "La entresuela articulada Phylon garantiza una suavidad de rebote, mientras que la suela de caucho con surcos profundos y patrón de tracción, te permite correr en cualquier superficie. Diseñadas para corredores con pisada neutra.",
+        "image": "https://solodeportes-9bvc3m9qgmf6g9x.stackpathdns.com/media/catalog/product/cache/7c4f9b393f0b8cb75f2b74fe5e9e52aa/z/a/zapatilla-running-nike-downshifter-7-gris-510010852459011-1.jpg",
+        "stock": 20,
+        "price": 110,
+        "brand": "Nike",
+        "color": ["grey", "black", "light-blue"],
+        "model": "510010852459011",
+        "category": "Running",
+        "gender": "Men",
+        "size": ["7", "7.5", "8", "8.5", "9", "10", "11", "12", "12.5"]
+    },
+    {
+        "name": "NIKE LEGEND REACT",
+        "description": "Las zapatillas de running Nike Legend React para hombre cuentan con una parte superior transpirable con capas sintéticas que mejoran la durabilidad, mientras que la espuma suave y sensible amortigua cada paso mientras corrés. La entresuela de espuma Nike React proporciona una amortiguación suave y elástica.",
+        "image": "https://solodeportes-9bvc3m9qgmf6g9x.stackpathdns.com/media/catalog/product/cache/7c4f9b393f0b8cb75f2b74fe5e9e52aa/z/a/zapatilla-running-nike-legend-react-azul-5322949-510010aa1625400-1.jpg",
+        "stock": 19,
+        "price": 200,
+        "brand": "Nike",
+        "color": ["blue", "black", "grey"],
+        "model": "510010AA1625400",
+        "category": "Running",
+        "gender": "Men",
+        "size": ["7", "7.5", "8", "8.5", "9", "10", "11", "12", "12.5"]
+    },
+    {
+        "name": "NIKE AIR ZOOM PEGASUS 35",
+        "description": "La Nike Air Zoom Pegasus 35 está diseñada para corredores de todos los niveles, ya sea que seas una corredor experimentado o recién estes empezando. La amortiguación Zoom Air ofrece una sensación elástica y receptiva. Absorbe el impacto de tu pie cuando aterriza y lo convierte en energía para tu siguiente paso.",
+        "image": "https://solodeportes-9bvc3m9qgmf6g9x.stackpathdns.com/media/catalog/product/cache/7c4f9b393f0b8cb75f2b74fe5e9e52aa/5/1/510010942851600-1.jpg",
+        "stock": 6,
+        "price": 230,
+        "brand": "Nike",
+        "color": ["orange", "grey", "white"],
+        "model": "510010942851600",
+        "category": "Running",
+        "gender": "Men",
+        "size": ["7", "7.5", "8", "8.5", "9", "10", "11", "12", "12.5"]
+    },
 ]

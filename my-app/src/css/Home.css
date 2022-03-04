@@ -1,0 +1,19 @@
+.containerHome{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-self: center;
+    background-attachment: fixed;
+    background-size:cover; 
+}
+
+
+
+.cards {
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-bottom: 30px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}

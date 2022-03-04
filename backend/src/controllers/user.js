@@ -36,8 +36,49 @@ const getAllUsers = async (req, res) => {
     }
 };
 
+const findUser = async (req, res) => {
+    const { id } = req.params
+    if (id) {
+        try {
+            const user = await User.findById( id );
+            res.status(200).json({
+                message: 'User found!',
+                user
+            })
+        }
+        catch (error) {
+            res.status(404).json({
+                message: 'User not Found',
+                error
+            })
+        }
+    }
+};
+
+const deleteUser = async (req, res) => {
+    const { id } = req.params;
+    try {
+        await User.findByIdAndDelete(id)
+            .then(u => res.status(200).json(
+                {
+                    message: 'User deleted',
+                    deletedUser: u
+                }
+            )
+            )
+    } catch (error) {
+        console.log(error)
+        res.status(400).json({
+            error: "The user couldn't be deleted. Try again"
+        })
+
+    }
+}
+
 
 module.exports = {
     createUser,
     getAllUsers,
+    findUser,
+    deleteUser
 }

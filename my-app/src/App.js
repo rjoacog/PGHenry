@@ -5,6 +5,7 @@ import Home from "./components/Home";
 import NavBar from "./components/NavBar";
 import UserForm from "./components/UserForm";
 import Detail from './components/Detail';
+import Footer from './components/Footer'
 
 function App() {
   return (
@@ -15,10 +16,12 @@ function App() {
           <Routes>
             {/* <Route exact path="/" element={<LandingPage/>} /> */}
             <Route exact path="/" element={<Home />} />
+            <Route path ="/landing" element={<LandingPage />} />
             <Route path="/register" element={<UserForm />} />
             <Route exact path="/:id" element={<Detail />} />
 
           </Routes>
+          <Footer />
         </Auth0ProviderWithHistory>
       </div>
     </BrowserRouter>

@@ -5,7 +5,8 @@ const { Schema } = mongoose;
 const ProductSchema = new Schema({
     name: {
         type: String,
-        trim: true
+        trim: true,
+        required: true
     },
     description: {
         type: String,
@@ -30,6 +31,10 @@ const ProductSchema = new Schema({
     },
     brand:{
         type: String,
+        required: true
+    },
+    color:{
+        type: Array,
         required: true
     },
     model:{

@@ -30,9 +30,9 @@ const UserSchema = new Schema({
         required: true,
         trim: true
     },
-    // token: {
-    //     type: String
-    // },
+    token: {
+        type: String
+    },
     birthDate: {
         type: String
     },
@@ -43,7 +43,7 @@ const UserSchema = new Schema({
     },
     isActive: {
         type: Boolean,
-        default:true
+        default: false
     },
     wishList: [
         {

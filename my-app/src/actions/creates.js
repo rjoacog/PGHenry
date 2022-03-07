@@ -1,5 +1,5 @@
 import axios from "axios";
-import { GET_PRODUCTS, GET_PRODUCT_BY_ID } from "./types";
+import { GET_PRODUCTS, GET_PRODUCT_BY_ID, GET_BY_NAME } from "./types";
 
 export function getProducts() {
   return async function (dispatch) {
@@ -21,4 +21,9 @@ export function getProductByID(id){
     }
 }
 
-
+export function getProductByName(payload) {
+    return {
+      type: GET_BY_NAME,
+      payload,
+    }
+}

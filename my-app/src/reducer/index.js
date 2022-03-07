@@ -1,4 +1,4 @@
-import { GET_PRODUCTS, GET_PRODUCT_BY_ID } from "../actions/types";
+import { GET_PRODUCTS, GET_PRODUCT_BY_ID, GET_BY_NAME } from "../actions/types";
 
 const initialState = {
   allProducts: [],
@@ -19,6 +19,14 @@ function rootReducer(state = initialState, { type, payload }) {
       return{
         ...state,
         detail: payload
+      }
+
+    case GET_BY_NAME:
+      let searched = state.allProducts.filter(el => el.brand.toLowerCase().includes(payload.toLowerCase()));
+      console.log(searched)
+      return {
+        ...state,
+        products: searched,
       }
 
     default:

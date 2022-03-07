@@ -21,7 +21,7 @@ function Home() {
               return (
                 <div key={p._id}>
                   <Link
-                    to={"/products/" + p._id}
+                    to={"/" + p._id}
                     style={{ textDecoration: "none" }}
                   >
                     <Card

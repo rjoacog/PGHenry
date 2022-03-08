@@ -102,6 +102,87 @@ const confirmar = async (req, res) => {
     } catch (error) {
         console.log(error);
     }
+};
+
+const makeAdmin = async (req, res) => {
+    const { id } = req.params
+    if (id) {
+        try {
+            const user = await User.findByIdAndUpdate(id, { role: 'admin' }, { new: true })
+            res.status(200).json({
+                msg: 'User is now admin',
+                user
+            })
+        }
+        catch (error) {
+            res.status(404).json({
+                msg: 'User not Found',
+                error
+            })
+        }
+    }
+};
+
+const updateUser = async (req, res) => {
+    const { id } = req.params;
+    const { name, lastName, userName, birthDate, address } = req.body;
+    try {
+        const updateUser = { name, lastName, userName, birthDate, address, _id: id }
+        await User.findByIdAndUpdate(id, updateUser, { new: true })
+        res.status(200).json(updateUser);
+    } catch (error) {
+        console.log(error)
+        res.status(400).json({
+            error: 'Your request could not be processed. try again'
+        })
+
+    }
+};
+
+
+// -------------- WISH LIST------------------------------
+
+const wishList = async (req, res) => {
+    const { email, productId } = req.body
+        try {
+            const user = await User.findOne({ 'email': { '$regex': email, $options: 'i' } });
+            let wish = [...user.wishList]
+            let flag = true;
+
+            for (let i = 0; i < wish.length; ++i) {
+                if (wish[i] == productId) {
+                    wish = wish.filter(id => id != productId);
+                    flag = false;
+                    break;
+                }
+            }
+
+            if (flag)
+                wish.push(productId);
+
+            user.wishList = wish;
+            await user.save()
+            return res.json(wish)
+        } catch (error) {
+            console.log('WISHLIST ROUTE Error', error)
+            res.status(400).json({
+                error: 'Your request could not be processed. try again'
+            })
+        }
+};
+
+const getWishList = async (req, res) => {
+    const { email } = req.body  
+    console.log(email)
+        try {
+            console.log('EEEEEEEEEMAIL', req.body)
+
+            const user = await User.findOne({ 'email': { '$regex': email, $options: 'i' } })
+            console.log('SOOOOOOOOOOOOOOOOY LOS WISHEs', user?.wishList)
+            res.json(user?.wishList)
+        } catch (error) {
+            console.log('Error en acceder a la lista de deseos', error)
+        }
 }
 
 
@@ -110,5 +191,9 @@ module.exports = {
     getAllUsers,
     findUser,
     deleteUser,
-    confirmar
+    confirmar,
+    makeAdmin,
+    updateUser,
+    wishList,
+    getWishList
 }

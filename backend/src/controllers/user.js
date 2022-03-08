@@ -173,12 +173,8 @@ const wishList = async (req, res) => {
 
 const getWishList = async (req, res) => {
     const { email } = req.body  
-    console.log(email)
         try {
-            console.log('EEEEEEEEEMAIL', req.body)
-
             const user = await User.findOne({ 'email': { '$regex': email, $options: 'i' } })
-            console.log('SOOOOOOOOOOOOOOOOY LOS WISHEs', user?.wishList)
             res.json(user?.wishList)
         } catch (error) {
             console.log('Error en acceder a la lista de deseos', error)

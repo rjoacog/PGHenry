@@ -44,11 +44,47 @@ const getProduct = async (req, res) => {
         });
     }
 };
+//Actualizar producto:
+const updateProduct = async (req, res) => {
+    const { id } = req.params;
+    const { name, description, image, stock, price, brand, color, model, category, gender, size } = req.body;
+    try {
+        const updateProduct = { name, description, image, stock, price, brand, color, model, category, gender, size, _id: id }
+        await Product.findByIdAndUpdate(id, updateProduct, { new: true });
+        res.status(200).json(updateProduct);
+    } catch (error) {
+        res.status(400).json({
+            error: 'Your request could not be processed. Please try again.'
+        })
+    };
+};
+//Eliminar producto:
+const deleteProduct = async (req, res) => {
+    const { id } = req.params;
+
+    try {
+        const remove = await Product.findOneAndRemove({ _id: id });
+        res.status(200).json({
+            message: 'Successful',
+            remove
+        });
+    }
+
+    catch (error) {
+        console.log(error)
+        res.status(400).json({
+            message: 'Your request could not be processed. Please try again.'
+        })
+    };
+};
+
 
 
 module.exports = {
     newProduct,
     getProducts,
     createManyProducts,
-    getProduct
+    getProduct,
+    updateProduct,
+    deleteProduct
 }

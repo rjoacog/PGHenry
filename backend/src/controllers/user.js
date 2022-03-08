@@ -1,3 +1,5 @@
+const { emailRegistro } = require('../helpers/email');
+const generarToken = require('../helpers/generarToken');
 const User = require('../models/User');
 
 
@@ -12,9 +14,15 @@ const createUser = async (req, res) => {
 
     try {
         const newUser = new User( req.body );
-        //TODO crear el token: 
+        //Crear el token: 
+        newUser.token = generarToken();
         const userInDB = await newUser.save();    //Almacenar usuario a base de datos.
-        // TODO Enviar el email de confirmación:
+        // Enviar el email de confirmación:
+        emailRegistro({
+            email: newUser.email,
+            name: newUser.name,
+            token: newUser.token
+        })
 
         res.status(201).json({
             msg: 'Added Succefully, Check your email.'
@@ -73,6 +81,27 @@ const deleteUser = async (req, res) => {
         })
 
     }
+};
+
+//* confirmar token:
+const confirmar = async (req, res) => {
+    //Verificamos que el token sea correcto:
+    const { token } = req.params;
+    const usuarioConfirmar = await User.findOne({ token });
+    if( !usuarioConfirmar ) {
+        const error = new Error('Token no válido.');
+        return res.status(404).json({ msg: error.message });
+    }
+
+    try {
+        usuarioConfirmar.isActive = true;
+        //usuarioConfirmar.token = '';   // TODO Pasar en blanco por si es un token de un solo uso
+        await usuarioConfirmar.save();
+        res.json({ msg: 'Usuario confirmado correctamente.'})
+        console.log(usuarioConfirmar)
+    } catch (error) {
+        console.log(error);
+    }
 }
 
 
@@ -80,5 +109,6 @@ module.exports = {
     createUser,
     getAllUsers,
     findUser,
-    deleteUser
+    deleteUser,
+    confirmar
 }

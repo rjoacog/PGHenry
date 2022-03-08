@@ -77,6 +77,37 @@ const deleteProduct = async (req, res) => {
         })
     };
 };
+//Review de producto:
+const productReview = async (req, res) => {
+    const { id } = req.query;
+    const { review, rating, user } = req.body;
+    console.log( "Body: ", req.body )
+    console.log("ID: ", id )
+    const product = await Product.findById(id);
+
+    const filterReviews = product.reviews.filter(review => review.user === user);
+    if (filterReviews?.length > 0) {
+        res.status(400).json({
+            msg: 'You have already reviewed this product'
+        })
+    } else {
+        try {
+            const newReview = { review, rating, user }
+            product.reviews.push(newReview);
+            await product.save();
+            res.status(200).json({
+                msg: 'Successful',
+                product
+            });
+
+        } catch (error) {
+            console.log(error);
+            res.status(400).json({
+                msg: 'Your request could not be processed. Please try again.'
+            })
+        }
+    }
+};
 
 
 
@@ -86,5 +117,6 @@ module.exports = {
     createManyProducts,
     getProduct,
     updateProduct,
-    deleteProduct
+    deleteProduct,
+    productReview
 }

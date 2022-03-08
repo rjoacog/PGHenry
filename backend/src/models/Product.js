@@ -23,7 +23,7 @@ const ProductSchema = new Schema({
         type: Number,
         required:true
     },
-    updated: Date,
+    //updated: Date,
     created: {
         type: Date,
         required: true,

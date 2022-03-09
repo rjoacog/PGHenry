@@ -1,9 +1,8 @@
-import React from "react";
+import React from 'react';
+import { Link } from 'react-router-dom';
 import "../css/Card.css";
-import AddShoppingCartIcon from '@mui/icons-material/AddShoppingCart';
-import {Link} from "react-router-dom"
 
-function Card({ img, brand, model, color, price, _id, addToCart }) {
+export default function CartItem({img, brand, model, color, price, _id, quantity, delFromCart}) {
   return (
     <div className="containerCard">
       <div className="card">
@@ -18,14 +17,11 @@ function Card({ img, brand, model, color, price, _id, addToCart }) {
           <h2>
             {brand} {model}
           </h2>
-          <h3>${price}</h3>
+          <h3>${price} x {quantity} = $ {price * quantity} </h3>
         </div>
+        <button onClick={() => delFromCart(_id, true)}>Eliminar Uno</button>
+        <button onClick={() => delFromCart(_id)}>Eliminar Todos</button>
       </div>
-      <button onClick={() => addToCart(_id)}>
-        <AddShoppingCartIcon />
-      </button>
-    </div>
-  );
+      </div>
+  )
 }
-
-export default Card;

@@ -21,6 +21,7 @@ function Card({ img, brand,name, price, _id, addToCart }) {
           <h3>${price}</h3>
         </div>
       </div>
+      <br />
       <button onClick={() => addToCart(_id)}>
         <AddShoppingCartIcon />
       </button>

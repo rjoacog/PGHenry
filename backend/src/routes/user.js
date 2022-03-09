@@ -10,7 +10,14 @@ router.get('/confirmar/:token', user.confirmar)
 router.delete('/:id', user.deleteUser)
 // Encontrar usuario:
 router.get('/:id', user.findUser)
-//
+// hacer Admin a un usuario:
+router.put('/makeAdmin/:id', user.makeAdmin)
+// actualizar usuario
+router.put('/:id', user.updateUser)
+
+// Wish List
+router.post("/wish", user.wishList)
+router.get("/wish/all", user.getWishList)
 
 //Carrito de compras
 router.post("/shoppingCart", async (req, res, next) => {

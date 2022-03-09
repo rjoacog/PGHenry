@@ -36,6 +36,9 @@ const UserSchema = new Schema({
     birthDate: {
         type: String
     },
+    address: {
+        type: String,
+    },
     role: {
         type: String,
         default: 'user',
@@ -53,7 +56,7 @@ const UserSchema = new Schema({
     ],
     wishList: [
         {
-            type: Schema.ObjectId,
+            type: mongoose.Schema.Types.ObjectId,
             ref: "Product",
         }
     ]

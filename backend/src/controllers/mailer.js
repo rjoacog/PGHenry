@@ -1,4 +1,4 @@
-const {sendMail} = require('../helpers/mailOrder')
+const {sendMail} = require('../helpers/email')
 
 
 const sendOrderDetails = async function (req, res) {

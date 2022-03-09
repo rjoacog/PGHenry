@@ -5,11 +5,22 @@ import { getProducts, orderByPrice } from "../actions/creates";
 import Card from "./Card";
 import "../css/Home.css";
 import { Select } from '@chakra-ui/react'
+import Paginado from './Paginado'
 
 function Home() {
   const dispatch = useDispatch();
   const products = useSelector((state) => state.products);
   const[price, setPrice] = useState("")
+
+  const [currentPage, setCurrentPage] = useState(1);
+  const [productsPerPage] = useState(16);
+  const indexOfLastProduct = currentPage * productsPerPage 
+  const indexOfFirstProduct = indexOfLastProduct - productsPerPage 
+  const currentProducts = products.slice(indexOfFirstProduct, indexOfLastProduct)
+
+  const paginado = (pageNumber) => {
+    setCurrentPage(pageNumber)
+  }
 
   function handlePrice(e) {
     e.preventDefault(e);
@@ -23,13 +34,29 @@ function Home() {
 
   return (
     <div className="containerHome">
-      <Select placeholder='Ordenar' width="150px" mt={"10"} mb="10" ml={"10"} onChange={handlePrice}>
-          <option value='+P'>Mayor Precio</option>
-          <option value='-P'>Menor Precio</option>
-        </Select>
+
+      <div className="containerPaginadoAndFilters">
+
+        <div className='selectPrice'>
+          <Select placeholder='Ordenar' width="150px" mt={"10"} mb="10" ml={"10"} onChange={handlePrice}>
+              <option value='+P'>Mayor Precio</option>
+              <option value='-P'>Menor Precio</option>
+          </Select>
+        </div>
+
+        <div className="paginado">
+          <Paginado
+            productsPerPage={productsPerPage}
+            allProducts={products.length}
+            paginado={paginado}
+            />
+        </div>
+      </div>
+
+
       <div className="cards">        
         {products ? (
-          products.map((p) => {
+          currentProducts.map((p) => {
             return (
               <div key={p._id}>
                 <Link
@@ -39,8 +66,7 @@ function Home() {
                   <Card
                     img={p.image}
                     brand={p.brand}
-                    model={p.model}
-                    color={p.color}
+                    name={p.name}
                     price={p.price}
                   />
                 </Link>
@@ -51,8 +77,9 @@ function Home() {
           <h1>Products not found</h1>
         )}
       </div>
+
     </div>
-  );
+  )
 }
 
 export default Home;

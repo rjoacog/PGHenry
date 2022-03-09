@@ -24,7 +24,7 @@ export default function SearchBar() {
 
     return (
         <div>
-            <Input width='auto' mr="4" borderColor={"gray.400"} border="2px" placeholder='Buscar...' onChange={handleChange} />
+            <Input type='text' width='auto' mr="4" borderColor={"gray.400"} border="2px" placeholder='Buscar...' onChange={handleChange} />
             <IconButton aria-label='Search database' ml="-70" width='5' mr="4" h="7" mb="1" icon={<SearchIcon />} onClick={handleClic}/>
         </div>
 

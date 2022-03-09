@@ -3,9 +3,10 @@ import "../css/Card.css";
 import AddShoppingCartIcon from '@mui/icons-material/AddShoppingCart';
 import {Link} from "react-router-dom"
 
-function Card({ img, brand, model, color, price, _id, addToCart }) {
+function Card({ img, brand,name, price, _id, addToCart }) {
   return (
     <div className="containerCard">
+
       <div className="card">
       <Link
                   to={"/" + _id}
@@ -14,9 +15,8 @@ function Card({ img, brand, model, color, price, _id, addToCart }) {
         <img src={img} alt="img not found" />
       </Link>
         <div className="detailCardHome">
-          <h3>{color} colors</h3>
           <h2>
-            {brand} {model}
+            {brand} {name}
           </h2>
           <h3>${price}</h3>
         </div>

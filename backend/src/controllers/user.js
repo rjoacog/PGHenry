@@ -145,7 +145,7 @@ const updateUser = async (req, res) => {
 const wishList = async (req, res) => {
     const { email, productId } = req.body
         try {
-            const user = await User.findOne({ 'email': { '$regex': email, $options: 'i' } });
+            const user = await User.findOne({ email })
             let wish = [...user.wishList]
             let flag = true;
 
@@ -174,7 +174,7 @@ const wishList = async (req, res) => {
 const getWishList = async (req, res) => {
     const { email } = req.body  
         try {
-            const user = await User.findOne({ 'email': { '$regex': email, $options: 'i' } })
+            const user = await User.findOne({ email })
             res.json(user?.wishList)
         } catch (error) {
             console.log('Error en acceder a la lista de deseos', error)

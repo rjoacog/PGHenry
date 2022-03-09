@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
-import { getProducts, orderByPrice } from "../actions/creates";
+import { getProducts, orderByPrice, addCart } from "../actions/creates";
 import Card from "./Card";
 import "../css/Home.css";
 import { Select } from '@chakra-ui/react'
@@ -10,7 +10,16 @@ import Paginado from './Paginado'
 function Home() {
   const dispatch = useDispatch();
   const products = useSelector((state) => state.products);
-  const[price, setPrice] = useState("")
+  const cart = useSelector((state) => state.cart)
+  const [price, setPrice] = useState("")
+ 
+
+  
+  const addToCart = (payload) => {
+    console.log(payload)
+     dispatch(addCart(payload))
+  }
+
 
   const [currentPage, setCurrentPage] = useState(1);
   const [productsPerPage] = useState(16);
@@ -26,7 +35,8 @@ function Home() {
     e.preventDefault(e);
     dispatch(orderByPrice(e.target.value));
     setPrice(`Ordenado ${e.target.value}`);
-}
+  }
+
 
   useEffect(() => {
     dispatch(getProducts());
@@ -59,17 +69,15 @@ function Home() {
           currentProducts.map((p) => {
             return (
               <div key={p._id}>
-                <Link
-                  to={"/" + p._id}
-                  style={{ textDecoration: "none" }}
-                >
-                  <Card
-                    img={p.image}
-                    brand={p.brand}
-                    name={p.name}
-                    price={p.price}
-                  />
-                </Link>
+                <Card
+                  img={p.image}
+                  brand={p.brand}
+                  model={p.model}
+                  color={p.color}
+                  price={p.price}
+                  _id={p._id}
+                  addToCart={addToCart}
+                />
               </div>
             );
           })

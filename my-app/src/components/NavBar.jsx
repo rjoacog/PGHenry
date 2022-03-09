@@ -15,6 +15,7 @@ import {
   VStack,
   Avatar,
 } from "@chakra-ui/react";
+import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import { Link } from "react-router-dom";
 import SearchBar from "../components/SearchBar";
 import { useAuth0 } from "@auth0/auth0-react";
@@ -33,6 +34,11 @@ export default function NavBar() {
         <Box p="4">
           <SearchBar />
         </Box>
+        <Link to="/shoppingcart">
+        <Box p="4" mt="2" mr="1" ml="1">
+        <ShoppingCartIcon  />
+        </Box>
+        </Link>  
         <Box p="4">
           {isAuthenticated ? (
             <>
@@ -90,6 +96,7 @@ export default function NavBar() {
               <Button colorScheme="teal" onClick={() => loginWithRedirect()}>
                 Log in
               </Button>
+
             </>
           )}
         </Box>

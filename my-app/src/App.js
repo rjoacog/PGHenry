@@ -6,6 +6,7 @@ import NavBar from "./components/NavBar";
 import UserForm from "./components/UserForm";
 import Detail from './components/Detail';
 import Footer from './components/Footer'
+import ShoppingCart from "./components/ShoppingCart"
 
 function App() {
   return (
@@ -19,7 +20,7 @@ function App() {
             <Route path ="/landing" element={<LandingPage />} />
             <Route path="/register" element={<UserForm />} />
             <Route exact path="/:id" element={<Detail />} />
-
+            <Route path="shoppingcart" element={<ShoppingCart />} />
           </Routes>
           <Footer />
         </Auth0ProviderWithHistory>

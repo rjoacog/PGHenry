@@ -2,7 +2,7 @@ const { Order, Product, Price, Order_detail, User} = require("../../src/db");
 
 
 const addOrderToDB = async function({userId, shoppingCart, shippingInfo}) {
-    const {name, lastName, adress, phone, email} = shippingInfo
+    const {name, lastName, adress, phone, email} = shippingInfo;
     let user = await User.findByPk(userId)
     
     shoppingCart.map(item => item.subtotal = item.quantity * item.price)

@@ -3,6 +3,7 @@ import { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { clearAllCart, delOneCart, delAllCart } from '../actions/creates';
 import CartItem from './CartItem';
+import { Button, Text, Box } from '@chakra-ui/react';
 
 export default function ShoppingCart() {
 
@@ -23,10 +24,13 @@ export default function ShoppingCart() {
     }
 
     return (
+        <Box display={"flex"} justifyContent="center" textAlign={"center"} mr={"100"} ml={"100"} >
         <div>
-          <h2>Carrito</h2>
-          <article>
-            <button onClick={clearCart}>Clear cart</button>  
+        <Box>    
+          <Text fontSize='3xl'>Carrito</Text>
+              <br />
+            <Button onClick={clearCart}  borderRadius='md' backgroundColor="red.400" color="white" size='sm'>Clear cart</Button>  
+            </Box> 
 
             {
                 cart?.map((p, index) => <CartItem key={index} delFromCart={delFromCart} 
@@ -38,8 +42,8 @@ export default function ShoppingCart() {
                   _id={p._id}
                   quantity= {p.quantity}
                 />)
-            }    
-         </article>  
+            }     
         </div>
+        </Box>
     )
 }

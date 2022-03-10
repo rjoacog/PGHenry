@@ -23,7 +23,7 @@ const products = [
         "price": 90,
         "brand": "Reebok",
         "color": ["yellow"],
-        "model": "GZ5392",
+        "model": "A0001",
         "category": "Training",
         "gender": "Women",
         "size": ["5", "6", "7", "8", "9", "10", "11", "12"] 
@@ -36,7 +36,7 @@ const products = [
         "price": 90,
         "brand": "Reebok",
         "color": ["yellow", "grey"],
-        "model": "GZ8948",
+        "model": "A0002",
         "category": "Training",
         "gender": "Women",
         "size": ["5", "6", "7", "8", "9", "10", "11", "12"] 
@@ -49,7 +49,7 @@ const products = [
         "price": 70,
         "brand": "Reebok",
         "color": ["black", "white"],
-        "model": "GZ0295",
+        "model": "A0003",
         "category": "Training",
         "gender": "Women",
         "size": ["5", "6", "7", "8", "9", "10", "11", "12"] 
@@ -62,7 +62,7 @@ const products = [
         "price": 70,
         "brand": "Reebok",
         "color": ["white"],
-        "model": "GY6182",
+        "model": "A0004",
         "category": "Training",
         "gender": "Women",
         "size": ["5", "6", "7", "8", "9", "10", "11", "12"] 
@@ -75,7 +75,7 @@ const products = [
         "price": 70,
         "brand": "Reebok",
         "color": ["black", "white"],
-        "model": "GZ8307",
+        "model": "A0005",
         "category": "Training",
         "gender": "Women",
         "size": ["5", "6", "7", "8", "9", "10", "11", "12"] 
@@ -88,7 +88,7 @@ const products = [
         "price": 90,
         "brand": "Reebok",
         "color": ["blue", "white"],
-        "model": "GZ3109",
+        "model": "A0006",
         "category": "Running",
         "gender": "Men",
         "size": ["7", "7.5", "8", "8.5", "9", "10", "11", "12", "12.5"]
@@ -101,7 +101,7 @@ const products = [
         "price": 90,
         "brand": "Reebok",
         "color": ["black"],
-        "model": "GY7706",
+        "model": "A0007",
         "category": "Running",
         "gender": "Men",
         "size": ["7", "7.5", "8", "8.5", "9", "10", "11", "12", "12.5"]
@@ -114,7 +114,7 @@ const products = [
         "price": 80,
         "brand": "Reebok",
         "color": ["white", "red", "blue"],
-        "model": "GW7772",
+        "model": "A0008",
         "category": "Running",
         "gender": "Men",
         "size": ["7", "7.5", "8", "8.5", "9", "10", "11", "12", "12.5"]
@@ -127,7 +127,7 @@ const products = [
         "price": 110,
         "brand": "Reebok",
         "color": ["red", "black", "yellow"],
-        "model": "H01316",
+        "model": "A0009",
         "category": "Básquetbol",
         "gender": "Men",
         "size": ["7", "7.5", "8", "8.5", "9", "10", "11", "12", "12.5"]
@@ -140,7 +140,7 @@ const products = [
         "price": 110,
         "brand": "Reebok",
         "color": ["white", "blue", "red"],
-        "model": "H01281",
+        "model": "A0010",
         "category": "Básquetbol",
         "gender": "Men",
         "size": ["7", "7.5", "8", "8.5", "9", "10", "11", "12", "12.5"]
@@ -154,7 +154,7 @@ const products = [
         "price": 120,
         "brand": "Puma",
         "color": ["beige", "light-blue"],
-        "model": "381270_01",
+        "model": "A0011",
         "category": "Lifestyle",
         "gender": "Men",
         "size": ["7", "7.5", "8", "8.5", "9", "10", "11", "12", "12.5"]
@@ -167,7 +167,7 @@ const products = [
         "price": 150,
         "brand": "Puma",
         "color": ["black", "white"],
-        "model": "380190_02",
+        "model": "A0012",
         "category": "Lifestyle",
         "gender": "Men",
         "size": ["7", "7.5", "8", "8.5", "9", "10", "11", "12", "12.5"]
@@ -180,7 +180,7 @@ const products = [
         "price": 130,
         "brand": "Puma",
         "color": ["red"],
-        "model": "194739_03",
+        "model": "A0013",
         "category": "Running",
         "gender": "Men",
         "size": ["7", "7.5", "8", "8.5", "9", "10", "11", "12", "12.5"]
@@ -193,7 +193,7 @@ const products = [
         "price": 130,
         "brand": "Puma",
         "color": ["grey", "yellow", "white"],
-        "model": "195170_02",
+        "model": "A0014",
         "category": "Running",
         "gender": "Men",
         "size": ["7", "7.5", "8", "8.5", "9", "10", "11", "12", "12.5"]
@@ -206,7 +206,7 @@ const products = [
         "price": 130,
         "brand": "Puma",
         "color": ["black", "white"],
-        "model": "192257_02",
+        "model": "A0015",
         "category": "Running",
         "gender": "Men",
         "size": ["7", "7.5", "8", "8.5", "9", "10", "11", "12", "12.5"]
@@ -219,7 +219,7 @@ const products = [
         "price": 100,
         "brand": "Puma",
         "color": ["pink"],
-        "model": "195172_05",
+        "model": "A0016",
         "category": "Running",
         "gender": "Women",
         "size": ["5", "6", "7", "8", "9", "10", "11", "12"]
@@ -232,7 +232,7 @@ const products = [
         "price": 90,
         "brand": "Puma",
         "color": ["red", "white"],
-        "model": "195172_05",
+        "model": "A0017",
         "category": "Running",
         "gender": "Women",
         "size": ["5", "6", "7", "8", "9", "10", "11", "12"]
@@ -245,7 +245,7 @@ const products = [
         "price": 80,
         "brand": "Puma",
         "color": ["pink", "white"],
-        "model": "195109_13",
+        "model": "A0018",
         "category": "Running",
         "gender": "Women",
         "size": ["5", "6", "7", "8", "9", "10", "11", "12"]
@@ -258,7 +258,7 @@ const products = [
         "price": 90,
         "brand": "Puma",
         "color": ["white", "black", "beige"],
-        "model": "373906_08",
+        "model": "A0019",
         "category": "Lifestyle",
         "gender": "Women",
         "size": ["5", "6", "7", "8", "9", "10", "11", "12"]
@@ -271,7 +271,7 @@ const products = [
         "price": 90,
         "brand": "Puma",
         "color": ["white", "light-blue", "pink", "black"],
-        "model": "381141_03",
+        "model": "A0020",
         "category": "Lifestyle",
         "gender": "Women",
         "size": ["5", "6", "7", "8", "9", "10", "11", "12"]
@@ -284,7 +284,7 @@ const products = [
         "price": 80,
         "brand": "Puma",
         "color": ["blue", "white"],
-        "model": "640010192740001",
+        "model": "A0021",
         "category": "Running",
         "gender": "Men",
         "size": ["7", "7.5", "8", "8.5", "9", "10", "11", "12", "12.5"]
@@ -297,7 +297,7 @@ const products = [
         "price": 250,
         "brand": "Adidas",
         "color": ["white", "black"],
-        "model": "GZ1338",
+        "model": "A0022",
         "category": "Básquetbol",
         "gender": "Men",
         "size": ["7", "7.5", "8", "8.5", "9", "10", "11", "12", "12.5"]
@@ -310,7 +310,7 @@ const products = [
         "price": 220,
         "brand": "Adidas",
         "color": ["black", "light-blue"],
-        "model": "GZ5526",
+        "model": "A0023",
         "category": "Básquetbol",
         "gender": "Men",
         "size": ["7", "7.5", "8", "8.5", "9", "10", "11", "12", "12.5"]
@@ -323,7 +323,7 @@ const products = [
         "price": 200,
         "brand": "Adidas",
         "color": ["white", "yellow"],
-        "model": "GZ1594",
+        "model": "A0024",
         "category": "Training",
         "gender": "Men",
         "size": ["7", "7.5", "8", "8.5", "9", "10", "11", "12", "12.5"]
@@ -336,7 +336,7 @@ const products = [
         "price": 100,
         "brand": "Adidas",
         "color": ["black", "white"],
-        "model": "FW1669",
+        "model": "A0025",
         "category": "Training",
         "gender": "Men",
         "size": ["7", "7.5", "8", "8.5", "9", "10", "11", "12", "12.5"]
@@ -349,7 +349,7 @@ const products = [
         "price": 110,
         "brand": "Adidas",
         "color": ["white", "orange"],
-        "model": "GX6026",
+        "model": "A0026",
         "category": "Lifestyle",
         "gender": "Men",
         "size": ["7", "7.5", "8", "8.5", "9", "10", "11", "12", "12.5"]
@@ -362,7 +362,7 @@ const products = [
         "price": 90,
         "brand": "Adidas",
         "color": ["white", "silver"],
-        "model": "EE7874",
+        "model": "A0027",
         "category": "Lifestyle",
         "gender": "Women",
         "size": ["5", "6", "7", "8", "9", "10", "11", "12"]
@@ -375,7 +375,7 @@ const products = [
         "price": 120,
         "brand": "Adidas",
         "color": ["violet", "green", "white"],
-        "model": "FY4082",
+        "model": "A0028",
         "category": "Running",
         "gender": "Women",
         "size": ["5", "6", "7", "8", "9", "10", "11", "12"]
@@ -388,7 +388,7 @@ const products = [
         "price": 120,
         "brand": "Adidas",
         "color": ["white", "grey", "light-blue"],
-        "model": "H00578",
+        "model": "A0029",
         "category": "Running",
         "gender": "Women",
         "size": ["5", "6", "7", "8", "9", "10", "11", "12"]
@@ -401,7 +401,7 @@ const products = [
         "price": 90,
         "brand": "Adidas",
         "color": ["black", "white"],
-        "model": "GY7648",
+        "model": "A0030",
         "category": "Training",
         "gender": "Women",
         "size": ["5", "6", "7", "8", "9", "10", "11", "12"]
@@ -414,7 +414,7 @@ const products = [
         "price": 100,
         "brand": "Adidas",
         "color": ["white", "pink", "blue"],
-        "model": "H05127",
+        "model": "A0031",
         "category": "Training",
         "gender": "Women",
         "size": ["5", "6", "7", "8", "9", "10", "11", "12"]
@@ -427,7 +427,7 @@ const products = [
         "price": 95,
         "brand": "Adidas",
         "color": ["black", "green", "grey"],
-        "model": "100010H04597001",
+        "model": "A0032",
         "category": "Running",
         "gender": "Men",
         "size": ["7", "7.5", "8", "8.5", "9", "10", "11", "12", "12.5"]
@@ -440,7 +440,7 @@ const products = [
         "price": 170,
         "brand": "Adidas",
         "color": ["blue", "white", "yellow"],
-        "model": "100010S42725001",
+        "model": "A0033",
         "category": "Running",
         "gender": "Men",
         "size": ["7", "7.5", "8", "8.5", "9", "10", "11", "12", "12.5"]
@@ -453,7 +453,7 @@ const products = [
         "price": 100,
         "brand": "Adidas",
         "color": ["black"],
-        "model": "100010G28970001",
+        "model": "A0034",
         "category": "Running",
         "gender": "Men",
         "size": ["7", "7.5", "8", "8.5", "9", "10", "11", "12", "12.5"]
@@ -466,7 +466,7 @@ const products = [
         "price": 120,
         "brand": "Adidas",
         "color": ["black", "orange", "white"],
-        "model": "100010EG8398001",
+        "model": "A0035",
         "category": "Lifestyle",
         "gender": "Men",
         "size": ["7", "7.5", "8", "8.5", "9", "10", "11", "12", "12.5"]
@@ -479,7 +479,7 @@ const products = [
         "price": 105,
         "brand": "Adidas",
         "color": ["red", "white"],
-        "model": "100010EE9674001",
+        "model": "A0036",
         "category": "Lifestyle",
         "gender": "Men",
         "size": ["7", "7.5", "8", "8.5", "9", "10", "11", "12", "12.5"]
@@ -492,7 +492,7 @@ const products = [
         "price": 140,
         "brand": "Adidas",
         "color": ["grey", "white"],
-        "model": "100010GV9982001",
+        "model": "A0037",
         "category": "Lifestyle",
         "gender": "Men",
         "size": ["7", "7.5", "8", "8.5", "9", "10", "11", "12", "12.5"]
@@ -505,7 +505,7 @@ const products = [
         "price": 320,
         "brand": "Adidas",
         "color": ["white", "black", "yellow"],
-        "model": "100010FY0377001",
+        "model": "A0038",
         "category": "Running",
         "gender": "Women",
         "size": ["5", "6", "7", "8", "9", "10", "11", "12"]
@@ -518,7 +518,7 @@ const products = [
         "price": 170,
         "brand": "Adidas",
         "color": ["black", "pink", "orange"],
-        "model": "100010H02027001",
+        "model": "A0039",
         "category": "Running",
         "gender": "Women",
         "size": ["5", "6", "7", "8", "9", "10", "11", "12"]
@@ -531,7 +531,7 @@ const products = [
         "price": 230,
         "brand": "Adidas",
         "color": ["blue", "orange", "violet"],
-        "model": "100010FZ5339001",
+        "model": "A0040",
         "category": "Training",
         "gender": "Women",
         "size": ["5", "6", "7", "8", "9", "10", "11", "12"]
@@ -544,7 +544,7 @@ const products = [
         "price": 215,
         "brand": "Nike",
         "color": ["white", "black"],
-        "model": "SGD-10",
+        "model": "A0041",
         "category": "Lifestyle",
         "gender": "Men",
         "size": ["7", "7.5", "8", "8.5", "9", "10", "11", "12", "12.5"]
@@ -557,7 +557,7 @@ const products = [
         "price": 200,
         "brand": "Nike",
         "color": ["black", "orange", "white"],
-        "model": "CZ2650-001",
+        "model": "A0042",
         "category": "Básquetbol",
         "gender": "Men",
         "size": ["7", "7.5", "8", "8.5", "9", "10", "11", "12", "12.5"]
@@ -570,7 +570,7 @@ const products = [
         "price": 240,
         "brand": "Nike",
         "color": ["white", "green", "light-blue"],
-        "model": "DC9339-400",
+        "model": "A0043",
         "category": "Básquetbol",
         "gender": "Men",
         "size": ["7", "7.5", "8", "8.5", "9", "10", "11", "12", "12.5"]
@@ -583,7 +583,7 @@ const products = [
         "price": 200,
         "brand": "Nike",
         "color": ["black", "white"],
-        "model": "CW3396-004",
+        "model": "A0044",
         "category": "Training",
         "gender": "Men",
         "size": ["7", "7.5", "8", "8.5", "9", "10", "11", "12", "12.5"]
@@ -596,7 +596,7 @@ const products = [
         "price": 180,
         "brand": "Nike",
         "color": ["grey", "white", "black", "gold"],
-        "model": "DH2728-091",
+        "model": "A0045",
         "category": "Training",
         "gender": "Men",
         "size": ["7", "7.5", "8", "8.5", "9", "10", "11", "12", "12.5"]
@@ -606,10 +606,10 @@ const products = [
         "description": "Nunca es un mal momento para mantenerse a la altura.El Nike Dunk High Up, creado para la cancha y adaptado al estilo urbano, eleva el ícono del básquetbol de los 80.Este calzado, con el clásico diseño de perfil alto, espíritu tipo deportivo y entresuela elevada, se mantiene fiel a la esencia del básquetbol mientras te permite canalizar tu confianza con cada paso.",
         "image": "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5/68d91b36-364f-4395-89e0-e1970089609c/calzado-dunk-high-up-DKdvP1.png",
         "stock": 10,
-        "price": 199,
+        "price": 190,
         "brand": "Nike",
         "color": ["grey", "white"],
-        "model": "DH3718-106",
+        "model": "A0046",
         "category": "Lifestyle",
         "gender": "Women",
         "size": ["5", "6", "7", "8", "9", "10", "11", "12"]
@@ -619,10 +619,10 @@ const products = [
     "description": "El calzado Air Jordan 1 Mid aporta estilo en toda la cancha y comodidad premium a un look icónico. La unidad Air-Sole amortigua el juego en las canchas de básquetbol, al tiempo que la zona del tobillo acolchada proporciona una sensación de sujeción.",
     "image": "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5/f338fd51-46f5-4764-9c3b-6424bb515640/calzado-air-jordan-1-mid-xMNLGv.png",
     "stock": 8,
-    "price": 159,
+    "price": 160,
     "brand": "Nike",
     "color": ["light-blue", "white", "black"],
-    "model": "BQ6472-300",
+    "model": "A0047",
     "category": "Lifestyle",
     "gender": "Women",
     "size": ["5", "6", "7", "8", "9", "10", "11", "12"]
@@ -635,7 +635,7 @@ const products = [
     "price": 150,
     "brand": "Nike",
     "color": ["green", "white", "yellow"],
-    "model": "CT2406-700",
+    "model": "A0048",
     "category": "Running",
     "gender": "Women",
     "size": ["5", "6", "7", "8", "9", "10", "11", "12"]
@@ -648,7 +648,7 @@ const products = [
     "price": 150,
     "brand": "Nike",
     "color": ["pink", "white"],
-    "model": "CW7136-500",
+    "model": "A0049",
     "category": "Running",
     "gender": "Women",
     "size": ["5", "6", "7", "8", "9", "10", "11", "12"]
@@ -661,7 +661,7 @@ const products = [
     "price": 170,
     "brand": "Nike",
     "color": ["violet", "orange"],
-    "model": "DA8698-401",
+    "model": "A0050",
     "category": "Running",
     "gender": "Women",
     "size": ["5", "6", "7", "8", "9", "10", "11", "12"]
@@ -674,7 +674,7 @@ const products = [
         "price": 260,
         "brand": "Nike",
         "color": ["red", "white"],
-        "model": "NI_DA7024-601",
+        "model": "A0051",
         "category": "Lifestyle",
         "gender": "Women",
         "size": ["5", "6", "7", "8", "9", "10", "11", "12"]
@@ -687,7 +687,7 @@ const products = [
         "price": 240,
         "brand": "Nike",
         "color": ["black", "white"],
-        "model": "NI_DD1525-001",
+        "model": "A0052",
         "category": "Lifestyle",
         "gender": "Women",
         "size": ["5", "6", "7", "8", "9", "10", "11", "12"]
@@ -700,7 +700,7 @@ const products = [
         "price": 210,
         "brand": "Nike",
         "color": ["white", "yellow", "light-blue"],
-        "model": "NI_CT1414-101",
+        "model": "A0053",
         "category": "Lifestyle",
         "gender": "Women",
         "size": ["5", "6", "7", "8", "9", "10", "11", "12"]
@@ -713,7 +713,7 @@ const products = [
         "price": 80,
         "brand": "Nike",
         "color": ["grey", "red"],
-        "model": "510010916783004",
+        "model": "A0054",
         "category": "Running",
         "gender": "Women",
         "size": ["5", "6", "7", "8", "9", "10", "11", "12"]
@@ -726,7 +726,7 @@ const products = [
         "price": 140,
         "brand": "Nike",
         "color": ["pink", "white"],
-        "model": "510010749869500",
+        "model": "A0055",
         "category": "Running",
         "gender": "Women",
         "size": ["5", "6", "7", "8", "9", "10", "11", "12"]
@@ -739,7 +739,7 @@ const products = [
         "price": 210,
         "brand": "Nike",
         "color": ["grey", "green"],
-        "model": "510010397690018",
+        "model": "A0056",
         "category": "Lifestyle",
         "gender": "Women",
         "size": ["5", "6", "7", "8", "9", "10", "11", "12"]
@@ -752,7 +752,7 @@ const products = [
         "price": 120,
         "brand": "Nike",
         "color": ["pink", "white"],
-        "model": "510010AQ9121600",
+        "model": "A0057",
         "category": "Running",
         "gender": "Women",
         "size": ["5", "6", "7", "8", "9", "10", "11", "12"]
@@ -765,7 +765,7 @@ const products = [
         "price": 190,
         "brand": "Nike",
         "color": ["pink", "white"],
-        "model": "510010AO0352600",
+        "model": "A0058",
         "category": "Running",
         "gender": "Women",
         "size": ["5", "6", "7", "8", "9", "10", "11", "12"]
@@ -778,7 +778,7 @@ const products = [
         "price": 100,
         "brand": "Nike",
         "color": ["white", "black"],
-        "model": "510010CV1658101",
+        "model": "A0059",
         "category": "Lifestyle",
         "gender": "Men",
         "size": ["7", "7.5", "8", "8.5", "9", "10", "11", "12", "12.5"]
@@ -791,7 +791,7 @@ const products = [
         "price": 140,
         "brand": "Nike",
         "color": ["blue", "orange", "black"],
-        "model": "510010CI9138402",
+        "model": "A0060",
         "category": "Lifestyle",
         "gender": "Men",
         "size": ["7", "7.5", "8", "8.5", "9", "10", "11", "12", "12.5"]
@@ -804,7 +804,7 @@ const products = [
         "price": 90,
         "brand": "Nike",
         "color": ["black"],
-        "model": "510010AT6107010",
+        "model": "A0061",
         "category": "Training",
         "gender": "Men",
         "size": ["7", "7.5", "8", "8.5", "9", "10", "11", "12", "12.5"]
@@ -817,7 +817,7 @@ const products = [
         "price": 160,
         "brand": "Nike",
         "color": ["red", "green", "blue"],
-        "model": "510010CU5691600",
+        "model": "A0062",
         "category": "Training",
         "gender": "Men",
         "size": ["7", "7.5", "8", "8.5", "9", "10", "11", "12", "12.5"]
@@ -830,7 +830,7 @@ const products = [
         "price": 110,
         "brand": "Nike",
         "color": ["grey", "black", "light-blue"],
-        "model": "510010852459011",
+        "model": "A0063",
         "category": "Running",
         "gender": "Men",
         "size": ["7", "7.5", "8", "8.5", "9", "10", "11", "12", "12.5"]
@@ -843,7 +843,7 @@ const products = [
         "price": 200,
         "brand": "Nike",
         "color": ["blue", "black", "grey"],
-        "model": "510010AA1625400",
+        "model": "A0064",
         "category": "Running",
         "gender": "Men",
         "size": ["7", "7.5", "8", "8.5", "9", "10", "11", "12", "12.5"]
@@ -856,7 +856,7 @@ const products = [
         "price": 230,
         "brand": "Nike",
         "color": ["orange", "grey", "white"],
-        "model": "510010942851600",
+        "model": "A0065",
         "category": "Running",
         "gender": "Men",
         "size": ["7", "7.5", "8", "8.5", "9", "10", "11", "12", "12.5"]

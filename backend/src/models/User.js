@@ -48,6 +48,12 @@ const UserSchema = new Schema({
         type: Boolean,
         default: false
     },
+    shoppingCart: [
+        {
+        type: Schema.ObjectId,
+        ref: "Product"
+        }
+    ],
     wishList: [
         {
             type: mongoose.Schema.Types.ObjectId,

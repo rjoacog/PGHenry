@@ -1,15 +1,25 @@
 const Product = require('../models/Product');
+const User = require('../models/User');
 
 
 const newProduct = async (req, res) => {
-    const product = new Product(req.body);   //Creamos un nuevo producto
+    //Obtenemos el usuario que está autenticado gracias al middleware checkAuth:
+    const user = req.user  
+    if( user.role === 'admin') {
+        const product = new Product(req.body);   //Creamos un nuevo producto
 
-    try {
-        const addProductinDB = await product.save();
-        res.json(addProductinDB);
-    } catch (error) {
-        console.log(error);
+        try {
+            const addProductinDB = await product.save();
+            res.json(addProductinDB);
+        } catch (error) {
+            console.log(error);
+        }
+
+    } else {
+        const error = new Error('Need to be an Admin.');
+        return res.status(401).json({ msg: error.message });
     }
+
 };
 //Obtener todos los productos:
 const getProducts = async (req, res) => {
@@ -18,18 +28,25 @@ const getProducts = async (req, res) => {
 };
 
 const createManyProducts = async (req, res) => {
-    try {
-        await Product.insertMany(req.body)
-        res.status(200).json({
-            message: 'Successful'
-        });
-    }
-
-    catch {
-        console.log(error)
-        res.status(400).json({
-            message: 'Your request could not be processed. Please try again.'
-        })
+    //Obtenemos el usuario que está autenticado gracias al middleware checkAuth:
+    const user = req.user  
+    if( user.role === 'admin') {
+        try {
+            await Product.insertMany(req.body)
+            res.status(200).json({
+                message: 'Successful'
+            });
+        }
+    
+        catch {
+            console.log(error)
+            res.status(400).json({
+                message: 'Your request could not be processed. Please try again.'
+            })
+        }
+    } else {
+        const error = new Error('Need to be an Admin.');
+        return res.status(401).json({ msg: error.message });
     }
 };
 //Obtener un producto:
@@ -46,36 +63,52 @@ const getProduct = async (req, res) => {
 };
 //Actualizar producto:
 const updateProduct = async (req, res) => {
-    const { id } = req.params;
-    const { name, description, image, stock, price, brand, color, model, category, gender, size } = req.body;
-    try {
-        const updateProduct = { name, description, image, stock, price, brand, color, model, category, gender, size, _id: id }
-        await Product.findByIdAndUpdate(id, updateProduct, { new: true });
-        res.status(200).json(updateProduct);
-    } catch (error) {
-        res.status(400).json({
-            error: 'Your request could not be processed. Please try again.'
-        })
-    };
+    //Obtenemos el usuario que está autenticado gracias al middleware checkAuth:
+    const user = req.user  
+    if( user.role === 'admin') {
+        const { id } = req.params;
+        const { name, description, image, stock, price, brand, color, model, category, gender, size } = req.body;
+        try {
+            const updateProduct = { name, description, image, stock, price, brand, color, model, category, gender, size, _id: id }
+            await Product.findByIdAndUpdate(id, updateProduct, { new: true });
+            res.status(200).json(updateProduct);
+        } catch (error) {
+            res.status(400).json({
+                error: 'Your request could not be processed. Please try again.'
+            })
+        };
+
+    } else {
+        const error = new Error('Need to be an Admin.');
+        return res.status(401).json({ msg: error.message });
+    }
 };
 //Eliminar producto:
 const deleteProduct = async (req, res) => {
-    const { id } = req.params;
+    //Obtenemos el usuario que está autenticado gracias al middleware checkAuth:
+    const user = req.user  
+    if( user.role === 'admin') {
+        const { id } = req.params;
+    
+        try {
+            const remove = await Product.findOneAndRemove({ _id: id });
+            res.status(200).json({
+                message: 'Successful',
+                remove
+            });
+        }
+    
+        catch (error) {
+            console.log(error)
+            res.status(400).json({
+                message: 'Your request could not be processed. Please try again.'
+            })
+        };
 
-    try {
-        const remove = await Product.findOneAndRemove({ _id: id });
-        res.status(200).json({
-            message: 'Successful',
-            remove
-        });
+    } else {
+        const error = new Error('Need to be an Admin.');
+        return res.status(401).json({ msg: error.message });
     }
-
-    catch (error) {
-        console.log(error)
-        res.status(400).json({
-            message: 'Your request could not be processed. Please try again.'
-        })
-    };
 };
 //Review de producto:
 const productReview = async (req, res) => {

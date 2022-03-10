@@ -1,6 +1,7 @@
-const { emailRegistro } = require('../helpers/email');
-const generarToken = require('../helpers/generarToken');
 const User = require('../models/User');
+const generarToken = require('../helpers/generarToken');
+const generarJWT = require('../helpers/generarJWT');
+const { emailRegistro } = require('../helpers/email');
 
 
 const createUser = async (req, res) => {
@@ -83,6 +84,37 @@ const deleteUser = async (req, res) => {
     }
 };
 
+//*Autenticar al usuario:
+const userAuth = async (req, res) => {
+
+    const { email, password } = req.body;
+    //Comprobar si el usuario existe:
+    const user = await User.findOne({ email });
+    if( !user ) {
+        const error = new Error('User do not exist.');
+        return res.status(404).json({ msg: error.message });
+    }
+    //Comprobar si el usuario esta confirmado:
+    //console.log(usuario)
+    if( !user.isActive ) {
+        const error = new Error('This count need to be active.');
+        return res.status(403).json({ msg: error.message });
+    }
+    //Comprobar su password:
+    if( await user.comparePassword( password ) ) {
+        res.json({
+            //* Muestro solo los datos que requiero:
+            _id: user._id,
+            name: user.name,
+            email: user.email,
+            token: generarJWT( user._id ),
+        })
+    } else {
+        const error = new Error('El password es incorrecto.');
+        return res.status(403).json({ msg: error.message });
+    }
+};
+
 //* confirmar token:
 const confirmar = async (req, res) => {
     //Verificamos que el token sea correcto:
@@ -98,10 +130,15 @@ const confirmar = async (req, res) => {
         //usuarioConfirmar.token = '';   // TODO Pasar en blanco por si es un token de un solo uso
         await usuarioConfirmar.save();
         res.json({ msg: 'Usuario confirmado correctamente.'})
-        console.log(usuarioConfirmar)
     } catch (error) {
         console.log(error);
     }
+};
+
+//* Perfil del usuario
+const profile = async (req, res) => {
+    const {user} = req
+    res.json(user)
 };
 
 const makeAdmin = async (req, res) => {
@@ -187,7 +224,9 @@ module.exports = {
     getAllUsers,
     findUser,
     deleteUser,
+    userAuth,
     confirmar,
+    profile,
     makeAdmin,
     updateUser,
     wishList,

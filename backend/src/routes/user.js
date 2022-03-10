@@ -1,9 +1,12 @@
 const { Router } = require('express');
 const router = Router();
 const user = require('../controllers/user');
+const checkAuth = require('../middleware/checkAuth');
 
 //Crear usuario y obtener todos los usuarios:
 router.route('/').post(user.createUser).get(user.getAllUsers)
+//Autneticar registro de usuario:
+router.post('/confirmar', user.userAuth)
 //Confirmar registro de usuario:
 router.get('/confirmar/:token', user.confirmar)
 // eliminar usuario
@@ -14,6 +17,8 @@ router.get('/:id', user.findUser)
 router.put('/makeAdmin/:id', user.makeAdmin)
 // actualizar usuario
 router.put('/:id', user.updateUser)
+//Checar que todos los datos sean correctos y despues dirigirlos al perfil:
+router.get('/profile/auth', checkAuth, user.profile ); 
 
 // Wish List
 router.post("/wish", user.wishList)

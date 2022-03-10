@@ -95,7 +95,7 @@ function rootReducer(state = initialState, { type, payload }) {
         }
 
     case CLEAR_CART:
-      return { cart: [] }
+      return state.cart
 
     case REMOVE_ONE_FROM_CART:
       let itemToDelete = state.cart.find(item => item._id === payload)

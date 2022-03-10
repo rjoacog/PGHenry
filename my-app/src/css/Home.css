@@ -7,7 +7,18 @@
     background-size:cover; 
 }
 
+.containerPaginadoAndFilters{
+    display: flex;
+    flex-direction: row;
+}
 
+.selectPrice{
+    margin: 0 0 0 2rem
+}
+
+.paginado{
+    margin: 0 0 0 52rem;
+}
 
 .cards {
     padding-left: 10px;

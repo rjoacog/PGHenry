@@ -12,14 +12,14 @@ const checkAuth =async  (req, res, next) => {
         try {
             token = req.headers.authorization.split(' ')[1];
             const decoded = jwt.verify( token,  process.env.JWT_SECRET);
-            req.user = await User.findById( decoded.id ).select('-password -isActive -token -address -__v') ;
+            req.user = await User.findById( decoded.id ).select('-password -isActive -token -wishList -shoppingCart -address -__v') ;
             //console.log(req.user)
 
             return next();
 
         } catch (error) {
             //console.log(error);
-            return res.status(404).json({ msg: 'Hubo un error' })
+            return res.status(404).json({ msg: 'Hubo un error en chekAuth' })
         }
     }
 

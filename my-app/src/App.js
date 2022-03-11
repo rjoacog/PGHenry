@@ -1,24 +1,31 @@
-import logo from './logo.svg';
-import './App.css';
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Auth0ProviderWithHistory from "./auth/auth0-provider-with-history";
+import LandingPage from "./components/LandingPage";
+import Home from "./components/Home";
+import NavBar from "./components/NavBar";
+import UserForm from "./components/UserForm";
+import Detail from './components/Detail';
+import Footer from './components/Footer'
+import ShoppingCart from "./components/ShoppingCart"
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <BrowserRouter>
+      <div className="App">
+        <Auth0ProviderWithHistory>
+          <NavBar />
+          <Routes>
+            {/* <Route exact path="/" element={<LandingPage/>} /> */}
+            <Route exact path="/" element={<Home />} />
+            <Route path ="/landing" element={<LandingPage />} />
+            <Route path="/register" element={<UserForm />} />
+            <Route exact path="/:id" element={<Detail />} />
+            <Route path="shoppingcart" element={<ShoppingCart />} />
+          </Routes>
+          <Footer />
+        </Auth0ProviderWithHistory>
+      </div>
+    </BrowserRouter>
   );
 }
 

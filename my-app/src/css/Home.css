@@ -1,0 +1,30 @@
+.containerHome{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-self: center;
+    background-attachment: fixed;
+    background-size:cover; 
+}
+
+.containerPaginadoAndFilters{
+    display: flex;
+    flex-direction: row;
+}
+
+.selectPrice{
+    margin: 0 0 0 2rem
+}
+
+.paginado{
+    margin: 0 0 0 52rem;
+}
+
+.cards {
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-bottom: 30px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}

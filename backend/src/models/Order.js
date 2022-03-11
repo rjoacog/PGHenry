@@ -3,11 +3,6 @@ const { Schema } = mongoose;
 
 
 const OrderSchema = newSchema({
-    id: {
-        type: UUID,
-        defaultValue: UUIDV4,
-        required: true
-    },
     status: {
         type: ENUM("Pending", "In progress", "Cancelled", "Completed"),
         defaultValue: "Pending",

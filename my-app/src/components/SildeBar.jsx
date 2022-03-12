@@ -33,9 +33,11 @@ function SildeBar() {
       <button onClick={() => dispatch(getProducts())}>Clean Filters</button>
       <div>
         <Select placeholder='Brands' onChange={(e) => handlefilterByBrand(e)}>
-          {brands.map((b) => {
-            return <option value={b} >{b}</option>;
-          })}
+         <option value ="all">All</option>
+         <option value ="Nike">Nike</option>
+         <option value ="Reebok">Reebok</option>
+         <option value ="Adidas">Adidas</option>
+         <option value ="Puma">Puma</option>
         </Select>
       </div>
       

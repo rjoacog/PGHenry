@@ -44,7 +44,8 @@ function rootReducer(state = initialState, { type, payload }) {
       };
     
     case FILTER_BY_BRAND:
-      const brands = state.allProducts.filter(p => p.brand === payload)
+      const product2 = state.allProducts
+      const brands = payload === "all" ? product2 : product2.filter(p => p.brand === payload)
       return{
         ...state,
         products: brands

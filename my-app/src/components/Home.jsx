@@ -1,32 +1,31 @@
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { Link } from "react-router-dom";
 import { getProducts, orderByPrice, addCart } from "../actions/creates";
 import Card from "./Card";
+import SildeBar from "./SildeBar";
 import "../css/Home.css";
 import { Select } from '@chakra-ui/react'
 import Paginado from './Paginado'
+import { Link } from "react-router-dom";
 
 function Home() {
   const dispatch = useDispatch();
   const products = useSelector((state) => state.products);
-  const cart = useSelector((state) => state.cart)
   const [price, setPrice] = useState("")
- 
-
   
-  const addToCart = (payload) => {
-    console.log(payload)
-     dispatch(addCart(payload))
-  }
-
-
   const [currentPage, setCurrentPage] = useState(1);
   const [productsPerPage] = useState(16);
   const indexOfLastProduct = currentPage * productsPerPage 
   const indexOfFirstProduct = indexOfLastProduct - productsPerPage 
   const currentProducts = products.slice(indexOfFirstProduct, indexOfLastProduct)
+  
+  useEffect(() => {
+    dispatch(getProducts());
+  }, [dispatch]);
 
+  const addToCart = (payload) => {
+    dispatch(addCart(payload))
+  }
   const paginado = (pageNumber) => {
     setCurrentPage(pageNumber)
   }
@@ -38,9 +37,6 @@ function Home() {
   }
 
 
-  useEffect(() => {
-    dispatch(getProducts());
-  }, [dispatch]);
 
   return (
     <div className="containerHome">
@@ -63,27 +59,33 @@ function Home() {
         </div>
       </div>
 
+      <div style={{display:'flex', flexDirection:'row'}}>
+        <SildeBar/>
+        
+        <div className="cards">        
+          {products ? (
+            currentProducts.map((p) => {
+              return (
+                <div key={p._id}>
+                  <Link to={'/'+ p._id} style={{textDecoration:'none'}}>
+                    <Card
+                        img={p.image}
+                        brand={p.brand}
+                        name={p.name}
+                        color={p.color}
+                        price={p.price}
+                        _id={p._id}
+                        addToCart={addToCart}
+                        />
+                  </Link>
+                </div>
+              );
+            })
+            ) : (
+              <h1>Products not found</h1>
+              )}
+        </div>
 
-      <div className="cards">        
-        {products ? (
-          currentProducts.map((p) => {
-            return (
-              <div key={p._id}>
-                <Card
-                  img={p.image}
-                  brand={p.brand}
-                  model={p.model}
-                  color={p.color}
-                  price={p.price}
-                  _id={p._id}
-                  addToCart={addToCart}
-                />
-              </div>
-            );
-          })
-        ) : (
-          <h1>Products not found</h1>
-        )}
       </div>
 
     </div>
@@ -91,3 +93,5 @@ function Home() {
 }
 
 export default Home;
+
+

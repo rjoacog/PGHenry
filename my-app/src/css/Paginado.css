@@ -1,6 +1,7 @@
 .order {
   margin: 40px 0 0 0;
-  border-bottom: 0.1px solid rgba(66, 65, 65, 0.24);
+  border: 1px solid #e2e8f0;
+  border-radius: 5px;
 }
 
 .order li {
@@ -20,8 +21,8 @@
 }
 
 .numberPage:hover {
-  background-color: #319795;
-  color: white;
+  background-color: #edf2f7;
+  color: black;
 }
 
 .numberPage:focus {

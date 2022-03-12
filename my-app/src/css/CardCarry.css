@@ -1,0 +1,76 @@
+.containerCardCarry {
+    background-color: white;
+    width: 250px;
+    height: 460px;
+    transition: 0.3s;
+    margin: 1.8px;
+    margin-top: 20px;
+
+    border: 1px solid transparent;
+
+}
+.removeCarry{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin: 2px;
+}
+
+#deleteOne{
+    margin: 0 0 0 2px;
+    border: 1px solid rgba(0, 0, 0, 0.185);
+    padding: 5px;
+
+}
+#deleteAll{
+    margin: 0 0 0 20px;
+    border: 1px solid rgba(0, 0, 0, 0.185);
+    padding: 5px;
+
+}
+.containerCardCarry:hover{
+    /* transform: perspective(200px) translateZ(10px);
+    box-shadow: 0 12px 16px rgba (0, 0, 0, 0.2);
+    transition: all 400ms ease;
+    text-decoration: none; */
+    box-shadow: 0 4px 8px 0 rgb(238, 238, 238);
+} 
+
+
+ .cardCarry img{
+    border-top-left-radius: 2px;
+    border-top-right-radius: 2px;
+    margin-top:auto;
+    margin-bottom: 15px ;
+    width: 100%;
+    height: 25vh;
+    display: center;
+    align-self: center;
+    text-decoration: none;
+
+
+}
+
+.detailCardCarry{
+    margin: 0 15px 0 15px
+}
+
+.cardCarry h2{
+    font-size: 17px;
+    color: #929292;
+    margin-top: 1px;
+    display: flex;
+    width: 100%;
+    margin: 5px 0 20px 0;
+    border-top: 1px solid black;
+    padding-top: 8px;
+}
+
+.cardCarry h3{
+    display: flex;
+    align-items:flex-start;
+    color: #929292;
+    font-size: 14px;
+    margin-top: 1px;
+}
+   

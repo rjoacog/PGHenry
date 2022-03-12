@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import {useParams } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
-import { getProductByID } from "../actions/creates";
+import { getProductByID, addCart } from "../actions/creates";
 import {
   Box,
   Container,
@@ -17,7 +17,6 @@ import {
   useColorModeValue,
   List,
   ListItem,
-  flexbox,
 } from '@chakra-ui/react';
 import { MdLocalShipping } from 'react-icons/md';
 
@@ -31,6 +30,10 @@ function Detail() {
   useEffect(() => {
     dispatch(getProductByID(id));
   }, [dispatch, id]);
+
+  const addToCart = (payload) => {
+    dispatch(addCart(payload))
+  }
 
   return (
     <Container maxW={'7xl'}>
@@ -160,7 +163,8 @@ function Detail() {
           _hover={{
             transform: 'translateY(2px)',
             boxShadow: 'lg',
-          }}>
+          }}
+          onClick={() => addToCart(product._id)}>
           Add to cart
         </Button>
 

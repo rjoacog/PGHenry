@@ -1,6 +1,5 @@
 import {
     Box,
-    Button,
     chakra,
     Container,
     Stack,
@@ -9,7 +8,6 @@ import {
     VisuallyHidden,
   } from "@chakra-ui/react";
   import { FaInstagram, FaTwitter, FaYoutube } from "react-icons/fa";
-  import { ReactNode } from "react";
   import { Link } from "react-router-dom";
   
   const SocialButton = ({

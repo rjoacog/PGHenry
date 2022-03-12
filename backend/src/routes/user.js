@@ -5,24 +5,24 @@ const checkAuth = require('../middleware/checkAuth');
 
 //Crear usuario y obtener todos los usuarios:
 router.route('/').post(user.createUser).get(user.getAllUsers)
-//Autneticar registro de usuario:
-router.post('/confirmar', user.userAuth)
-//Confirmar registro de usuario:
+//Confirmar registro de usuario isActive:
 router.get('/confirmar/:token', user.confirmar)
+//Autneticar registro de usuario asignar JWT:
+router.post('/confirmar', user.userAuth)
 // eliminar usuario
-router.delete('/:id', user.deleteUser)
+router.delete('/:id', checkAuth, user.deleteUser)
 // Encontrar usuario:
 router.get('/:id', user.findUser)
-// hacer Admin a un usuario:
-router.put('/makeAdmin/:id', user.makeAdmin)
 // actualizar usuario
-router.put('/:id', user.updateUser)
+router.put('/:id', checkAuth, user.updateUser)
+// hacer Admin a un usuario:
+router.put('/makeAdmin/:id', checkAuth, user.makeAdmin)
 //Checar que todos los datos sean correctos y despues dirigirlos al perfil:
 router.get('/profile/auth', checkAuth, user.profile ); 
 
 // Wish List
-router.post("/wish", user.wishList)
-router.get("/wish/all", user.getWishList)
+router.post("/wish", checkAuth, user.wishList)
+router.get("/wish/list", checkAuth, user.getWishList)
 
 //Carrito de compras
 router.post("/shoppingCart", async (req, res, next) => {

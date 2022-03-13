@@ -1,0 +1,11 @@
+export const GET_PRODUCTS = 'GET_PRODUCTS';
+export const GET_PRODUCT_BY_ID = 'GET_PRODUCT_BY_ID';
+export const GET_BY_NAME = 'GET_BY_NAME';
+export const ORDER_BY_PRICE = "ORDER_BY_PRICE";
+export const ADD_TO_CART = "ADD_TO_CART";
+export const REMOVE_ONE_FROM_CART = "REMOVE_ONE_FROM_CART";
+export const REMOVE_ALL_FROM_CART = "REMOVE_ALL_FROM_CART";
+export const CLEAR_CART = "CLEAR_CART";
+export const FILTER_BY_BRAND = 'FILTER_BY_BRAND';
+export const FILTER_BY_GENDER = 'FILTER_BY_GENDER';
+export const FILTER_BY_COLOR = 'FILTER_BY_COLOR';

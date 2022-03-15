@@ -3,7 +3,7 @@ import { GET_PRODUCTS, GET_PRODUCT_BY_ID, GET_BY_NAME, ORDER_BY_PRICE, ADD_TO_CA
 
 export function getProducts() {
     return async function (dispatch) {
-        const json = await axios.get("http://localhost:4000/products");
+        const json = await axios.get("pfhenrygrupo13.herokuapp.com/products");
         return dispatch({
             type: GET_PRODUCTS,
             payload: json.data,
@@ -13,7 +13,7 @@ export function getProducts() {
 
 export function getProductByID(id) {
     return async function (dispatch) {
-        const json = await axios.get("http://localhost:4000/products/" + id);
+        const json = await axios.get("pfhenrygrupo13.herokuapp.com/products/" + id);
         return dispatch({
             type: GET_PRODUCT_BY_ID,
             payload: json.data

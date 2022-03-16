@@ -3,11 +3,6 @@ const { Schema } = mongoose;
 
 
 const Order_detailSchema = newSchema({
-    orderId: {
-        type: Integer,
-        primaryKey: true,
-        required: true
-    },
     productId: {
         type: Integer,
         primaryKey: true,

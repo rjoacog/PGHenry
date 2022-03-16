@@ -55,7 +55,7 @@ const sendMail = async function (payload = '') {
 
     switch (payload.template) {
         case 'resetPassword':
-        await transporter.sendMail({
+        await transport.sendMail({
             from: '"Sneakers - Administrador de Usuarios" <cuentas@sneakers.com>',
             to: payload.email,
             subject: `Reset Password`,
@@ -70,7 +70,7 @@ const sendMail = async function (payload = '') {
         break;
         
         case 'activateAccount':
-        await transporter.sendMail({
+        await transport.sendMail({
             from: '"Sneakers - Administrador de Usuarios" <cuentas@sneakers.com>',
             to: payload.email,
             subject: `${payload.name} Active your account`,
@@ -84,7 +84,7 @@ const sendMail = async function (payload = '') {
         break;
     
         case 'purchase':
-        await transporter.sendMail({
+        await transport.sendMail({
             from: '"Sneakers - Administrador de Usuarios" <cuentas@sneakers.com>',
             to: payload.email,
             subject: `Your order is ${payload.status} (Order details #${payload.orderId})`,

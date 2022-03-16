@@ -22,7 +22,7 @@ import {
 
 export function getProducts() {
     return async function (dispatch) {
-        const json = await axios.get("pfhenrygrupo13.herokuapp.com/products");
+        const json = await axios.get("https://pfhenrygrupo13.herokuapp.com/products");
         return dispatch({
             type: GET_PRODUCTS,
             payload: json.data,
@@ -32,7 +32,7 @@ export function getProducts() {
 
 export function getProductByID(id) {
     return async function (dispatch) {
-        const json = await axios.get("pfhenrygrupo13.herokuapp.com/products/" + id);
+        const json = await axios.get("https://pfhenrygrupo13.herokuapp.com/products/" + id);
         return dispatch({
             type: GET_PRODUCT_BY_ID,
             payload: json.data

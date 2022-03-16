@@ -30,11 +30,14 @@ const UserSchema = new Schema({
         required: true,
         trim: true
     },
-    // token: {
-    //     type: String
-    // },
+    token: {
+        type: String
+    },
     birthDate: {
         type: String
+    },
+    address: {
+        type: String,
     },
     role: {
         type: String,
@@ -43,11 +46,17 @@ const UserSchema = new Schema({
     },
     isActive: {
         type: Boolean,
-        default:true
+        default: false
     },
+    shoppingCart: [
+        {
+        type: Schema.ObjectId,
+        ref: "Product"
+        }
+    ],
     wishList: [
         {
-            type: Schema.ObjectId,
+            type: mongoose.Schema.Types.ObjectId,
             ref: "Product",
         }
     ]

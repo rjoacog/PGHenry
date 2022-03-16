@@ -5,8 +5,9 @@ import Home from "./components/Home";
 import NavBar from "./components/NavBar";
 import UserForm from "./components/UserForm";
 import Detail from './components/Detail';
-import Footer from './components/Footer'
-import ShoppingCart from "./components/ShoppingCart"
+import Footer from './components/Footer';
+import ShoppingCart from "./components/ShoppingCart";
+import Wishlist from "./components/Wishlist";
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
             <Route path="/register" element={<UserForm />} />
             <Route exact path="/:id" element={<Detail />} />
             <Route path="shoppingcart" element={<ShoppingCart />} />
+            <Route path="/favourites" element={<Wishlist />} />
           </Routes>
           <Footer />
         </Auth0ProviderWithHistory>

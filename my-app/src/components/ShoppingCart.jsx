@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { clearAllCart, delOneCart, delAllCart } from '../actions/creates';
 import CartItem from './CartItem';
@@ -6,9 +6,26 @@ import { Button, Text, Box } from '@chakra-ui/react';
 
 export default function ShoppingCart() {
 
+    const [totalItems, setTotalItems] = useState(0)
+    const [totalPrice, setTotalPrice] = useState(0)
+
     const cart = useSelector((state) => state.cart)
     const dispatch = useDispatch();
 
+    useEffect(() => {
+        let itemCarts = 0;
+        let priceCart = 0;
+        
+
+        cart.forEach(item => {
+            itemCarts += item.quantity
+            priceCart += item.price * item.quantity
+        })
+
+        setTotalItems(itemCarts)
+        setTotalPrice(priceCart)
+        localStorage.setItem('items', JSON.stringify(cart));
+    }, [cart, totalItems, totalPrice])
 
     const clearCart = () => {
         dispatch(clearAllCart())

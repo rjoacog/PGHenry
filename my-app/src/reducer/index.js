@@ -9,7 +9,14 @@ import {
   REMOVE_ONE_FROM_CART,
   FILTER_BY_BRAND,
   FILTER_BY_GENDER,
-  FILTER_BY_COLOR
+  FILTER_BY_COLOR,
+  GET_ALL_USERS,
+  NEW_USER,
+  UPDATE_USER,
+  GET_WISHLIST,
+  ADD_TO_WISHLIST,
+  REMOVE_FROM_WISHLIST,
+  SAVE_WISHLIST,
 } from "../actions/types";
 
 const initialState = {
@@ -166,6 +173,41 @@ function rootReducer(state = initialState, { type, payload }) {
         ...state,
         cart: state.cart.filter((item) => item._id !== payload),
       };
+      case GET_ALL_USERS:
+        return {
+          ...state,
+          allUsers: payload,
+        }
+      case NEW_USER:
+        return {
+          ...state,
+        };
+      case UPDATE_USER:
+        return {
+          ...state,
+        }
+      case GET_WISHLIST:
+        let list = state.products.filter((item) => item._id)
+        return {
+          ...state,
+          wishlist: payload,
+        };
+      case ADD_TO_WISHLIST:
+        let add = state.products.find((item) => item === payload);
+        return {
+          ...state,
+          wishlist: [...state.wishlist, add],
+        };
+      case REMOVE_FROM_WISHLIST:
+        return {
+          ...state,
+          wishlist: state.wishlist.filter((item) => item._id !== payload),
+        };
+      case SAVE_WISHLIST:
+        return {
+          ...state,
+        }
+  
 
     default:
       return {

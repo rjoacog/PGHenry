@@ -23,7 +23,7 @@ const initialState = {
   allProducts: [],
   products: [],
   detail: [],
-  cart: localStorage.items?.length > 0 ? JSON.parse(localStorage.getItem('items')) : [],
+  cart: [],
 };
 
 function rootReducer(state = initialState, { type, payload }) {
@@ -130,25 +130,26 @@ function rootReducer(state = initialState, { type, payload }) {
       }
 
     case ADD_TO_CART:
-      let newItem = state.products.find(product => product._id === payload);
-      let itemInCart = state.cart.find((item) => item._id === payload ? true: false);
+      let newItem = state.products.find((product) => product._id === payload);
 
-      return {
+      let itemInCart = state.cart.find((item) => item._id === newItem._id);
+
+      return itemInCart
+        ? {
             ...state,
-            cart: itemInCart ?  
-              state.cart.map((item) => item._id === payload
+            cart: state.cart.map((item) =>
+              item._id === newItem._id
                 ? { ...item, quantity: item.quantity + 1 }
                 : item
-            )
-            : [...state.cart, { ...newItem, quantity: 1 }]
+            ),
           }
-        
+        : {
+            ...state,
+            cart: [...state.cart, { ...newItem, quantity: 1 }],
+          };
 
     case CLEAR_CART:
-      return {
-        ...state,
-        cart: []
-      };
+      return state.cart;
 
     case REMOVE_ONE_FROM_CART:
       let itemToDelete = state.cart.find((item) => item._id === payload);

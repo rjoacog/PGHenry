@@ -17,8 +17,6 @@ const AdminJSMongoose = require('@adminjs/mongoose')
 
 AdminJS.registerAdapter(AdminJSMongoose)
 
-const app = express()
-
 const adminJs = new AdminJS({
   databases: [mongoose],
   rootPath: '/admin',
@@ -26,8 +24,8 @@ const adminJs = new AdminJS({
 
 const router = AdminJSExpress.buildRouter(adminJs)
 
-app.use(adminJs.options.rootPath, router)
-app.listen(8080, () => console.log('AdminJS is under localhost:8080/admin'))
+server.use(adminJs.options.rootPath, router)
+server.listen(8080, () => console.log('AdminJS is under localhost:8080/admin'))
 
 //--------------------------------------------------------------------------//
 

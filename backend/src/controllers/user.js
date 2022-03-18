@@ -173,13 +173,7 @@ const makeAdmin = async (req, res) => {
 };
 
 const updateUser = async (req, res) => {
-    const userId = req.user._id.toString();
     const { id } = req.params;
-
-    if( userId !== id) {
-        const error = new Error('Login to edit your profile.');
-        return res.status(401).json({ msg: error.message });
-    }
     
     const { name, lastName, userName, birthDate, address } = req.body;
     try {
@@ -191,7 +185,6 @@ const updateUser = async (req, res) => {
         res.status(400).json({
             error: 'Your request could not be processed. try again'
         })
-
     }
 };
 
@@ -199,12 +192,7 @@ const updateUser = async (req, res) => {
 // -------------- WISH LIST------------------------------
 
 const wishList = async (req, res) => {
-    const userEmail = req.user.email
     const { email, productId } = req.body
-    if( userEmail !== email ) {
-        const error = new Error('Access to your account and add products to your wishlist.');
-        return res.status(401).json({ msg: error.message });
-    }
 
         try {
             const user = await User.findOne({ email })
@@ -234,13 +222,7 @@ const wishList = async (req, res) => {
 };
 
 const getWishList = async (req, res) => {
-    const userEmail = req.user.email
-    const { email } = req.body  
-    
-    if( userEmail !== email) {
-        const error = new Error('Access to your account to see your wishlist.');
-        return res.status(401).json({ msg: error.message });
-    }
+    const { email } = req.body
 
         try {
             const user = await User.findOne({ email })

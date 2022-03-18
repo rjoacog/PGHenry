@@ -4,6 +4,8 @@ const cookieParser = require('cookie-parser');
 const morgan = require('morgan');
 const mongoose = require('mongoose')
 const routes = require('./src/routes/index.js');
+const cors = require('cors');
+const { FRONTEND_URL } = process.env;
 
 
 require('./db.js');
@@ -34,6 +36,7 @@ server.use( express.static('public') );
 
 server.name = 'API';
 
+server.use(cors({ origin: "http://localhost:3000"}));
 server.use(express.urlencoded({ extended: true, limit: '50mb' }));
 server.use(express.json());
 server.use(cookieParser());

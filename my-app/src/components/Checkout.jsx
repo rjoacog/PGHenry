@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { useSelector } from "react-redux";
 import { loadStripe } from "@stripe/stripe-js";
+import { stripeAxios } from '../config/clienteAxios';
 import {
   Elements,
   CardElement,
@@ -55,7 +56,7 @@ const CheckoutForm = () => {
       const { id } = paymentMethod;
 
       try {
-        const {data} = await axios.post("http://localhost:3001/checkout", 
+        const {data} = await stripeAxios.post("/checkout", 
           {
             id,
             amount: sum * 100,

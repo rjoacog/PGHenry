@@ -1,6 +1,7 @@
 const { Router } = require('express');
 const router = Router();
 const user = require('../controllers/user');
+//const checkAuth = require('../middleware/checkAuth');
 const { jwtCheck } = require('../middleware/check-jwt');
 
 //Crear usuario y obtener todos los usuarios:

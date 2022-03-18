@@ -2,7 +2,7 @@ import { Auth0Provider } from "@auth0/auth0-react";
 import { useNavigate } from "react-router-dom";
 
 const Auth0ProviderWithHistory = ({ children }) => {
-  const { REACT_APP_AUTH0_DOMAIN, REACT_APP_AUTH0_CLIENT_ID } = process.env;
+  const { REACT_APP_AUTH0_DOMAIN, REACT_APP_AUTH0_CLIENT_ID, REACT_APP_AUTH0_AUDIENCE } = process.env;
 
   const navigate = useNavigate();
 
@@ -16,6 +16,7 @@ const Auth0ProviderWithHistory = ({ children }) => {
       clientId={REACT_APP_AUTH0_CLIENT_ID}
       redirectUri={window.location.origin}
       onRedirectCallback={onRedirectCallback}
+      audience={REACT_APP_AUTH0_AUDIENCE}
     >
       {children}
     </Auth0Provider>

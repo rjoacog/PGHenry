@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { clearAllCart, delOneCart, delAllCart } from '../actions/creates';
 import CartItem from './CartItem';
 import { Button, Text, Box } from '@chakra-ui/react';
+import {Link} from "react-router-dom";
 
 export default function ShoppingCart() {
 
@@ -22,7 +23,7 @@ export default function ShoppingCart() {
         cart.forEach(item => {
             itemCarts += item.quantity
             priceCart += item.price * item.quantity
-            totalCart += priceCart
+            totalCart = priceCart
         })
 
         setTotalItems(itemCarts)
@@ -66,7 +67,9 @@ export default function ShoppingCart() {
              <Box bg='gray.100' w='100%' p={4} color='black'>
                     <Text fontSize='3xl'>TOTAL : ${totalCart} </Text>
                     < br/>
+                    <Link to='/checkout'>
                     <Button colorScheme='blue'>PROCEED TO CHECKOUT</Button>
+                    </Link>
                     </Box>    
         </div>
         </Box>

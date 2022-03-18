@@ -8,6 +8,7 @@ import Detail from './components/Detail';
 import Footer from './components/Footer';
 import ShoppingCart from "./components/ShoppingCart";
 import Wishlist from "./components/Wishlist";
+import Checkout from "./components/Checkout";
 
 function App() {
   return (
@@ -23,6 +24,7 @@ function App() {
             <Route exact path="/:id" element={<Detail />} />
             <Route path="shoppingcart" element={<ShoppingCart />} />
             <Route path="/favourites" element={<Wishlist />} />
+            <Route path="/checkout" element={<Checkout/>} />
           </Routes>
           <Footer />
         </Auth0ProviderWithHistory>

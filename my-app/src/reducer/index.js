@@ -24,6 +24,7 @@ const initialState = {
   products: [],
   detail: [],
   cart: localStorage.items?.length > 0 ? JSON.parse(localStorage.getItem('items')) : [],
+  allUsers: [],
 };
 
 function rootReducer(state = initialState, { type, payload }) {

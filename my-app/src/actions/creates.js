@@ -1,4 +1,5 @@
-import axios from "axios";
+
+import { clienteAxios } from "../config/clienteAxios";
 import {
   GET_PRODUCTS,
   GET_PRODUCT_BY_ID,
@@ -22,7 +23,7 @@ import {
 
 export function getProducts() {
     return async function (dispatch) {
-        const json = await axios.get("https://pfhenrygrupo13.herokuapp.com/products");
+        const json = await clienteAxios("/products");
         return dispatch({
             type: GET_PRODUCTS,
             payload: json.data,
@@ -32,7 +33,7 @@ export function getProducts() {
 
 export function getProductByID(id) {
     return async function (dispatch) {
-        const json = await axios.get("https://pfhenrygrupo13.herokuapp.com/products/" + id);
+        const json = await clienteAxios("/products/" + id);
         return dispatch({
             type: GET_PRODUCT_BY_ID,
             payload: json.data
@@ -104,7 +105,7 @@ export function filterByByColor(color) {
 
 export function getAllUsers() {
     return async function(dispatch) {
-      const json = await axios.get("http://localhost:4000/user");
+      const json = await clienteAxios("/user");
       // console.log(json.data);
       return dispatch({
         type: GET_ALL_USERS,
@@ -115,7 +116,7 @@ export function getAllUsers() {
   
   export function newUser(payload) {
     return async function(dispatch) {
-      const json = await axios.post("http://localhost:4000/user", payload);
+      const json = await  clienteAxios.post("/user", payload);
       return dispatch({
         type: NEW_USER,
         payload: json.data,
@@ -125,7 +126,7 @@ export function getAllUsers() {
   
   export function updateUser(id, payload) {
     return async function(dispatch) {
-      const json = await axios.put(`http://localhost:4000/user/${id}`, payload);
+      const json = await clienteAxios.put(`/user/${id}`, payload);
       console.log(json.data);
       return dispatch({
         type: UPDATE_USER,
@@ -143,7 +144,7 @@ export function getAllUsers() {
   
   export function getWishlist(payload) {
     return async function(dispatch) {
-        const json = await axios.get("http://localhost:4000/user/wish/list", payload);
+        const json = await clienteAxios("/user/wish/list", payload);
         console.log(json);
         return dispatch({
             type: GET_WISHLIST,
@@ -161,7 +162,7 @@ export function getAllUsers() {
   
   export function saveWishlist(payload) {
     return async function(dispatch) {
-      const json = await axios.post("http://localhost:4000/user/wish", payload);
+      const json = await clienteAxios.post("/user/wish", payload);
       return dispatch({
         type: SAVE_WISHLIST,
         payload: json.data,

@@ -134,13 +134,15 @@ function Detail() {
                     Size:
                   </Text>{" "}
                   <ul style={{ display: "flex", flexDirection: "row" }}>
+                    <select>
                     {product.size?.map((s) => {
                       return (
-                        <ul key={s} style={{ margin: "5px" }}>
+                        <option key={s} style={{ margin: "5px" }}>
                           {s}
-                        </ul>
+                        </option>
                       );
                     })}
+                    </select>
                   </ul>
                 </ListItem>
                 <ListItem>
@@ -148,13 +150,16 @@ function Detail() {
                     Colors:
                   </Text>{" "}
                   <ul style={{ display: "flex", flexDirection: "row" }}>
+                    <select>
+
                     {product.color?.map((c) => {
                       return (
-                        <ul key={c} style={{ margin: "5px" }}>
+                        <option key={c} style={{ margin: "5px" }}>
                           {c}
-                        </ul>
+                        </option>
                       );
                     })}
+                    </select>
                   </ul>
                 </ListItem>
               </List>

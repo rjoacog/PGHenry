@@ -6,8 +6,6 @@
     margin: 1.8px;
     margin-top: 20px;
 
-    border: 1px solid transparent;
-
 }
 
 .containerCard:hover{
@@ -18,8 +16,11 @@
     box-shadow: 0 4px 8px 0 rgb(238, 238, 238);
 } 
 
+.card{
+    border: none !important;
+}
 
- .card img{
+.card img{
     border-top-left-radius: 2px;
     border-top-right-radius: 2px;
     margin-top:auto;

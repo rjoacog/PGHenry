@@ -17,11 +17,21 @@ import {
 } from "@chakra-ui/react";
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import { Link } from "react-router-dom";
+import { useSelector } from "react-redux";
 import SearchBar from "../components/SearchBar";
 import { useAuth0 } from "@auth0/auth0-react";
 
 export default function NavBar() {
   const { isAuthenticated, logout, loginWithRedirect, user } = useAuth0();
+  const carry = useSelector((state => state.cart)) 
+  const a = [];
+  {
+    carry.map(c => {
+      for(let i = 0; i < c.quantity; i++)
+        a.push(c)
+      })
+  }
+  const item = a.length; 
   return (
     <div>
       <Flex backgroundColor={"gray.100"}>
@@ -37,6 +47,7 @@ export default function NavBar() {
         <Link to="/shoppingcart">
         <Box p="4" mt="2" mr="1" ml="1">
         <ShoppingCartIcon  />
+        <h1>{item? item : null}</h1>
         </Box>
         </Link>  
         <Box p="4">

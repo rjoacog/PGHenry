@@ -3,9 +3,9 @@ const cookieParser = require('cookie-parser');
 //const bodyParser = require('body-parser');
 const morgan = require('morgan');
 const mongoose = require('mongoose')
+const cors = require("cors");
 const routes = require('./src/routes/index.js');
 const cors = require('cors');
-const { FRONTEND_URL } = process.env;
 
 
 require('./db.js');
@@ -29,14 +29,30 @@ const router = AdminJSExpress.buildRouter(adminJs)
 server.use(adminJs.options.rootPath, router)
 server.listen(8080, () => console.log('AdminJS is under localhost:8080/admin'))
 
-//--------------------------------------------------------------------------//
+//configurar CORS:
+const whitelist = [ process.env.FRONTEND_URL ];
+const corsOptions = {
+    origin: function (origin, callback) {
+        if(whitelist.includes(origin)) {
+            //Puede consultar la API:
+            callback(null, true)
+        } else {
+            //No permitido:
+            callback( new Error('Error de Cors.'))
+        }
+    }
+};
+server.use(cors(corsOptions));
 
 //Directorio publico
 server.use( express.static('public') );
 
 server.name = 'API';
 
+
 server.use(cors({ origin: "http://localhost:3000"}));
+
+
 server.use(express.urlencoded({ extended: true, limit: '50mb' }));
 server.use(express.json());
 server.use(cookieParser());

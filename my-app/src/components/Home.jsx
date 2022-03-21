@@ -11,7 +11,7 @@ import { Link } from "react-router-dom";
 function Home() {
   const dispatch = useDispatch();
   const products = useSelector((state) => state.products);
-  const [price, setPrice] = useState("")
+  const [setPrice] = useState("")
   
   const [currentPage, setCurrentPage] = useState(1);
   const [productsPerPage] = useState(16);

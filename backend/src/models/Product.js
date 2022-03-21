@@ -60,7 +60,7 @@ const ProductSchema = new Schema({
         type: Array,
         required: true,
     },
-    reviews: [reviewSchema]
+    reviews: [reviewSchema],
 });
 
 const Product = mongoose.model("Product", ProductSchema);

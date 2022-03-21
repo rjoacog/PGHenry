@@ -15,6 +15,8 @@ router.put('/:id', products.updateProduct)
 router.delete('/:id', products.deleteProduct);
 // Crear review de producto:
 router.post('/review', products.productReview);
+//Editar Stock
+router.post('/stock/:id', products.updateStock)
 
 
 module.exports = router;

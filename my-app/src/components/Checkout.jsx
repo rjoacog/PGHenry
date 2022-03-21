@@ -20,6 +20,7 @@ const CheckoutForm = () => {
   const elements = useElements();
   const [loading, setLoading] = useState(false);
   const products = useSelector((state) => state.cart);
+  console.log(products)
   const product = products.map((p) => {
     return {
       id: p._id,
@@ -33,14 +34,26 @@ const CheckoutForm = () => {
   const ids = product.map(p => p.id)
   const price = [];
   const sa = product.map(p => {
-      price.push(p.price * p.quantity)
+    price.push(p.price * p.quantity)
   })
-  let sum =0
-  
+  let sum = 0
+
   for (let i = 0; i < price.length; i++) {
     sum += price[i];
-}
+  }
 
+  const description = product.map(d => {
+    return {
+      name: d.name,
+      size: 5,
+      color: "black",
+      id: d._id,
+      quantity: d.quantity
+    }
+  })
+
+  const des = JSON.stringify(description)
+  console.log(description)
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -51,22 +64,24 @@ const CheckoutForm = () => {
     });
 
     setLoading(true);
-    
+
     if (!error) {
       const { id } = paymentMethod;
 
       try {
-        const {data} = await stripeAxios.post("/checkout", 
+        const { data } = await stripeAxios.post("/checkout",
           {
             id,
             amount: sum * 100,
+            description: des
+
           }
-          );
-          console.log(data);
-          elements.getElement(CardElement).clear();
-        } 
-        
-        catch (error) {
+        );
+        console.log(data);
+        elements.getElement(CardElement).clear();
+      }
+
+      catch (error) {
         console.log(error);
       }
 
@@ -79,7 +94,7 @@ const CheckoutForm = () => {
       <div>
         {product.map((p) => {
           return (
-            <div className="container p-4" style={{borderBottom:'1px solid black'}}>
+            <div className="container p-4" style={{ borderBottom: '1px solid black' }}>
               <br />
               <h3 style={{ fontWeight: "bold", color: "black" }}>
                 Product: {p.name}

@@ -169,4 +169,10 @@ export function getAllUsers() {
       })
     }
   }
+
+export function stock(payload) {
+  return async function(){
+    const json = await clienteAxios.post("/products/stock", payload);
+  }
+}  
   

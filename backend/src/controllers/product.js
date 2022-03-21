@@ -110,6 +110,41 @@ const deleteProduct = async (req, res) => {
         return res.status(401).json({ msg: error.message });
     }
 };
+
+//Editar Stock:
+const updateStock = async (req, res) => {
+    const { id } = req.params;
+    const product = await Product.findById(id);
+    
+    try {
+        if (req.body.action === "decrement") {
+            product.stock = product.stock - 1
+            const deleteProduct = await product.save()
+            console.log(deleteProduct)
+            res.status(200).json({
+                msg: 'Restando',
+                deleteProduct
+            })
+        }
+        if (req.body.action === 'increment') {
+            product.stock = product.stock + 1
+            const addProduct = await product.save()
+            console.log(addProduct)
+            res.status(200).json({
+                msg: 'Sumando',
+                addProduct
+            })
+        }
+    } catch (error) {
+        console.log(error)
+        res.status(400).json({
+            message: 'Error on Stock Action.'
+        })
+    }
+    
+    
+};
+
 //Review de producto:
 const productReview = async (req, res) => {
     const { id } = req.query;
@@ -151,5 +186,6 @@ module.exports = {
     getProduct,
     updateProduct,
     deleteProduct,
-    productReview
+    productReview,
+    updateStock
 }

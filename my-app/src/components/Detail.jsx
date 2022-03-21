@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
-import { getProductByID, addCart } from "../actions/creates";
+import { getProductByID, addCart, stock } from "../actions/creates";
 import {
   Box,
   Container,
@@ -38,6 +38,7 @@ function Detail() {
 
   const addToCart = (payload) => {
     dispatch(addCart(payload));
+    // dispatch(stock("decrement", id))
     setAlert(true)
   };
 

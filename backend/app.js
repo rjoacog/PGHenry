@@ -29,20 +29,20 @@ const router = AdminJSExpress.buildRouter(adminJs)
 server.use(adminJs.options.rootPath, router)
 server.listen(8080, () => console.log('AdminJS is under localhost:8080/admin'))
 
-//configurar CORS:
-// const whitelist = [ process.env.FRONTEND_URL ];
-// const corsOptions = {
-//     origin: function (origin, callback) {
-//         if(whitelist.includes(origin)) {
-//             //Puede consultar la API:
-//             callback(null, true)
-//         } else {
-//             //No permitido:
-//             callback( new Error('Error de Cors.'))
-//         }
-//     }
-// };
-// server.use(cors(corsOptions));
+// configurar CORS:
+const whitelist = [ process.env.FRONTEND_URL ];
+const corsOptions = {
+    origin: function (origin, callback) {
+        if(whitelist.includes(origin)) {
+            //Puede consultar la API:
+            callback(null, true)
+        } else {
+            //No permitido:
+            callback( new Error('Error de Cors.'))
+        }
+    }
+};
+server.use(cors(corsOptions));
 
 //Directorio publico
 server.use( express.static('public') );

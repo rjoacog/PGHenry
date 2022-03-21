@@ -47,7 +47,7 @@ export default function NavBar() {
         <Link to="/shoppingcart">
         <Box p="4" mt="2" mr="1" ml="1">
         <ShoppingCartIcon  />
-        <h1>{item? item : null}</h1>
+        {item? item : null}
         </Box>
         </Link>  
         <Box p="4">

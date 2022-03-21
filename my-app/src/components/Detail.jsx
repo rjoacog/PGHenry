@@ -29,10 +29,12 @@ function Detail() {
   const dispatch = useDispatch();
   const product = useSelector((state) => state.detail);
   const [alert, setAlert] = useState(false)
+  const cart = useSelector(state => state.cart)
 
   useEffect(() => {
     dispatch(getProductByID(id));
-  }, [dispatch, id]);
+    localStorage.setItem('items', JSON.stringify(cart))
+  }, [dispatch, id, cart]);
 
   const addToCart = (payload) => {
     dispatch(addCart(payload));

@@ -21,7 +21,8 @@ function Home() {
   
   useEffect(() => {
     dispatch(getProducts());
-  }, [dispatch]);
+    localStorage.setItem("allProduct", JSON.stringify(products))
+  }, [dispatch, products]);
 
   const addToCart = (payload) => {
     dispatch(addCart(payload))

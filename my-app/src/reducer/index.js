@@ -20,7 +20,7 @@ import {
 
 const initialState = {
   allProducts: [],
-  products: [],
+  products: localStorage.allProduct?.length > 0 ? JSON.parse(localStorage.getItem('allProduct')) : [],
   detail: [],
   cart: localStorage.items?.length > 0 ? JSON.parse(localStorage.getItem('items')) : [],
   allUsers: [],

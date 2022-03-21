@@ -22,7 +22,7 @@ function Home() {
   useEffect(() => {
     dispatch(getProducts());
     localStorage.setItem("allProduct", JSON.stringify(products))
-  }, [dispatch, products]);
+  }, [dispatch]);
 
   const addToCart = (payload) => {
     dispatch(addCart(payload))

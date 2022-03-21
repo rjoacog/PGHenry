@@ -170,9 +170,9 @@ export function getAllUsers() {
     }
   }
 
-export function stock(payload) {
+export function stock(action, id ) {
   return async function(){
-    const json = await clienteAxios.post("/products/stock", payload);
+    const json = await clienteAxios.post("/products/stock/" + id, action);
   }
 }  
   

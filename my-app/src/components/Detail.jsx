@@ -38,7 +38,7 @@ function Detail() {
 
   const addToCart = (payload) => {
     dispatch(addCart(payload));
-    // dispatch(stock("decrement", id))
+    dispatch(stock("decrement", id))
     setAlert(true)
   };
 

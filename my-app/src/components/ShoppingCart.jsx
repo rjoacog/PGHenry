@@ -39,8 +39,7 @@ export default function ShoppingCart() {
     const clearCart = () => {
         dispatch(clearAllCart());
         for(let i = 0; i <= cart.length; i++ ) {
-            // console.log(cart[i]._id)
-            // dispatch(stock("increment", i._id))
+            dispatch(stock("increment", i._id))
         }
     }
    
@@ -48,10 +47,10 @@ export default function ShoppingCart() {
     const delFromCart = (payload, all = false) => {
         if(all) {
             dispatch(delOneCart(payload))
-            //dispatch(stock("increment", payload))
+            dispatch(stock("increment", payload))
         } else {
             dispatch(delAllCart(payload, true));
-            // dispatch(stock("increment", payload))
+            dispatch(stock("increment", payload))
         }
     }
 

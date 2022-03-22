@@ -114,19 +114,18 @@ const deleteProduct = async (req, res) => {
 //Editar Stock:
 const updateStock = async (req, res) => {
     const { id } = req.params;
+    const { action } = req.body;
     const product = await Product.findById(id);
-    
     try {
-        if (req.body.action === "decrement") {
+        if (action === "decrement") {
             product.stock = product.stock - 1
             const deleteProduct = await product.save()
-            console.log(deleteProduct)
             res.status(200).json({
                 msg: 'Restando',
                 deleteProduct
             })
         }
-        if (req.body.action === 'increment') {
+        if (action === 'increment') {
             product.stock = product.stock + 1
             const addProduct = await product.save()
             console.log(addProduct)

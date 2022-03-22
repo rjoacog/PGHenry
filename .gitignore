@@ -108,3 +108,7 @@ dist
 
 # package-lock.json
 package-lock.json
+
+
+#Keys stripe
+keys_prod.js

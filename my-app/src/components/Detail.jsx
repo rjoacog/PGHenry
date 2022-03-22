@@ -145,7 +145,7 @@ function Detail() {
                     <select>
                     {product.size?.map((s) => {
                       return (
-                        <ul key={s} onClick={handleSelectSize} style={{ margin: "5px", cursor: "pointer" }}>
+                        <option key={s} onClick={handleSelectSize} style={{ margin: "5px", cursor: "pointer" }}>
                           {s}
                         </option>
                       );

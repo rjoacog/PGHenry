@@ -8,6 +8,7 @@ import Footer from './components/Footer';
 import ShoppingCart from "./components/ShoppingCart";
 import Wishlist from "./components/Wishlist";
 import Checkout from "./components/Checkout";
+import ProtectedRoute from "./auth/Protected-route";
 
 function App() {
   return (

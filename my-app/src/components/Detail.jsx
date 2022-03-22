@@ -23,6 +23,7 @@ import {
   AlertDescription,
 } from "@chakra-ui/react";
 import { MdLocalShipping } from "react-icons/md";
+import TablaDeTalles from "../img/TablaDeTalles.jpg";
 
 function Detail() {
   const { id } = useParams();
@@ -46,7 +47,7 @@ function Detail() {
     <Container maxW={"7xl"}>
       <SimpleGrid
         columns={{ base: 1, lg: 2 }}
-        spacing={{ base: 8, md: 10 }}
+        spacing={{ base: 5, md: 7 }}
         py={{ base: 18, md: 24 }}
       >
         <Flex>
@@ -57,15 +58,15 @@ function Detail() {
             fit={"cover"}
             align={"center"}
             w={"100%"}
-            h={{ base: "100%", sm: "400px", lg: "500px" }}
+            h={{ base: "100%", sm: "400px", lg: "350px" }}
           />
         </Flex>
-        <Stack spacing={{ base: 6, md: 10 }}>
+        <Stack spacing={{ base: 3, md: 5 }}>
           <Box as={"header"}>
             <Heading
               lineHeight={1.1}
               fontWeight={600}
-              fontSize={{ base: "2xl", sm: "4xl", lg: "5xl" }}
+              fontSize={{ base: "2xl", sm: "4xl", lg: "3xl" }}
             >
               {product.name}
             </Heading>
@@ -87,11 +88,11 @@ function Detail() {
               />
             }
           >
-            <VStack spacing={{ base: 4, sm: 6 }}>
+            <VStack spacing={{ base: 2, sm: 3 }}>
               <Text
                 color={useColorModeValue("gray.500", "gray.400")}
-                fontSize={"2xl"}
-                fontWeight={"300"}
+                fontSize={"1xl"}
+                fontWeight={"150"}
               >
                 {product.description}
               </Text>
@@ -107,7 +108,7 @@ function Detail() {
                 Product Details
               </Text>
 
-              <List spacing={2}>
+              <List spacing={1}>
                 <ListItem>
                   <Text as={"span"} fontWeight={"bold"}>
                     Brand:
@@ -136,8 +137,7 @@ function Detail() {
                   <Text as={"span"} fontWeight={"bold"}>
                     Size:
                   </Text>{" "}
-                  <ul style={{ display: "flex", flexDirection: "row" }}>
-                    <select>
+                    <select spacing={2}>
                     {product.size?.map((s) => {
                       return (
                         <option key={s} style={{ margin: "5px" }}>
@@ -146,6 +146,10 @@ function Detail() {
                       );
                     })}
                     </select>
+                </ListItem>
+                <ListItem>
+                  <ul>
+                    <img src={TablaDeTalles} alt="sizeToSelect" width={425} />
                   </ul>
                 </ListItem>
                 <ListItem>

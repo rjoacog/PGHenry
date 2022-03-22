@@ -41,7 +41,7 @@ function SildeBar() {
           <option value='all'>All</option>
           <option value='Men'>Male</option>
           <option value='Women'>Female</option>
-          <option value='unisex'>Unisex</option>
+          {/* <option value='unisex'>Unisex</option> */}
         </Select>
       </div>
 

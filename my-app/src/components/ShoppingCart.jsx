@@ -32,7 +32,6 @@ export default function ShoppingCart() {
         setTotalPrice(priceCart)
         setTotalCart(totalCart)
         localStorage.setItem('items', JSON.stringify(cart));
-        
     }, [cart, totalItems, totalPrice, totalCart])
 
 
@@ -42,7 +41,6 @@ export default function ShoppingCart() {
             dispatch(stock("increment", i._id))
         }
     }
-   
 
     const delFromCart = (payload, all = false) => {
         if(all) {
@@ -58,28 +56,29 @@ export default function ShoppingCart() {
         <Box display={"flex"} justifyContent="center" textAlign={"center"} mr={"100"} ml={"100"} >
         <div>
         <Box>    
-          <Text fontSize='3xl'>Carrito</Text>
-              <br />
+            <Text fontSize='3xl'>Carrito</Text>
+                <br />
             <Button onClick={clearCart}  borderRadius='md' backgroundColor="red.400" color="white" size='sm'>Clear cart</Button>  
             </Box> 
 
             {
                 cart?.map((p, index) => <CartItem key={index} delFromCart={delFromCart} 
                 img={p.image}
-                  brand={p.brand}
-                  name={p.name}
-                  price={p.price}
-                  _id={p._id}
-                  quantity= {p.quantity}
+                    brand={p.brand}
+                    name={p.name}
+                    price={p.price}
+                    _id={p._id}
+                    size={p.size}
+                    quantity= {p.quantity}
                 />)
             } 
-             <Box bg='gray.100' w='100%' p={4} color='black'>
-                    <Text fontSize='3xl'>TOTAL : ${totalCart} </Text>
-                    < br/>
-                    <Link to='/checkout'>
+            <Box bg='gray.100' w='100%' p={4} color='black'>
+                <Text fontSize='3xl'>TOTAL : ${totalCart} </Text>
+                < br/>
+                <Link to='/checkout'>
                     <Button colorScheme='blue'>PROCEED TO CHECKOUT</Button>
-                    </Link>
-                    </Box>    
+                </Link>
+            </Box>    
         </div>
         </Box>
     )

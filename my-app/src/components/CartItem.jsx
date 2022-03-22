@@ -11,6 +11,7 @@ export default function CartItem({
   name,
   price,
   _id,
+  size,
   quantity,
   delFromCart,
 }) {
@@ -24,6 +25,9 @@ export default function CartItem({
         <div className="detailCardCarry">
           <h2>
             {brand} {name}
+          </h2>
+          <h2>
+            Size: {size}
           </h2>
           <Text fontSize="2xl">
             ${price} x {quantity} = $ {price * quantity}{" "}

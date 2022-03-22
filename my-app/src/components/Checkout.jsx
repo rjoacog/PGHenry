@@ -27,6 +27,7 @@ const CheckoutForm = () => {
       price: p.price,
       photo: p.image,
       quantity: p.quantity,
+      size: p.size,
     };
   });
 
@@ -96,11 +97,17 @@ const CheckoutForm = () => {
             <div className="container p-4" style={{ borderBottom: '1px solid black' }}>
               <br />
               <h3 style={{ fontWeight: "bold", color: "black" }}>
-                Product: {p.name}
+                Product:
               </h3>
+                {p.name}
               <h3 style={{ fontWeight: "bold", color: "black" }}>
-                (x1) {p.price} --- (x{p.quantity}) ${p.price * p.quantity}
+                Size:
               </h3>
+                {p.size}
+              <h3 style={{ fontWeight: "bold", color: "black" }}>
+                Price:
+              </h3>
+                ${p.price} --------------------- (x{p.quantity}) ${p.price * p.quantity}
               <div>
                 <img
                   src={p.photo}
@@ -112,7 +119,10 @@ const CheckoutForm = () => {
           );
         })}
       </div>
-      <p>Total: {sum}</p>
+      <div>
+        <p>Total: ${sum}</p>
+      </div>
+      <br/>
       <div className="form-group">
         <CardElement />
       </div>

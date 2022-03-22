@@ -12,7 +12,6 @@ import {
   FILTER_BY_COLOR,
   GET_ALL_USERS,
   NEW_USER,
-  UPDATE_USER,
   GET_WISHLIST,
   ADD_TO_WISHLIST,
   REMOVE_FROM_WISHLIST,
@@ -21,9 +20,10 @@ import {
 
 const initialState = {
   allProducts: [],
-  products: [],
+  products: localStorage.allProduct?.length > 0 ? JSON.parse(localStorage.getItem('allProduct')) : [],
   detail: [],
   cart: localStorage.items?.length > 0 ? JSON.parse(localStorage.getItem('items')) : [],
+  allUsers: [],
 };
 
 function rootReducer(state = initialState, { type, payload }) {
@@ -142,13 +142,11 @@ function rootReducer(state = initialState, { type, payload }) {
             )
             : [...state.cart, { ...newItem, quantity: 1 }]
           }
-        
-
-    case CLEAR_CART:
-      return {
-        ...state,
-        cart: []
-      };
+          case CLEAR_CART:
+            return {
+              ...state,
+              cart: []
+            };
 
     case REMOVE_ONE_FROM_CART:
       let itemToDelete = state.cart.find((item) => item._id === payload);
@@ -181,10 +179,6 @@ function rootReducer(state = initialState, { type, payload }) {
         return {
           ...state,
         };
-      case UPDATE_USER:
-        return {
-          ...state,
-        }
       case GET_WISHLIST:
         let list = state.products.filter((item) => item._id)
         return {

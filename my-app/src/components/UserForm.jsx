@@ -1,4 +1,5 @@
 import React, { useEffect } from "react";
+import axios from "axios";
 import { useDispatch, useSelector } from "react-redux";
 import {
   Button,
@@ -11,16 +12,15 @@ import {
   useColorModeValue,
   Avatar,
   Center,
-  FormErrorMessage,
   FormHelperText,
   useToast,
 } from "@chakra-ui/react";
 import { useAuth0 } from "@auth0/auth0-react";
 import { useForm } from "react-hook-form";
-import { newUser, updateUser, getAllUsers } from "../actions/creates";
+import { newUser, getAllUsers } from "../actions/creates";
 
 export default function UserForm() {
-  const { user } = useAuth0();
+  const { user, getAccessTokenSilently } = useAuth0();
   const dispatch = useDispatch();
   const toast = useToast();
   const users = useSelector((state) => state.allUsers);
@@ -28,15 +28,21 @@ export default function UserForm() {
   const {
     register,
     handleSubmit,
-    formState: { errors, isSubmitting },
+    setValue,
+    formState: { isSubmitting },
   } = useForm();
 
   const onSubmit = async (submit) => {
-    let currentUser = users.filter((users) => users.email === user.email);
+    let currentUser = users?.filter((users) => users.email === user.email);
     if (currentUser.length > 0) {
-    //   dispatch(updateUser(currentUser[0]._id, submit));
-    console.log(currentUser[0]._id);
-    dispatch(updateUser(currentUser[0]._id, submit));
+      //   dispatch(updateUser(currentUser[0]._id, submit));
+      const token = await getAccessTokenSilently();
+      await axios.put(`http://localhost:4000/user/${currentUser[0]._id}`, submit, {
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      });
+      console.log(token);
       toast({
         title: "Datos actualizados!",
         status: "success",
@@ -58,15 +64,6 @@ export default function UserForm() {
   useEffect(() => {
     dispatch(getAllUsers());
   }, [dispatch]);
-  // function onSubmit(values) {
-  //   return new Promise((resolve) => {
-  //     setTimeout(() => {
-  //       alert(JSON.stringify(values, null, 2))
-  //       resolve()
-  //     }, 3000)
-  //   })
-  // }
-
   return (
     <div>
       <Flex
@@ -89,32 +86,22 @@ export default function UserForm() {
             User Profile Edit
           </Heading>
           <form onSubmit={handleSubmit(onSubmit)}>
-            <FormControl id="userName">
+            <FormControl id="image">
               <Stack direction={["column", "row"]} spacing={6}>
                 <Center>
                   <Avatar size="xl" src={user.picture}></Avatar>
                 </Center>
-                <Center w="full">
-                  <Button w="full" isDisabled={true}>
-                    Change profile photo
-                  </Button>
-                </Center>
               </Stack>
             </FormControl>
-            <FormControl htmlFor="name" isInvalid={errors.name} isRequired>
+            <FormControl id="name" isRequired>
               <FormLabel>First name</FormLabel>
               <Input
                 placeholder={user.name}
                 _placeholder={{ color: "gray.500" }}
                 type="text"
-                {...register("name", {
-                  minLength: { value: 4, message: "Minimo 4 caracteres" },
-                  maxLength: { value: 8, message: "Maximo 8 caracteres" },
-                })}
+                {...register("name")}
               />
-              <FormErrorMessage>
-                {errors.name && errors.name.message}
-              </FormErrorMessage>
+              {setValue("name", `${user.name}`)}
             </FormControl>
             <FormControl id="lastName" isRequired>
               <FormLabel>Last name</FormLabel>
@@ -124,6 +111,7 @@ export default function UserForm() {
                 type="text"
                 {...register("lastName")}
               />
+              {setValue("name", `${user.name}`)}
             </FormControl>
             <FormControl id="userName" isRequired>
               <FormLabel>Last name</FormLabel>
@@ -134,7 +122,7 @@ export default function UserForm() {
                 {...register("userName")}
               />
             </FormControl>
-            <FormControl id="email" isRequired>
+            <FormControl id="email" isRequired isReadOnly>
               <FormLabel>Email address</FormLabel>
               <Input
                 placeholder={user.email}
@@ -142,6 +130,7 @@ export default function UserForm() {
                 type="email"
                 {...register("email")}
               />
+              {setValue("email", `${user.email}`)}
               <FormHelperText>We'll never share your email.</FormHelperText>
             </FormControl>
             <FormControl id="password" isRequired>

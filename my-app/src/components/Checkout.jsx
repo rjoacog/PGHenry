@@ -12,7 +12,7 @@ import {
 import axios from "axios";
 import "bootswatch/dist/lux/bootstrap.min.css";
 
-const stripePromise = loadStripe(keys.stripePublishableKey);
+const stripePromise = loadStripe("pk_test_51Ke1jsGMvGiWG7BaB74NT66vIDnZoYdgbBmKNcwq4SaMuDzPf6SFtWVEnlXMv46vUH0G8kZOjpYZHxabuPMgCyqo00tqyuN3GA");
 
 const CheckoutForm = () => {
   const stripe = useStripe();

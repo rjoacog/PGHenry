@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { clearAllCart, delOneCart, delAllCart } from '../actions/creates';
+import { clearAllCart, delOneCart, delAllCart, stock } from '../actions/creates';
 import CartItem from './CartItem';
 import { Button, Text, Box } from '@chakra-ui/react';
 import {Link} from "react-router-dom";
@@ -14,6 +14,8 @@ export default function ShoppingCart() {
 
     const cart = useSelector((state) => state.cart)
     const dispatch = useDispatch();
+
+    
 
     useEffect(() => {
         let itemCarts = 0;
@@ -30,18 +32,25 @@ export default function ShoppingCart() {
         setTotalPrice(priceCart)
         setTotalCart(totalCart)
         localStorage.setItem('items', JSON.stringify(cart));
+        
     }, [cart, totalItems, totalPrice, totalCart])
 
 
     const clearCart = () => {
-        dispatch(clearAllCart())
+        dispatch(clearAllCart());
+        for(let i = 0; i <= cart.length; i++ ) {
+            dispatch(stock("increment", i._id))
+        }
     }
+   
 
     const delFromCart = (payload, all = false) => {
         if(all) {
             dispatch(delOneCart(payload))
+            dispatch(stock("increment", payload))
         } else {
-            dispatch(delAllCart(payload, true))
+            dispatch(delAllCart(payload, true));
+            dispatch(stock("increment", payload))
         }
     }
 

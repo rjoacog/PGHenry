@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
-import { getProductByID, addCart } from "../actions/creates";
+import { getProductByID, addCart, stock } from "../actions/creates";
 import {
   Box,
   Container,
@@ -29,13 +29,16 @@ function Detail() {
   const dispatch = useDispatch();
   const product = useSelector((state) => state.detail);
   const [alert, setAlert] = useState(false)
+  const cart = useSelector(state => state.cart)
 
   useEffect(() => {
     dispatch(getProductByID(id));
-  }, [dispatch, id]);
+    localStorage.setItem('items', JSON.stringify(cart))
+  }, [dispatch, id, cart]);
 
   const addToCart = (payload) => {
     dispatch(addCart(payload));
+    dispatch(stock("decrement", id))
     setAlert(true)
   };
 
@@ -134,13 +137,15 @@ function Detail() {
                     Size:
                   </Text>{" "}
                   <ul style={{ display: "flex", flexDirection: "row" }}>
+                    <select>
                     {product.size?.map((s) => {
                       return (
-                        <ul key={s} style={{ margin: "5px" }}>
+                        <option key={s} style={{ margin: "5px" }}>
                           {s}
-                        </ul>
+                        </option>
                       );
                     })}
+                    </select>
                   </ul>
                 </ListItem>
                 <ListItem>
@@ -148,13 +153,16 @@ function Detail() {
                     Colors:
                   </Text>{" "}
                   <ul style={{ display: "flex", flexDirection: "row" }}>
+                    <select>
+
                     {product.color?.map((c) => {
                       return (
-                        <ul key={c} style={{ margin: "5px" }}>
+                        <option key={c} style={{ margin: "5px" }}>
                           {c}
-                        </ul>
+                        </option>
                       );
                     })}
+                    </select>
                   </ul>
                 </ListItem>
               </List>

@@ -21,6 +21,7 @@ function Home() {
   
   useEffect(() => {
     dispatch(getProducts());
+    localStorage.setItem("allProduct", JSON.stringify(products))
   }, [dispatch]);
 
   const addToCart = (payload) => {

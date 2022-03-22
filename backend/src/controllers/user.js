@@ -191,7 +191,6 @@ const updateUser = async (req, res) => {
         res.status(400).json({
             error: 'Your request could not be processed. try again'
         })
-
     }
 };
 

@@ -50,7 +50,7 @@ server.use( express.static('public') );
 server.name = 'API';
 
 
-server.use(cors({ origin: "http://localhost:3000"}));
+server.use(cors({ origin: "https://practical-hopper-f19b68.netlify.app"}));
 
 
 server.use(express.urlencoded({ extended: true, limit: '50mb' }));

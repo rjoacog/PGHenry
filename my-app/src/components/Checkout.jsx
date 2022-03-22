@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { useSelector } from "react-redux";
 import { loadStripe } from "@stripe/stripe-js";
 import { stripeAxios } from '../config/clienteAxios';
+import keys from '../config/key';
 import {
   Elements,
   CardElement,
@@ -11,9 +12,7 @@ import {
 import axios from "axios";
 import "bootswatch/dist/lux/bootstrap.min.css";
 
-const stripePromise = loadStripe(
-  "pk_test_51Ke1jsGMvGiWG7Ba3pPvD9WOJWgbX3yxWSpZc66XQgA1aPJr0z82HoxEssWOOlFzs9UE347EDwcNd5HfdH6iHn2y00PyfVRW68"
-);
+const stripePromise = loadStripe("pk_test_51Ke1jsGMvGiWG7BaB74NT66vIDnZoYdgbBmKNcwq4SaMuDzPf6SFtWVEnlXMv46vUH0G8kZOjpYZHxabuPMgCyqo00tqyuN3GA");
 
 const CheckoutForm = () => {
   const stripe = useStripe();

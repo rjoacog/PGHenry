@@ -1,12 +1,11 @@
 const express = require("express");
 const Stripe = require("stripe");
+const keys = require("../config/key");
 // const cors = require("cors");
 
 //const app = express();
 
-const stripe = new Stripe(
-  "sk_test_51Ke1jsGMvGiWG7BafXKYFFSZj8DsA8ya4ell93bKVUQRQzrmnUuMzzAR7oyte4O0jZRw3IGl34np9Ke9OQKWRiuw00UXwLHuGM"
-);
+const stripe = new Stripe("sk_test_51Ke1jsGMvGiWG7BasJxNfexxigjcLA8LPtJA1nkou4hGMeaf7OswqmmYpDcPHmg9T5lkgl015fsX79AUqpDCKLRk00Wx7KzIwR");
 
 // app.use(cors({ origin: "http://localhost:3000" }));
 // app.use(express.json());

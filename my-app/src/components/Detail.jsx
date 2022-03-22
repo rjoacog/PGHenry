@@ -153,8 +153,6 @@ function Detail() {
                     Colors:
                   </Text>{" "}
                   <ul style={{ display: "flex", flexDirection: "row" }}>
-                    <select>
-
                     {product.color?.map((c) => {
                       return (
                         <option key={c} style={{ margin: "5px" }}>
@@ -162,7 +160,6 @@ function Detail() {
                         </option>
                       );
                     })}
-                    </select>
                   </ul>
                 </ListItem>
               </List>

@@ -21,6 +21,7 @@ import {
   AlertIcon,
   AlertTitle,
   AlertDescription,
+  color,
 } from "@chakra-ui/react";
 import { MdLocalShipping } from "react-icons/md";
 
@@ -42,6 +43,10 @@ function Detail() {
     setAlert(true)
   };
 
+  function handleSelectSize() {
+    
+  };
+
   return (
     <Container maxW={"7xl"}>
       <SimpleGrid
@@ -57,7 +62,7 @@ function Detail() {
             fit={"cover"}
             align={"center"}
             w={"100%"}
-            h={{ base: "100%", sm: "400px", lg: "500px" }}
+            h={{ base: "100%", sm: "400px", lg: "350px" }}
           />
         </Flex>
         <Stack spacing={{ base: 6, md: 10 }}>
@@ -65,14 +70,14 @@ function Detail() {
             <Heading
               lineHeight={1.1}
               fontWeight={600}
-              fontSize={{ base: "2xl", sm: "4xl", lg: "5xl" }}
+              fontSize={{ base: "2xl", sm: "4xl", lg: "4xl" }}
             >
               {product.name}
             </Heading>
             <Text
               color={useColorModeValue("gray.900", "gray.400")}
-              fontWeight={300}
-              fontSize={"2xl"}
+              fontWeight={500}
+              fontSize={"4x1"}
             >
               ${product.price}
             </Text>
@@ -90,8 +95,8 @@ function Detail() {
             <VStack spacing={{ base: 4, sm: 6 }}>
               <Text
                 color={useColorModeValue("gray.500", "gray.400")}
-                fontSize={"2xl"}
-                fontWeight={"300"}
+                fontSize={"1xl"}
+                fontWeight={"380"}
               >
                 {product.description}
               </Text>
@@ -134,13 +139,13 @@ function Detail() {
                 </ListItem>
                 <ListItem>
                   <Text as={"span"} fontWeight={"bold"}>
-                    Size:
+                    Size(US):
                   </Text>{" "}
                   <ul style={{ display: "flex", flexDirection: "row" }}>
                     <select>
                     {product.size?.map((s) => {
                       return (
-                        <option key={s} style={{ margin: "5px" }}>
+                        <ul key={s} onClick={handleSelectSize} style={{ margin: "5px", cursor: "pointer" }}>
                           {s}
                         </option>
                       );

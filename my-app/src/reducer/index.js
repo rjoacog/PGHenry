@@ -70,7 +70,8 @@ function rootReducer(state = initialState, { type, payload }) {
     case FILTER_BY_COLOR:
       const product1 =  state.allProducts
       if(payload === 'all') return {...state, products: product1}
-      const color = product1.filter(p => p.color === payload)
+      
+      const color = product1.filter(p => p.color[0] === payload)
       return{
         ...state,
         products: color

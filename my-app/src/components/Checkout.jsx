@@ -11,6 +11,13 @@ import {
 } from "@stripe/react-stripe-js";
 import axios from "axios";
 import "bootswatch/dist/lux/bootstrap.min.css";
+import {
+  Box,
+  Alert,
+  AlertIcon,
+  AlertTitle,
+  AlertDescription,
+} from "@chakra-ui/react";
 
 const stripePromise = loadStripe(keys.stripePublishableKey);
 
@@ -18,8 +25,13 @@ const CheckoutForm = () => {
   const stripe = useStripe();
   const elements = useElements();
   const [loading, setLoading] = useState(false);
+  const [email, setEmail] = useState('');
+  const [DNI, setDNI] = useState('');
   const products = useSelector((state) => state.cart);
-  console.log(products)
+  const[cart, setCart] = useState()
+  let [succesfull, setSuccesfull] = useState(false);
+  let [failed, setFailed] = useState(false);
+
   const product = products.map((p) => {
     return {
       id: p._id,
@@ -47,12 +59,27 @@ const CheckoutForm = () => {
       size: 5,
       color: "black",
       id: d._id,
-      quantity: d.quantity
+      quantity: d.quantity,
+      email: email,
+      dni: DNI
     }
   })
 
   const des = JSON.stringify(description)
-  console.log(description)
+
+  const clearStorage = () => {
+    setCart(localStorage.removeItem("items"));
+    document.location.reload()
+  }
+
+  const handleChangeEmail = (e) => {
+    e.preventDefault();
+    setEmail(e.target.value)
+  }
+  const handleChangeDni = (e) => {
+    e.preventDefault();
+    setDNI(e.target.value)
+  }
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -72,16 +99,20 @@ const CheckoutForm = () => {
           {
             id,
             amount: sum * 100,
-            description: des
-
+            description: des,
           }
         );
-        console.log(data);
+        setEmail('')
+        setDNI('')
         elements.getElement(CardElement).clear();
+        setSuccesfull(true);
+        clearStorage();
+        setFailed(false);
       }
 
       catch (error) {
         console.log(error);
+        setFailed(true);
       }
 
       setLoading(false);
@@ -90,7 +121,7 @@ const CheckoutForm = () => {
 
   return (
     <form className="card card-body" onSubmit={handleSubmit}>
-      <div>
+      <div style={{backgroundColor:'#edf2f7'}}>
         {product.map((p) => {
           return (
             <div className="container p-4" style={{ borderBottom: '1px solid black' }}>
@@ -101,6 +132,7 @@ const CheckoutForm = () => {
               <h3 style={{ fontWeight: "bold", color: "black" }}>
                 (x1) {p.price} --- (x{p.quantity}) ${p.price * p.quantity}
               </h3>
+              <br />
               <div>
                 <img
                   src={p.photo}
@@ -114,7 +146,13 @@ const CheckoutForm = () => {
       </div>
       <p>Total: {sum}</p>
       <div className="form-group">
+        <br />
+        <input type="email" pattern=".+@gmail.com" required className="form-control" placeholder="Email" value={email} onChange={handleChangeEmail}/>
+        <br />
+        <input type="number" className="form-control" placeholder="DNI" value={DNI} onChange={handleChangeDni}/>
+        <br />
         <CardElement />
+        <br />
       </div>
       <button className="btn btn-success" disabled={!stripe}>
         {loading ? (
@@ -124,7 +162,28 @@ const CheckoutForm = () => {
         ) : (
           "Buy"
         )}
+
       </button>
+      <br />
+        {succesfull ? (
+          <Alert status="success">
+          <AlertIcon />
+          <Box flex="1">
+            <AlertTitle>Success payment!</AlertTitle>
+            <AlertDescription>We will send you an email when your order is ready.</AlertDescription>
+          </Box>
+        </Alert>
+        ) : null}
+      <br />
+        {failed? (
+          <Alert status="error">
+          <AlertIcon />
+          <Box flex="1">
+            <AlertTitle>Failed payment!</AlertTitle>
+            <AlertDescription>Try again</AlertDescription>
+          </Box>
+        </Alert>
+        ) : null}
     </form>
   );
 };

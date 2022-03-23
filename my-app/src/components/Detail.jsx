@@ -201,8 +201,6 @@ function Detail() {
             null
           }
           <Stack direction="row" alignItems="center" justifyContent={"center"}>
-            <MdLocalShipping />
-            <Text>2-3 business days delivery</Text>
           </Stack>
         </Stack>
       </SimpleGrid>

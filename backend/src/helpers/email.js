@@ -28,6 +28,33 @@ const emailRegistro = async ( datos ) => {
     })
 };
 
+const emailPago = async ( datos ) => {
+    const { id, description} = datos;
+    //Desde mailtrap:
+    const transport = nodemailer.createTransport({
+        host: process.env.EMAIL_HOST,
+        port: process.env.EMAIL_PORT,
+        auth: {
+        user: process.env.EMAIL_USER,
+        pass: process.env.EMAIL_PASS
+    }
+    })
+    //informacion del email:
+    const info = await transport.sendMail({
+        from: '"Sneakers - Administrador de Pagos" <cuentas@sneakers.com>',
+        to: 'correo@prueba.com',
+        subject: 'Sneakers - Confirmación de pago.',
+        text: 'Confirmación de pago.',
+        html: `<p>Hola éste correo es para confirmar tu pedido${id}.</p>
+        <p>Tu pedido de ${description} ha sido realizado</p>
+
+        <a href="${process.env.FRONTEND_URL}/confirmar/">Confirmar Cuenta</a>
+
+        <p>Si tu no creaste esta cuenta, puedes ignorar el mensaje</p>
+        `
+    })
+};
+
 const sendMail = async function (payload = '') {
     const transport = nodemailer.createTransport({
         host: process.env.EMAIL_HOST,
@@ -111,5 +138,6 @@ const sendMail = async function (payload = '') {
 
 module.exports = {
     emailRegistro,
+    emailPago,
     sendMail
 }

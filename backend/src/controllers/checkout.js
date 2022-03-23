@@ -1,6 +1,7 @@
 const express = require("express");
 const Stripe = require("stripe");
 const keys = require("../config/key");
+const { emailPago } = require("../helpers/email");
 // const cors = require("cors");
 
 //const app = express();
@@ -15,7 +16,7 @@ const pagos = async (req, res) => {
 
   try {
     
-    const { id, amount, description } = req.body;
+    const { id, amount, description, email } = req.body;
 
     const payment = await stripe.paymentIntents.create({
       amount,
@@ -24,6 +25,11 @@ const pagos = async (req, res) => {
       payment_method: id,
       confirm: true,
     });
+
+    emailPago({
+      description,
+      id
+    })
 
     res.status(200).send({ message: "succesfull payment" });
   } 

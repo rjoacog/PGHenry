@@ -14,6 +14,10 @@ function Card({ img, brand,name, price, _id, addToCart }) {
           <h3>${price}</h3>
         </div>
       </div>      
+          <button className="btn"
+          >
+            <i className="fa-solid fa-heart"></i>
+          </button>
     </div>
   );
 }

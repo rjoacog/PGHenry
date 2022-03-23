@@ -72,7 +72,7 @@ const CheckoutForm = () => {
     setTimeout(() => {
       dispatch(clearAllCart())
       navigate('/')
-    }, 8000)
+    }, 7000)
   }
 
   const handleChangeEmail = (e) => {

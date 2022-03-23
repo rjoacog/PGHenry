@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
 import { loadStripe } from "@stripe/stripe-js";
 import { stripeAxios } from '../config/clienteAxios';
 import keys from '../config/key';
@@ -10,7 +10,6 @@ import {
   useStripe,
   useElements,
 } from "@stripe/react-stripe-js";
-import axios from "axios";
 import "bootswatch/dist/lux/bootstrap.min.css";
 import {
   Box,
@@ -19,20 +18,21 @@ import {
   AlertTitle,
   AlertDescription,
 } from "@chakra-ui/react";
-
-//const stripePromise = loadStripe(keys.stripePublishableKey);
- const stripePromise = loadStripe("pk_test_51Ke1jsGMvGiWG7BaB74NT66vIDnZoYdgbBmKNcwq4SaMuDzPf6SFtWVEnlXMv46vUH0G8kZOjpYZHxabuPMgCyqo00tqyuN3GA");
+import { useNavigate } from "react-router-dom";
+import { clearAllCart } from '../actions/creates'
+const stripePromise = loadStripe(keys.stripePublishableKey);
 
 const CheckoutForm = () => {
   const stripe = useStripe();
+  const dispatch = useDispatch();
   const elements = useElements();
   const [loading, setLoading] = useState(false);
   const [email, setEmail] = useState('');
   const [DNI, setDNI] = useState('');
   const products = useSelector((state) => state.cart);
-  const[cart, setCart] = useState()
   let [succesfull, setSuccesfull] = useState(false);
   let [failed, setFailed] = useState(false);
+  const navigate = useNavigate();
 
   const product = products.map((p) => {
     return {
@@ -70,8 +70,10 @@ const CheckoutForm = () => {
   const des = JSON.stringify(description)
 
   const clearStorage = () => {
-      setCart(localStorage.removeItem("items"));
-      document.location.reload()
+    setTimeout(() => {
+      dispatch(clearAllCart())
+      navigate('/')
+    }, 8000)
   }
 
   const handleChangeEmail = (e) => {
@@ -109,20 +111,21 @@ const CheckoutForm = () => {
         elements.getElement(CardElement).clear();
         setSuccesfull(true);
         setFailed(false);
+        clearStorage();
       }
-      
+
       catch (error) {
         console.log(error);
         setFailed(true);
       }
-      
+
       setLoading(false);
     }
   };
 
   return (
     <form className="card card-body" onSubmit={handleSubmit}>
-      <div style={{backgroundColor:'#edf2f7'}}>
+      <div style={{ backgroundColor: '#edf2f7' }}>
         {product.map((p) => {
           return (
             <div className="container p-4" style={{ borderBottom: '1px solid black' }}>
@@ -148,9 +151,9 @@ const CheckoutForm = () => {
       <p>Total: {sum}</p>
       <div className="form-group">
         <br />
-        <input type="email" pattern=".+@gmail.com" required className="form-control" placeholder="Email" value={email} onChange={handleChangeEmail}/>
+        <input type="email" pattern=".+@gmail.com" required className="form-control" placeholder="Email" value={email} onChange={handleChangeEmail} />
         <br />
-        <input type="number" className="form-control" placeholder="DNI" value={DNI} onChange={handleChangeDni}/>
+        <input type="number" className="form-control" placeholder="DNI" value={DNI} onChange={handleChangeDni} />
         <br />
         <CardElement />
         <br />
@@ -166,35 +169,33 @@ const CheckoutForm = () => {
 
       </button>
       <br />
-        {succesfull ? (
-          <div>
+      {succesfull ? (
+        <div>
           <Alert status="success">
-          <AlertIcon />
-          <Box flex="1">
-            <AlertTitle>Success payment!</AlertTitle>
-            <AlertDescription>We will send you an email when your order is ready.</AlertDescription>
-          </Box>
-        </Alert>
+            <AlertIcon />
+            <Box flex="1">
+              <AlertTitle>Success payment!</AlertTitle>
+              <AlertDescription>We will send you an email when your order is ready.</AlertDescription>
+              <br />
+              <AlertDescription>you will be redirected to home</AlertDescription>
+            </Box>
+            <br />
+          </Alert>
           </div>
-        )
-         : null}
+      )
+        : null}
       <br />
-        {failed? (
-          <Alert status="error">
+      {failed ? (
+        <Alert status="error">
           <AlertIcon />
           <Box flex="1">
             <AlertTitle>Failed payment!</AlertTitle>
             <AlertDescription>Try again</AlertDescription>
           </Box>
         </Alert>
-        ) : null}
-        <div style={{alignSelf: 'center'}}>
-        <Link to="/">
-        <button className="btn btn-primary" onClick={clearStorage} >
-          Back home
-        </button>
-        </Link>
-        </div>
+      ) : null}
+      <div style={{ alignSelf: 'center' }}>
+      </div>
     </form>
   );
 };

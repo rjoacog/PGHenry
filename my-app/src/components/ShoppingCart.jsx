@@ -15,7 +15,6 @@ export default function ShoppingCart() {
     const cart = useSelector((state) => state.cart)
     const dispatch = useDispatch();
 
-    
 
     useEffect(() => {
         let itemCarts = 0;
@@ -66,7 +65,7 @@ export default function ShoppingCart() {
                     <Text fontSize='3xl'>TOTAL : ${totalCart} </Text>
                     < br/>
                     <Link to='/checkout'>
-                    <Button colorScheme='blue'>PROCEED TO CHECKOUT</Button>
+                    <Button colorScheme='blue' disabled={totalCart === 0}>PROCEED TO CHECKOUT</Button>
                     </Link>
                     </Box>    
         </div>

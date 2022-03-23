@@ -18,7 +18,7 @@ import {
   AlertTitle,
   AlertDescription,
 } from "@chakra-ui/react";
-
+import { Link } from 'react-router-dom';
 const stripePromise = loadStripe(keys.stripePublishableKey);
 
 const CheckoutForm = () => {
@@ -68,8 +68,8 @@ const CheckoutForm = () => {
   const des = JSON.stringify(description)
 
   const clearStorage = () => {
-    setCart(localStorage.removeItem("items"));
-    document.location.reload()
+      setCart(localStorage.removeItem("items"));
+      document.location.reload()
   }
 
   const handleChangeEmail = (e) => {
@@ -106,15 +106,14 @@ const CheckoutForm = () => {
         setDNI('')
         elements.getElement(CardElement).clear();
         setSuccesfull(true);
-        clearStorage();
         setFailed(false);
       }
-
+      
       catch (error) {
         console.log(error);
         setFailed(true);
       }
-
+      
       setLoading(false);
     }
   };
@@ -166,6 +165,7 @@ const CheckoutForm = () => {
       </button>
       <br />
         {succesfull ? (
+          <div>
           <Alert status="success">
           <AlertIcon />
           <Box flex="1">
@@ -173,7 +173,9 @@ const CheckoutForm = () => {
             <AlertDescription>We will send you an email when your order is ready.</AlertDescription>
           </Box>
         </Alert>
-        ) : null}
+          </div>
+        )
+         : null}
       <br />
         {failed? (
           <Alert status="error">
@@ -184,6 +186,13 @@ const CheckoutForm = () => {
           </Box>
         </Alert>
         ) : null}
+        <div style={{alignSelf: 'center'}}>
+        <Link to="/">
+        <button className="btn btn-primary" onClick={clearStorage} >
+          Back home
+        </button>
+        </Link>
+        </div>
     </form>
   );
 };

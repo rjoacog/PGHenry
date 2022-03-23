@@ -46,7 +46,10 @@ const pagos = async (req, res) => {
     });
 
     emailPago({
-      description,
+      email,
+      dni,
+      amount,
+      description: description[0].name,
       id
     })
 

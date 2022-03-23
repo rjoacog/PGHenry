@@ -4,37 +4,14 @@ const keys = require("../config/key");
 const { emailPago } = require("../helpers/email");
 // const cors = require("cors");
 
-
-const stripe = new Stripe("sk_test_51Ke1jsGMvGiWG7BasJxNfexxigjcLA8LPtJA1nkou4hGMeaf7OswqmmYpDcPHmg9T5lkgl015fsX79AUqpDCKLRk00Wx7KzIwR");
-
-// let transporter = nodemailer.createTransport({
-//   host: 'smtp.mailtrap.io',
-//   port: 2525,
-//   auth: {
-//     user: "d8bbacdfbac524",
-//     pass: "805a2b93be48e6"
-//   }
-// })
-
-// message = {
-//   from: "pfgrupo13@gmail.com",
-//   to: {email},
-//   subject: "Subject",
-//   text: "anda culea"
-// }
-// transporter.sendMail(message, (err, info) => {
-//   if (err) {
-//     console.log('erro', err)
-//   } else {
-//     console.log('succes', info);
-//   }
-// })
+//const stripe = new Stripe(keys.stripeSecretKey);
+ const stripe = new Stripe("sk_test_51Ke1jsGMvGiWG7BasJxNfexxigjcLA8LPtJA1nkou4hGMeaf7OswqmmYpDcPHmg9T5lkgl015fsX79AUqpDCKLRk00Wx7KzIwR");
 
 
 const pagos = async (req, res) => {
   try {
 
-    const { id, amount, description, dni, email } = req.body;
+    const { id, description, dni, email } = req.body;
     
 
     const payment = await stripe.paymentIntents.create({
@@ -48,8 +25,7 @@ const pagos = async (req, res) => {
     emailPago({
       email,
       dni,
-      amount,
-      description: description[0].name,
+      description: description,
       id
     })
 

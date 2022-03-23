@@ -36,12 +36,7 @@ export default function ShoppingCart() {
     }, [cart, totalItems, totalPrice, totalCart])
 
 
-    const clearCart = () => {
-        dispatch(clearAllCart());
-        for(let i = 0; i <= cart.length; i++ ) {
-            dispatch(stock("increment", i._id))
-        }
-    }
+  
    
 
     const delFromCart = (payload, all = false) => {
@@ -57,12 +52,6 @@ export default function ShoppingCart() {
     return (
         <Box display={"flex"} justifyContent="center" textAlign={"center"} mr={"100"} ml={"100"} >
         <div>
-        <Box>    
-          <Text fontSize='3xl'>Carrito</Text>
-              <br />
-            <Button onClick={clearCart}  borderRadius='md' backgroundColor="red.400" color="white" size='sm'>Clear cart</Button>  
-            </Box> 
-
             {
                 cart?.map((p, index) => <CartItem key={index} delFromCart={delFromCart} 
                 img={p.image}

@@ -74,13 +74,6 @@ export default function NavBar() {
                     </HStack>
                   </MenuButton>
                   <MenuList bg={"white"} borderColor={"gray.200"}>
-                    <Link to="/register">
-                      <MenuItem>Perfil</MenuItem>
-                    </Link>
-                    <Link to="/favourites">
-                      <MenuItem>Favoritos</MenuItem>
-                    </Link>
-                    <MenuDivider />
                     <MenuItem
                       onClick={() =>
                         logout({ returnTo: window.location.origin })

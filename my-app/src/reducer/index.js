@@ -16,6 +16,7 @@ import {
   ADD_TO_WISHLIST,
   REMOVE_FROM_WISHLIST,
   SAVE_WISHLIST,
+  USER_DATA,
 } from "../actions/types";
 
 const initialState = {
@@ -179,11 +180,10 @@ function rootReducer(state = initialState, { type, payload }) {
         return {
           ...state,
         };
-      case GET_WISHLIST:
-        let list = state.products.filter((item) => item._id)
+      case USER_DATA:
         return {
           ...state,
-          wishlist: payload,
+          userData: payload,
         };
       case ADD_TO_WISHLIST:
         let add = state.products.find((item) => item === payload);

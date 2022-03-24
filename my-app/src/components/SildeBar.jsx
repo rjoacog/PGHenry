@@ -8,6 +8,13 @@ import { Select } from '@chakra-ui/react'
 function SildeBar() {
   const dispatch = useDispatch();
   
+<<<<<<< HEAD
+=======
+  const products = useSelector((s) => s.allProducts);
+  const colors = products.map((p) => p.color);
+  
+ 
+>>>>>>> origin/Developement
   const handlefilterByBrand = (e) => {
     e.preventDefault();
     dispatch(filterByBrand(e.target.value));
@@ -18,10 +25,6 @@ function SildeBar() {
     dispatch(filterByByGender(e.target.value));
   };
 
-  const handlefilterByColor = (e) => {
-    e.preventDefault();
-    dispatch(filterByByColor(e.target.value));
-  };
 
   return (
     <div className="bar">
@@ -45,6 +48,7 @@ function SildeBar() {
         </Select>
       </div>
 
+<<<<<<< HEAD
       <div>
         <Select placeholder="Colors" onChange={(e) => handlefilterByColor(e)}>
           <option value='all'>All</option>
@@ -62,6 +66,8 @@ function SildeBar() {
           <option value='violet'>Violet</option>
         </Select>
       </div>
+=======
+>>>>>>> origin/Developement
     </div>
   );
 }

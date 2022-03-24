@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
-import axios from "axios";
 import { useDispatch, useSelector } from "react-redux";
+import { clienteAxios } from "../config/clienteAxios";
 import {
   Button,
   Flex,
@@ -17,18 +17,22 @@ import {
 } from "@chakra-ui/react";
 import { useAuth0 } from "@auth0/auth0-react";
 import { useForm } from "react-hook-form";
-import { newUser, getAllUsers } from "../actions/creates";
+import { getAllUsers, userData } from "../actions/creates";
 
 export default function UserForm() {
   const { user, getAccessTokenSilently } = useAuth0();
   const dispatch = useDispatch();
   const toast = useToast();
   const users = useSelector((state) => state.allUsers);
+  const userDetail = useSelector((state) => state.userData);
+  //const currentUser = users.filter((el) => el.email === user.email);
+
 
   const {
     register,
     handleSubmit,
     setValue,
+    watch,
     formState: { isSubmitting },
   } = useForm();
 
@@ -37,7 +41,7 @@ export default function UserForm() {
     if (currentUser.length > 0) {
       //   dispatch(updateUser(currentUser[0]._id, submit));
       const token = await getAccessTokenSilently();
-      await axios.put(`http://localhost:4000/user/${currentUser[0]._id}`, submit, {
+      await clienteAxios.put(`/user/${currentUser[0]._id}`, submit, {
         headers: {
           Authorization: `Bearer ${token}`,
         },
@@ -49,9 +53,10 @@ export default function UserForm() {
         duration: 3000,
         isClosable: true,
       });
+      dispatch(userData(submit));
       console.log(submit);
     } else {
-      dispatch(newUser(submit));
+      clienteAxios.post("/user", submit);
       toast({
         title: "Nuevo usuario guardado!",
         status: "success",
@@ -64,6 +69,7 @@ export default function UserForm() {
   useEffect(() => {
     dispatch(getAllUsers());
   }, [dispatch]);
+  
   return (
     <div>
       <Flex
@@ -93,7 +99,7 @@ export default function UserForm() {
                 </Center>
               </Stack>
             </FormControl>
-            <FormControl id="name" isRequired>
+            <FormControl id="name" >
               <FormLabel>First name</FormLabel>
               <Input
                 placeholder={user.name}
@@ -101,9 +107,9 @@ export default function UserForm() {
                 type="text"
                 {...register("name")}
               />
-              {setValue("name", `${user.name}`)}
+              {setValue("name", userDetail?.name?.length > 0 ? `${userDetail.name}` : "")}
             </FormControl>
-            <FormControl id="lastName" isRequired>
+            <FormControl id="lastName" >
               <FormLabel>Last name</FormLabel>
               <Input
                 placeholder="Last name"
@@ -111,9 +117,9 @@ export default function UserForm() {
                 type="text"
                 {...register("lastName")}
               />
-              {setValue("name", `${user.name}`)}
+              {setValue("lastName", userDetail?.lastName?.length > 0 ? `${userDetail.lastName}` : "")}
             </FormControl>
-            <FormControl id="userName" isRequired>
+            {/* <FormControl id="userName" isRequired>
               <FormLabel>Last name</FormLabel>
               <Input
                 placeholder="User name"
@@ -121,7 +127,7 @@ export default function UserForm() {
                 type="text"
                 {...register("userName")}
               />
-            </FormControl>
+            </FormControl> */}
             <FormControl id="email" isRequired isReadOnly>
               <FormLabel>Email address</FormLabel>
               <Input
@@ -133,7 +139,7 @@ export default function UserForm() {
               {setValue("email", `${user.email}`)}
               <FormHelperText>We'll never share your email.</FormHelperText>
             </FormControl>
-            <FormControl id="password" isRequired>
+            <FormControl id="password" >
               <FormLabel>Password</FormLabel>
               <Input
                 placeholder="Password"
@@ -141,16 +147,28 @@ export default function UserForm() {
                 type="password"
                 {...register("password")}
               />
+              {setValue("password", userDetail?.password?.length > 0 ? `${userDetail.password}` : "")}
             </FormControl>
-            <FormControl id="confirm-password" isRequired>
+            <FormControl id="confirm-password" >
               <FormLabel>Confirm password</FormLabel>
               <Input
                 placeholder="Confirm password"
                 _placeholder={{ color: "gray.500" }}
                 type="password"
+                {...register("confirm password" )}
               />
             </FormControl>
-            <FormControl id="birthday" isRequired>
+            <FormControl>
+              <FormLabel>Adress</FormLabel>
+              <Input
+                placeholder="Adress"
+                _placeholder={{color: "gray.500"}}
+                type="text"
+                {...register("adress")}
+              />
+              {setValue("adress", userDetail?.adress?.length > 0 ? `${userDetail.adress}` : "")}
+            </FormControl>
+            <FormControl id="birthday" >
               <FormLabel>Birthday</FormLabel>
               <Input
                 placeholder="Birthday"
@@ -158,6 +176,7 @@ export default function UserForm() {
                 type="date"
                 {...register("birthDate")}
               />
+              {setValue("birthDate", userDetail?.birthDate?.length > 0 ? `${userDetail.birthDate}` : "")}
             </FormControl>
             <Stack spacing={6} direction={["column", "row"]}>
               <Button

@@ -34,17 +34,8 @@ export default function ShoppingCart() {
     }, [cart, totalItems, totalPrice, totalCart])
 
 
-<<<<<<< HEAD
-    const clearCart = () => {
-        dispatch(clearAllCart());
-        for(let i = 0; i <= cart.length; i++ ) {
-            dispatch(stock("increment", i._id))
-        }
-    }
-=======
   
    
->>>>>>> origin/Developement
 
     const delFromCart = (payload, all = false) => {
         if(all) {
@@ -59,15 +50,6 @@ export default function ShoppingCart() {
     return (
         <Box display={"flex"} justifyContent="center" textAlign={"center"} mr={"100"} ml={"100"} >
         <div>
-<<<<<<< HEAD
-        <Box>    
-            <Text fontSize='3xl'>Carrito</Text>
-                <br />
-            <Button onClick={clearCart}  borderRadius='md' backgroundColor="red.400" color="white" size='sm'>Clear cart</Button>  
-            </Box> 
-
-=======
->>>>>>> origin/Developement
             {
                 cart?.map((p, index) => <CartItem key={index} delFromCart={delFromCart} 
                 img={p.image}
@@ -79,15 +61,6 @@ export default function ShoppingCart() {
                     quantity= {p.quantity}
                 />)
             } 
-<<<<<<< HEAD
-            <Box bg='gray.100' w='100%' p={4} color='black'>
-                <Text fontSize='3xl'>TOTAL : ${totalCart} </Text>
-                < br/>
-                <Link to='/checkout'>
-                    <Button colorScheme='blue'>PROCEED TO CHECKOUT</Button>
-                </Link>
-            </Box>    
-=======
              <Box bg='gray.100' w='100%' p={4} color='black'>
                     <Text fontSize='3xl'>TOTAL : ${totalCart} </Text>
                     < br/>
@@ -95,7 +68,6 @@ export default function ShoppingCart() {
                     <Button colorScheme='blue' disabled={totalCart === 0}>PROCEED TO CHECKOUT</Button>
                     </Link>
                     </Box>    
->>>>>>> origin/Developement
         </div>
         </Box>
     )

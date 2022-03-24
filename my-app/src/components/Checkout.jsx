@@ -147,15 +147,7 @@ const CheckoutForm = () => {
               <h3 style={{ fontWeight: "bold", color: "black" }}>
                 Size:
               </h3>
-<<<<<<< HEAD
-                {p.size}
-              <h3 style={{ fontWeight: "bold", color: "black" }}>
-                Price:
-              </h3>
-                ${p.price} --------------------- (x{p.quantity}) ${p.price * p.quantity}
-=======
               <br />
->>>>>>> origin/Developement
               <div>
                 <img
                   src={p.photo}

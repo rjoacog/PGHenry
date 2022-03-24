@@ -110,7 +110,7 @@ const CheckoutForm = () => {
         const { data } = await stripeAxios.post("/checkout",
           {
             id,
-            amount: sum,
+            amount: sum * 100,
             description: des,
           }
         );

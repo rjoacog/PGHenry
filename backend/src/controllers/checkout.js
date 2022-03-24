@@ -22,7 +22,7 @@ const pagos = async (req, res) => {
     console.log('cantidad: ', amount )
     emailPago({
       email: desc.email,
-      amount,
+      amount: amount / 100,
       dni: desc.dni
     });
 

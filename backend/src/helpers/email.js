@@ -47,7 +47,7 @@ const emailPago = async ( datos ) => {
         text: 'Confirma tu órden.',
         html: `<p>¡Hola gracias por tu compra!.</p>
         <p>Ésta es una confirmación de tu pedido.</p>
-        <p>Tu factura por un total de $ ${amount} realizada por el DNI: ${dni}</p>
+        <p>Tu factura por un total de $ ${amount}.00 realizada por el DNI: ${dni}</p>
         `
     })
 };

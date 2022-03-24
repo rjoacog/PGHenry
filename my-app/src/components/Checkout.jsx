@@ -19,6 +19,7 @@ import {
 } from "@chakra-ui/react";
 import { useNavigate } from "react-router-dom";
 import { clearAllCart } from '../actions/creates'
+import { useAuth0 } from '@auth0/auth0-react'
 const stripePromise = loadStripe(keys.stripePublishableKey);
 
 const CheckoutForm = () => {
@@ -26,12 +27,14 @@ const CheckoutForm = () => {
   const dispatch = useDispatch();
   const elements = useElements();
   const [loading, setLoading] = useState(false);
-  const [email, setEmail] = useState('');
   const [DNI, setDNI] = useState('');
   const products = useSelector((state) => state.cart);
   let [succesfull, setSuccesfull] = useState(false);
   let [failed, setFailed] = useState(false);
   const navigate = useNavigate();
+  
+  const {user, isAuthenticated} = useAuth0()
+  const [email, setEmail] = useState(isAuthenticated ? user.email : '');
 
   const product = products.map((p) => {
     return {
@@ -65,14 +68,20 @@ const CheckoutForm = () => {
       dni: DNI
     }
   })
+  
+  for( let i = 0; i < i.length; i++) {
+    const des = JSON.stringify(description[i])
+    console.log(des)
+      //fin del for:
+}
 
-  const des = JSON.stringify(description)
+  const des = JSON.stringify(description[0])
 
   const clearStorage = () => {
     setTimeout(() => {
       dispatch(clearAllCart())
       navigate('/')
-    }, 8000)
+    }, 5000)
   }
 
   const handleChangeEmail = (e) => {
@@ -101,7 +110,7 @@ const CheckoutForm = () => {
         const { data } = await stripeAxios.post("/checkout",
           {
             id,
-            amount: sum * 100,
+            amount: sum,
             description: des,
           }
         );
@@ -120,6 +129,7 @@ const CheckoutForm = () => {
 
       setLoading(false);
     }
+
   };
 
   return (
@@ -150,7 +160,7 @@ const CheckoutForm = () => {
       <p>Total: {sum}</p>
       <div className="form-group">
         <br />
-        <input type="email" pattern=".+@gmail.com" required className="form-control" placeholder="Email" value={email} onChange={handleChangeEmail} />
+        <input type="email" pattern=".+@gmail.com" required className="form-control" placeholder="Email" value={ email} onChange={handleChangeEmail} />
         <br />
         <input type="number" className="form-control" placeholder="DNI" value={DNI} onChange={handleChangeDni} />
         <br />

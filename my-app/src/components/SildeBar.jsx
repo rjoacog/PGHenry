@@ -10,7 +10,6 @@ function SildeBar() {
   
   const products = useSelector((s) => s.allProducts);
   const colors = products.map((p) => p.color);
-  const brands = products.map((p) => p.brand);
   
  
   const handlefilterByBrand = (e) => {
@@ -23,10 +22,6 @@ function SildeBar() {
     dispatch(filterByByGender(e.target.value));
   };
 
-  const handlefilterByColor = (e) => {
-    e.preventDefault();
-    dispatch(filterByByColor(e.target.value));
-  };
 
   return (
     <div className="bar">
@@ -50,18 +45,6 @@ function SildeBar() {
         </Select>
       </div>
 
-      <div>
-        <Select placeholder="Colors" onChange={(e) => handlefilterByColor(e)}>
-          <option value='all'>All</option>
-          {
-            colors.map(s => {
-              return(
-                <option value={s}>{s}</option>
-              )
-            })
-          }
-        </Select>
-      </div>
     </div>
   );
 }

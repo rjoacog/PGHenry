@@ -19,6 +19,7 @@ import {
   GET_WISHLIST,
   REMOVE_FROM_WISHLIST,
   SAVE_WISHLIST,
+  USER_DATA,
 } from "./types";
 
 export function getProducts() {
@@ -175,4 +176,11 @@ export function getAllUsers() {
     const json = await clienteAxios.post(`/products/stock/${id}`, {action});
   }
 }  
+
+export function userData(payload) {
+  return {
+    type: USER_DATA,
+    payload,
+  }
+}
   

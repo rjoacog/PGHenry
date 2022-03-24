@@ -35,9 +35,10 @@ export default function NavBar() {
   return (
     <div>
       <Flex backgroundColor={"gray.100"}>
-        <Box p="4">
+        <Box p="1"  ml={10}>
           <Link to="/">
-            <Heading size="md">logo de la app</Heading>
+            <img src={"https://www.pikpng.com/pngl/b/377-3770554_shoe-png-icon-free-download-onlinewebfonts-com-clip.png"} display="flex" width={90} />
+            <Heading size="md" mt={1} >Henry Shoes</Heading>
           </Link>
         </Box>
         <Spacer />
@@ -73,13 +74,6 @@ export default function NavBar() {
                     </HStack>
                   </MenuButton>
                   <MenuList bg={"white"} borderColor={"gray.200"}>
-                    <Link to="/register">
-                      <MenuItem>Perfil</MenuItem>
-                    </Link>
-                    <Link to="/favourites">
-                      <MenuItem>Favoritos</MenuItem>
-                    </Link>
-                    <MenuDivider />
                     <MenuItem
                       onClick={() =>
                         logout({ returnTo: window.location.origin })

@@ -30,7 +30,7 @@ function Detail() {
   const product = useSelector((state) => state.detail);
   const [alert, setAlert] = useState(false)
   const cart = useSelector(state => state.cart)
-
+  
   useEffect(() => {
     dispatch(getProductByID(id));
     localStorage.setItem('items', JSON.stringify(cart))
@@ -183,8 +183,10 @@ function Detail() {
               boxShadow: "lg",
             }}
             onClick={() => addToCart(product._id)}
+            disabled={product.stock === 0}
           >
-            Add to cart
+            {product.stock === 0 ? "No stock" :
+            "Add to cart"}
           </Button>
 
           {

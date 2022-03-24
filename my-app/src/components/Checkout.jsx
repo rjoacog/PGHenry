@@ -80,6 +80,7 @@ const CheckoutForm = () => {
   const clearStorage = () => {
     setTimeout(() => {
       dispatch(clearAllCart())
+      localStorage.removeItem("items")
       navigate('/')
     }, 5000)
   }

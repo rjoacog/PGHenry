@@ -16,3 +16,4 @@ export const GET_WISHLIST = "GET_WISHLIST";
 export const ADD_TO_WISHLIST = "ADD_TO_WISHLIST";
 export const REMOVE_FROM_WISHLIST = "REMOVE_FROM_WISHLIST";
 export const SAVE_WISHLIST = "SAVE_WISHLIST";
+export const USER_DATA = "USER_DATA";

@@ -8,7 +8,7 @@ const stripe = new Stripe(keys.stripeSecretKey);
 const pagos = async (req, res) => {
   try {
 
-    const { id, amount, description, dni, email } = req.body;
+    const { id, amount, description } = req.body;
     const desc = JSON.parse(description)
 
     const payment = await stripe.paymentIntents.create({
@@ -22,7 +22,8 @@ const pagos = async (req, res) => {
     console.log('cantidad: ', amount )
     emailPago({
       email: desc.email,
-      amount
+      amount,
+      dni: desc.dni
     });
 
     res.status(200).send({ message: "succesfull payment" });

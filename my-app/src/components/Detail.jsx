@@ -59,7 +59,7 @@ function Detail() {
             fit={"cover"}
             align={"center"}
             w={"100%"}
-            h={{ base: "100%", sm: "400px", lg: "450px" }}
+            h={"40%"}
           />
         </Flex>
         <Stack spacing={{ base: 6, md: 5 }}>

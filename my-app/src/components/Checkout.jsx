@@ -3,6 +3,7 @@ import { useSelector, useDispatch } from "react-redux";
 import { loadStripe } from "@stripe/stripe-js";
 import { stripeAxios } from '../config/clienteAxios';
 import keys from '../config/key';
+import "../css/Checkout.css";
 import {
   Elements,
   CardElement,
@@ -135,34 +136,42 @@ const CheckoutForm = () => {
 
   return (
     <form className="card card-body" onSubmit={handleSubmit}>
-      <div style={{ backgroundColor: '#edf2f7' }}>
+      <div className="carryContainer">
         {product.map((p) => {
           return (
-            <div className="container p-4" style={{ borderBottom: '1px solid black' }}>
+            <div className="products" style={{ borderBottom: '1px solid black' }}>
               <br />
-              <h3 style={{ fontWeight: "bold", color: "black" }}>
-                Product:
-              </h3>
-                {p.name}
-              <h3 style={{ fontWeight: "bold", color: "black" }}>
-                Size:
-              </h3>
-              <br />
+              <h2 style={{ fontWeight: "bolder", color: "black" }}>
+                Product: 
+                <h3>
+                  {p.name}
+                </h3>
+              </h2>
+              <h2 style={{ fontWeight: "bolder", color: "black" }}>
+                Price:
+                <h3>
+                  u$d {p.price * p.quantity}
+                </h3>
+              </h2>
+              <h2 style={{ fontWeight: "bolder", color: "black" }}>
+                Quantity:
+                <h3>
+                  {p.quantity}
+                </h3>
+              </h2>
               <div>
                 <img
                   src={p.photo}
                   alt="img not found"
-                  style={{ width: "100%", height: "25vh" }}
                 />
               </div>
             </div>
           );
         })}
       </div>
-      <div>
-        <p>Total: ${sum}</p>
+      <div className="totalOrder">
+        Total: u$d {sum}
       </div>
-      <br/>
       <div className="form-group">
         <br />
         <input type="email" pattern=".+@gmail.com" required className="form-control" placeholder="Email" value={ email} onChange={handleChangeEmail} />

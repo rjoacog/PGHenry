@@ -70,17 +70,17 @@ export default function NavBar() {
                         spacing="1px"
                         ml="2"
                       >
-                        <Text fontSize="sm">{user.name}</Text>
+                        <Text fontSize="sm" color="goldenrod">{user.name}</Text>
                       </VStack>
                     </HStack>
                   </MenuButton>
-                  <MenuList bg={"black"} borderColor={"goldenrod"}>
+                  <MenuList fontSize="sm" bg="black" color="goldenrod" borderColor="goldenrod">
                     <MenuItem
                       onClick={() =>
                         logout({ returnTo: window.location.origin })
                       }
                     >
-                      Cerrar sesión
+                      Log out
                     </MenuItem>
                   </MenuList>
                 </Menu>

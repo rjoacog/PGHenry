@@ -2,13 +2,14 @@
     position: relative;
     background-color: rgba(218, 165, 32, 0.65);
     width: 250px;
-    height: 380px;
+    height: 350px;
     display: flex;
     flex-direction: column;
+    justify-content: space-around;
     transition: 0.4s;
-    margin: 2px;
-    margin-top: 15px;
-    border-radius: 1cm;
+    margin-top: 12px;
+    margin-left: 5px;
+    border-radius: 0.5cm;
     border-style: solid;
     border-color: black;
     align-items: center;
@@ -34,10 +35,7 @@
 .card img{
     object-fit: cover;
     object-position: center;
-    border-radius: 1cm;
-    border-top-left-radius: 5px;
-    border-top-right-radius: 5px;
-    margin-top: 15px;
+    margin-top: 5px;
     width: 75%;
     height: 20vh;
     display: flex;
@@ -57,10 +55,10 @@
     margin-top: 1px;
     display: flex;
     width: 100%;
-    margin: 5px 0 90px 0;
+    margin: 2px 0 100px 0;
     margin-left: 0px;
     border-top: 1px solid black;
-    padding-top: 8px;
+    padding-top: 12px;
     background-color: rgba(245, 222, 179, 0.40);
 }
 

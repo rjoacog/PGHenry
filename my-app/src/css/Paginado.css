@@ -1,8 +1,7 @@
 .order {
-  margin: 15px 0 0 0;
+  margin: 2px 0 2px 0;
   display: flex;
   margin-left: 0px;
-  align-items: center;
 }
 
 .order li {

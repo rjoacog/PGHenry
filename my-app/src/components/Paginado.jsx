@@ -20,7 +20,7 @@ function Paginado({ productsPerPage, allProducts, paginado, currentPage }) {
               {
                 (currentPage === number ? (
                   <chakra.button
-                    mx={4}
+                    mx={2}
                     px={4}
                     py={2}
                     marginRight={1}
@@ -35,7 +35,7 @@ function Paginado({ productsPerPage, allProducts, paginado, currentPage }) {
                   </chakra.button>
                 ) : (
                   <chakra.button
-                    mx={4}
+                    mx={2}
                     px={4}
                     py={2}
                     marginRight={1}

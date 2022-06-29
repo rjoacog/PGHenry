@@ -22,17 +22,16 @@
 }
 
 .cards {
-    padding-left: 10px;
-    padding-right: 10px;
+    padding-left: 0px;
+    padding-right: 0px;
     padding-bottom: 30px;
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-evenly;
-    background-color: rgba(245, 222, 179, 0.45);
+    justify-content:space-around;
+    background-color: rgba(255, 255, 255, 0.80);
 }
 
 .orderButton {
-    width: "60px";
     background-color: gainsboro;
     color: goldenrod;
     cursor: pointer;
@@ -40,8 +39,4 @@
     font-size: xx-large;
     padding: 5px;
     cursor: pointer; 
-}
-
-.orderButton :hover{
-    background-color: black;
 }

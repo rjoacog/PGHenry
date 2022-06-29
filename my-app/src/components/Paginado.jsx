@@ -23,11 +23,12 @@ function Paginado({ productsPerPage, allProducts, paginado, currentPage }) {
                     mx={4}
                     px={4}
                     py={2}
+                    marginRight={1}
                     rounded="md"
-                    bg="gray.800"
-                    color="gray.200"
-                    _active="gray.200"
-                    _focus="gray.200"
+                    bg="white"
+                    color="goldenrod"
+                    _active="black"
+                    _focus="black"
                     onClick={() => paginado(number)}
                   >
                     {number}
@@ -37,9 +38,10 @@ function Paginado({ productsPerPage, allProducts, paginado, currentPage }) {
                     mx={4}
                     px={4}
                     py={2}
+                    marginRight={1}
                     rounded="md"
-                    bg="gray.600"
-                    color="gray.200"
+                    bg="black"
+                    color="goldenrod"
                     onClick={() => paginado(number)}
                   >
                     {number}

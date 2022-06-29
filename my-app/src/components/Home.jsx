@@ -65,7 +65,7 @@ function Home() {
       <Grid templateColumns='repeat(2, 1fr)' >
 
         <GridItem >
-          <Select placeholder='Ordenar' width="150px" mt={"10"} mb="10" ml={"10"} variant="filled" onChange={handlePrice}>
+          <Select placeholder='Ordenar' className="orderButton" width="110px" mt={"8"} mb="4" ml={"4"} variant="filled" onChange={handlePrice}>
               <option value='+P'>Mayor Precio</option>
               <option value='-P'>Menor Precio</option>
           </Select>
@@ -76,11 +76,11 @@ function Home() {
             allProducts={products.length}
             paginado={paginado}
             currentPage={currentPage}
-            />
+          />
         </GridItem>
       </Grid>
 
-      <div style={{display:'flex', flexDirection:'row'}}>
+      <div style={{display:'flex', flexDirection:'row',}}>
         <SildeBar/>
         
         <div className="cards">        

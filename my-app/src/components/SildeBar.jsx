@@ -1,5 +1,5 @@
 import React from "react";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { filterByBrand, filterByByGender,filterByByColor, getProducts } from "../actions/creates";
 import "../css/SlideBar.css";
 import { Select } from '@chakra-ui/react'

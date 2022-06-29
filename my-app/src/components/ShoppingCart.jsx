@@ -34,8 +34,6 @@ export default function ShoppingCart() {
     }, [cart, totalItems, totalPrice, totalCart])
 
 
-  
-   
 
     const delFromCart = (payload, all = false) => {
         if(all) {
@@ -48,7 +46,7 @@ export default function ShoppingCart() {
     }
 
     return (
-        <Box display={"flex"} justifyContent="center" textAlign={"center"} mr={"100"} ml={"100"} >
+        <Box display={"flex"} flexDirection={"column"} justifyContent="left" textAlign={"center"} mr={"0"} ml={"0"} >
         <div>
             {
                 cart?.map((p, index) => <CartItem key={index} delFromCart={delFromCart} 
@@ -61,11 +59,11 @@ export default function ShoppingCart() {
                     quantity= {p.quantity}
                 />)
             } 
-             <Box bg='gray.100' w='100%' p={4} color='black'>
-                    <Text fontSize='3xl'>TOTAL : ${totalCart} </Text>
+            <Box bg='blackAlpha.900' w='100%' p={4} color='goldenrod'>
+                    <Text fontSize='3xl'>TOTAL: u$d {totalCart} </Text>
                     < br/>
                     <Link to='/checkout'>
-                    <Button colorScheme='blue' disabled={totalCart === 0}>PROCEED TO CHECKOUT</Button>
+                    <Button backgroundColor='goldenrod' colorScheme='black' disabled={totalCart === 0}>PROCEED TO CHECKOUT</Button>
                     </Link>
                     </Box>    
         </div>

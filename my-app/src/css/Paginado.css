@@ -1,5 +1,8 @@
 .order {
-  margin: 40px 0 0 0;
+  margin: 15px 0 0 0;
+  display: flex;
+  margin-left: 0px;
+  align-items: center;
 }
 
 .order li {

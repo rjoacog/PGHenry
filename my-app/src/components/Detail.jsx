@@ -47,8 +47,9 @@ function Detail() {
     <Container maxW={"7xl"}>
       <SimpleGrid
         columns={{ base: 1, lg: 2 }}
-        spacing={{ base: 5, md: 7 }}
-        py={{ base: 18, md: 24 }}
+        spacing={{ base: 2, md: 1 }}
+        py={{ base: 18, md: 6 }}
+        backgroundColor={"blackAlpha.50"}
       >
         <Flex>
           <Image
@@ -58,22 +59,23 @@ function Detail() {
             fit={"cover"}
             align={"center"}
             w={"100%"}
-            h={{ base: "100%", sm: "400px", lg: "350px" }}
+            h={{ base: "100%", sm: "400px", lg: "450px" }}
           />
         </Flex>
-        <Stack spacing={{ base: 3, md: 5 }}>
+        <Stack spacing={{ base: 6, md: 5 }}>
           <Box as={"header"}>
             <Heading
               lineHeight={1.1}
-              fontWeight={600}
-              fontSize={{ base: "2xl", sm: "4xl", lg: "3xl" }}
+              fontWeight={650}
+              fontSize={{ base: "6x1", sm: "6xl", lg: "2xl" }}
+              color={"goldenrod"}
             >
               {product.name}
             </Heading>
             <Text
-              color={useColorModeValue("gray.900", "gray.400")}
-              fontWeight={300}
-              fontSize={"2xl"}
+              color={"goldenrod"}
+              fontWeight={500}
+              fontSize={"3xl"}
             >
               ${product.price}
             </Text>
@@ -84,13 +86,13 @@ function Detail() {
             direction={"column"}
             divider={
               <StackDivider
-                borderColor={useColorModeValue("gray.200", "gray.600")}
+                borderColor={"goldenrod"}
               />
             }
           >
             <VStack spacing={{ base: 2, sm: 3 }}>
               <Text
-                color={useColorModeValue("gray.500", "gray.400")}
+                color={"black"}
                 fontSize={"1xl"}
                 fontWeight={"150"}
               >
@@ -99,45 +101,45 @@ function Detail() {
             </VStack>
             <Box>
               <Text
-                fontSize={{ base: "16px", lg: "18px" }}
-                color={"#319593"}
-                fontWeight={"500"}
+                fontSize={{ base: "16px", lg: "22px" }}
+                color={"goldenrod"}
+                fontWeight={"600"}
                 textTransform={"uppercase"}
-                mb={"4"}
+                mb={"8"}
               >
                 Product Details
               </Text>
 
               <List spacing={1}>
                 <ListItem>
-                  <Text as={"span"} fontWeight={"bold"}>
+                  <Text as={"span"} color={"goldenrod"} fontWeight={"bold"}>
                     Brand:
                   </Text>{" "}
                   {product.brand}
                 </ListItem>
                 <ListItem>
-                  <Text as={"span"} fontWeight={"bold"}>
+                  <Text as={"span"} color={"goldenrod"} fontWeight={"bold"}>
                     Model:
                   </Text>{" "}
                   {product.model}
                 </ListItem>
                 <ListItem>
-                  <Text as={"span"} fontWeight={"bold"}>
+                  <Text as={"span"} color={"goldenrod"} fontWeight={"bold"}>
                     Category:
                   </Text>{" "}
                   {product.category}
                 </ListItem>
                 <ListItem>
-                  <Text as={"span"} fontWeight={"bold"}>
+                  <Text as={"span"} color={"goldenrod"} fontWeight={"bold"}>
                     Gender:
                   </Text>{" "}
                   {product.gender}
                 </ListItem>
                 <ListItem>
-                  <Text as={"span"} fontWeight={"bold"}>
+                  <Text as={"span"} color={"goldenrod"} fontWeight={"bold"}>
                     Size:
                   </Text>{" "}
-                    <select spacing={2}>
+                    <select spacing={1}>
                     {product.size?.map((s) => {
                       return (
                         <option key={s} style={{ margin: "5px" }}>
@@ -149,11 +151,11 @@ function Detail() {
                 </ListItem>
                 <ListItem>
                   <ul>
-                    <img src={TablaDeTalles} alt="sizeToSelect" width={425} />
+                    <img src={TablaDeTalles} alt="sizeToSelect" width={500} />
                   </ul>
                 </ListItem>
                 <ListItem>
-                  <Text as={"span"} fontWeight={"bold"}>
+                  <Text as={"span"} color={"goldenrod"} fontWeight={"bold"}>
                     Colors:
                   </Text>{" "}
                   <ul style={{ display: "flex", flexDirection: "row" }}>
@@ -176,12 +178,14 @@ function Detail() {
             mt={8}
             size={"lg"}
             py={"7"}
-            bg={"#319593"}
-            color={useColorModeValue("white", "gray.900")}
+            bg={"black"}
+            color={"goldenrod"}
             textTransform={"uppercase"}
             _hover={{
-              transform: "translateY(2px)",
+              transform: "translateY(15px)",
               boxShadow: "lg",
+              color: "black",
+              backgroundColor: "goldenrod"
             }}
             onClick={() => addToCart(product._id)}
           >

@@ -1,34 +1,47 @@
 .bar{
-    background-color: #edf2f7;
+    background-color: goldenrod;
     width: 200px;
     display: flex;
     flex-direction: column;
     align-items: center;
     margin-top: 20px;
+    margin-left: 0px;
     border-top-right-radius: 5px;
+    color: goldenrod;
+    font-size: medium;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 
 .bar div{
-    margin: 5px;
+    margin: 3px;
 }
 
 .bar button{
-    margin-top: 5px;
+    margin-top: 2px;
     border: 1px solid #e2e8f0;
-    padding: 5px;
+    background-color: gainsboro;
+    padding: 6px;
     border-radius: 5px;
+    margin-bottom: 12px;
 }
 
 .bar button:hover{
-    background-color: #e2e8f0;
+    background-color: black;
 }
 
-
-
 .bar select{
+    margin-top: 1px;
+    border: 1px solid #e2e8f0;
     width: 20vh;
+    background-color: gainsboro;
+    padding: 5px;
+    border-radius: 5px;
+    font-size: large;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 
 .bar select:hover{
-    background-color: #e2e8f0;
+    border: gainsboro;
+    background-color: black;
+    cursor: pointer;
 }

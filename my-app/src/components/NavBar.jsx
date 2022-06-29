@@ -20,6 +20,7 @@ import { Link } from "react-router-dom";
 import { useSelector } from "react-redux";
 import SearchBar from "../components/SearchBar";
 import { useAuth0 } from "@auth0/auth0-react";
+import sneakers from "../img/sneakers.png";
 
 export default function NavBar() {
   const { isAuthenticated, logout, loginWithRedirect, user } = useAuth0();
@@ -34,19 +35,19 @@ export default function NavBar() {
   const item = a.length; 
   return (
     <div>
-      <Flex backgroundColor={"gray.100"}>
+      <Flex backgroundColor={"black"}>
         <Box p="1"  ml={10}>
           <Link to="/">
-            <img src={"https://www.pikpng.com/pngl/b/377-3770554_shoe-png-icon-free-download-onlinewebfonts-com-clip.png"} display="flex" width={90} />
-            <Heading size="md" mt={1} >Henry Shoes</Heading>
+            <img src={ sneakers } display="flex" width={40} />
+            <Heading size="sm" mt={3} color={"goldenrod"}>Henry Shoes</Heading>
           </Link>
         </Box>
         <Spacer />
-        <Box p="4">
+        <Box p="4" color={"goldenrod"}>
           <SearchBar />
         </Box>
         <Link to="/shoppingcart">
-        <Box p="4" mt="2" mr="1" ml="1">
+        <Box p="4" mt="2" mr="1" ml="1" color={"goldenrod"}>
         <ShoppingCartIcon  />
         {item? item : null}
         </Box>
@@ -73,7 +74,7 @@ export default function NavBar() {
                       </VStack>
                     </HStack>
                   </MenuButton>
-                  <MenuList bg={"white"} borderColor={"gray.200"}>
+                  <MenuList bg={"black"} borderColor={"goldenrod"}>
                     <MenuItem
                       onClick={() =>
                         logout({ returnTo: window.location.origin })
@@ -89,6 +90,7 @@ export default function NavBar() {
             <>
               <Button
                 colorScheme="teal"
+                backgroundColor="goldenrod"
                 mr="4"
                 onClick={() =>
                   loginWithRedirect({
@@ -98,7 +100,7 @@ export default function NavBar() {
               >
                 Sign Up
               </Button>
-              <Button colorScheme="teal" onClick={() => loginWithRedirect()}>
+              <Button colorScheme="teal" backgroundColor={"goldenrod"} onClick={() => loginWithRedirect()}>
                 Log in
               </Button>
 

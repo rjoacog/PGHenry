@@ -11,7 +11,7 @@ function Card({ img, brand,name, price, _id, addToCart }) {
           <h2>
             {brand} {name}
           </h2>
-          <h3>${price}</h3>
+          <h3>u$d {price}</h3>
         </div>
       </div>      
     </div>

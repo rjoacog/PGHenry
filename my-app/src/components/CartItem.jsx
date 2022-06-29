@@ -29,13 +29,16 @@ export default function CartItem({
           <h2>
             Size: {size}
           </h2>
-          <Text fontSize="2xl">
-            ${price} x {quantity} = $ {price * quantity}{" "}
-          </Text>
+          <h2>
+            Price: u$d {price}
+          </h2>
+          <h2>
+            Total x{quantity}: u$d {price * quantity}
+          </h2>
         </div>
         <br />
         <div className="removeCarry">
-          <div id='deleteOne'>
+          <div className="deleteOne">
             <button onClick={() => delFromCart(_id, true)} >
             Delete One 
             <br/>
@@ -43,7 +46,7 @@ export default function CartItem({
             </button>
           </div>
 
-          <div id='deleteAll'>
+          <div className="deleteAll">
             <button onClick={() => delFromCart(_id)}>
             Delete All 
             <br/>

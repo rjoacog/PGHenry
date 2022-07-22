@@ -11,7 +11,6 @@ function SildeBar() {
   const products = useSelector((s) => s.allProducts);
   const colors = products.map((p) => p.color);
   
- 
   const handlefilterByBrand = (e) => {
     e.preventDefault();
     dispatch(filterByBrand(e.target.value));

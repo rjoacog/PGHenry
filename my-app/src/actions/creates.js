@@ -171,10 +171,10 @@ export function getAllUsers() {
     }
   }
 
-  export function stock(action, id ) {
-  return async function(){
-    const json = await clienteAxios.post(`/products/stock/${id}`, {action});
-  }
+export function stock(action, id ) {
+    return async function() {
+      const json = await clienteAxios.post(`/products/stock/${id}`, {action});
+    }
 }  
 
 export function userData(payload) {

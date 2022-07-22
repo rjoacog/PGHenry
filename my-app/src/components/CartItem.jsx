@@ -3,7 +3,6 @@ import { Link } from "react-router-dom";
 import "../css/CardCarry.css";
 import { DeleteIcon } from "@chakra-ui/icons";
 
-import { Text } from "@chakra-ui/react";
 
 export default function CartItem({
   img,

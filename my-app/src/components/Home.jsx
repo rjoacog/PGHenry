@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { getProducts, orderByPrice, addCart, getAllUsers, userData } from "../actions/creates";
+import { getProducts, orderByPrice, addCart, getAllUsers } from "../actions/creates";
 import { clienteAxios } from "../config/clienteAxios";
 import Card from "./Card";
 import SildeBar from "./SildeBar";
 import "../css/Home.css";
-import { Select, Flex, Box, GridItem, Grid } from '@chakra-ui/react';
+import { Select, GridItem, Grid } from '@chakra-ui/react';
 import Paginado from './Paginado'
 import { Link } from "react-router-dom";
 import { useAuth0 } from "@auth0/auth0-react";
@@ -41,7 +41,6 @@ function Home() {
     dispatch(getProducts());
     localStorage.setItem("allProduct", JSON.stringify(products));
     dispatch(getAllUsers());
-    
   }, [dispatch]);
 
   const addToCart = (payload) => {

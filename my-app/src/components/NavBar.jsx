@@ -5,7 +5,6 @@ import {
   Button,
   Box,
   Flex,
-  MenuDivider,
   MenuItem,
   MenuList,
   Text,
@@ -26,19 +25,26 @@ export default function NavBar() {
   const { isAuthenticated, logout, loginWithRedirect, user } = useAuth0();
   const carry = useSelector((state => state.cart)) 
   const a = [];
+  
   {
     carry.map(c => {
       for(let i = 0; i < c.quantity; i++)
         a.push(c)
       })
   }
+  
   const item = a.length; 
   return (
     <div>
       <Flex backgroundColor={"black"}>
         <Box p="1"  ml={10}>
           <Link to="/">
-            <img src={ sneakers } display="flex" width={40} />
+            <img 
+              src={ sneakers } 
+              display="flex" 
+              width={40} 
+              alt=""
+            />
             <Heading size="sm" mt={3} color={"goldenrod"}>Henry Shoes</Heading>
           </Link>
         </Box>

@@ -14,7 +14,6 @@ import {
   Heading,
   SimpleGrid,
   StackDivider,
-  useColorModeValue,
   List,
   ListItem,
   Alert,
@@ -22,7 +21,6 @@ import {
   AlertTitle,
   AlertDescription,
 } from "@chakra-ui/react";
-import { MdLocalShipping } from "react-icons/md";
 import TablaDeTalles from "../img/TablaDeTalles.jpg";
 
 function Detail() {

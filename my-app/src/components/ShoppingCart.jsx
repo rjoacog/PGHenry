@@ -1,13 +1,11 @@
 import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { clearAllCart, delOneCart, delAllCart, stock } from '../actions/creates';
+import { delOneCart, delAllCart, stock } from '../actions/creates';
 import CartItem from './CartItem';
 import { Button, Text, Box } from '@chakra-ui/react';
 import {Link} from "react-router-dom";
 
 export default function ShoppingCart() {
-
-    
     const [totalItems, setTotalItems] = useState(0)
     const [totalPrice, setTotalPrice] = useState(0)
     const [totalCart, setTotalCart] = useState(0)
@@ -63,7 +61,13 @@ export default function ShoppingCart() {
                     <Text fontSize='3xl'>TOTAL: u$d {totalCart} </Text>
                     < br/>
                     <Link to='/checkout'>
-                    <Button backgroundColor='goldenrod' colorScheme='black' disabled={totalCart === 0}>PROCEED TO CHECKOUT</Button>
+                        <Button 
+                            backgroundColor='goldenrod' 
+                            colorScheme='black' 
+                            disabled={totalCart === 0}
+                        >
+                            PROCEED TO CHECKOUT
+                        </Button>
                     </Link>
                     </Box>    
         </div>

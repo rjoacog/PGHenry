@@ -6,17 +6,14 @@ const bcrypt = require('bcrypt');   // Para encriptar contraseñas
 const UserSchema = new Schema({
     name: {
         type: String,
-        required: false,
         trim: true,
     },
     lastName: {
         type: String,
-        required: false,
         trim: true
     },
     userName: {
         type: String,
-        required: false,
         trim: true
     },
     email: {

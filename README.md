@@ -1,6 +1,3 @@
-# PGHenry
-Proyecto grupal de Henry
-
 Desarrollo de una app completa de un E-commerce con diseño y desarrollo de las siguientes features básicas de e-commerce (CRUD de productos, auth, catálogo, checkout, etc..)
 
 - Integración pasarela de Pago (Stripe).

@@ -3,7 +3,6 @@ import { Link } from "react-router-dom";
 import "../css/CardCarry.css";
 import { DeleteIcon } from "@chakra-ui/icons";
 
-import { Text } from "@chakra-ui/react";
 
 export default function CartItem({
   img,
@@ -11,6 +10,7 @@ export default function CartItem({
   name,
   price,
   _id,
+  size,
   quantity,
   delFromCart,
 }) {
@@ -25,13 +25,19 @@ export default function CartItem({
           <h2>
             {brand} {name}
           </h2>
-          <Text fontSize="2xl">
-            ${price} x {quantity} = $ {price * quantity}{" "}
-          </Text>
+          <h2>
+            Size: {size}
+          </h2>
+          <h2>
+            Price: u$d {price}
+          </h2>
+          <h2>
+            Total x{quantity}: u$d {price * quantity}
+          </h2>
         </div>
         <br />
         <div className="removeCarry">
-          <div id='deleteOne'>
+          <div className="deleteOne">
             <button onClick={() => delFromCart(_id, true)} >
             Delete One 
             <br/>
@@ -39,7 +45,7 @@ export default function CartItem({
             </button>
           </div>
 
-          <div id='deleteAll'>
+          <div className="deleteAll">
             <button onClick={() => delFromCart(_id)}>
             Delete All 
             <br/>

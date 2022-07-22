@@ -24,16 +24,16 @@ export default function SearchBar() {
                 status: "error",
                 duration: 4000,
                 isClosable: true,
-              });
+            });
         }
     }
 
     return (
         <div>
             <InputGroup size='md'>
-                <Input type='text' width='auto' mr="4" borderColor={"gray.400"} border="2px" placeholder='Buscar...' onChange={handleChange} />
+                <Input type='text' width='auto' mr="4" fontFamily={'sans-serif'} borderColor={"goldenrod"} border="2px" placeholder='Buscar...' onChange={handleChange} />
                 <InputRightElement width='0rem'>
-                    <IconButton aria-label='Search database' ml="-70" width='5' mr="4" h="7" mb="1" icon={<SearchIcon />} onClick={handleClic}/>
+                    <IconButton aria-label='Search database' fontFamily={'sans-serif'} ml="-70" width='5' mr="4" h="7" mb="1" icon={<SearchIcon />} onClick={handleClic}/>
                 </InputRightElement>
             </InputGroup>
         </div>

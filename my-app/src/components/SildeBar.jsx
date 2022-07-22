@@ -1,4 +1,4 @@
-import React, { useEffect, useState} from "react";
+import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { filterByBrand, filterByByGender,filterByByColor, getProducts } from "../actions/creates";
 import "../css/SlideBar.css";
@@ -10,9 +10,7 @@ function SildeBar() {
   
   const products = useSelector((s) => s.allProducts);
   const colors = products.map((p) => p.color);
-  const brands = products.map((p) => p.brand);
   
- 
   const handlefilterByBrand = (e) => {
     e.preventDefault();
     dispatch(filterByBrand(e.target.value));
@@ -23,21 +21,17 @@ function SildeBar() {
     dispatch(filterByByGender(e.target.value));
   };
 
-  const handlefilterByColor = (e) => {
-    e.preventDefault();
-    dispatch(filterByByColor(e.target.value));
-  };
 
   return (
     <div className="bar">
       <button onClick={() => dispatch(getProducts())}>Clean Filters</button>
       <div>
         <Select placeholder='Brands' onChange={(e) => handlefilterByBrand(e)}>
-         <option value ="all">All</option>
-         <option value ="Nike">Nike</option>
-         <option value ="Reebok">Reebok</option>
-         <option value ="Adidas">Adidas</option>
-         <option value ="Puma">Puma</option>
+          <option value ="all">All</option>
+          <option value ="Nike">Nike</option>
+          <option value ="Reebok">Reebok</option>
+          <option value ="Adidas">Adidas</option>
+          <option value ="Puma">Puma</option>
         </Select>
       </div>
       
@@ -46,22 +40,10 @@ function SildeBar() {
           <option value='all'>All</option>
           <option value='Men'>Male</option>
           <option value='Women'>Female</option>
-          <option value='unisex'>Unisex</option>
+          {/* <option value='unisex'>Unisex</option> */}
         </Select>
       </div>
 
-      <div>
-        <Select placeholder="Colors" onChange={(e) => handlefilterByColor(e)}>
-          <option value='all'>All</option>
-          {
-            colors.map(s => {
-              return(
-                <option value={s}>{s}</option>
-              )
-            })
-          }
-        </Select>
-      </div>
     </div>
   );
 }

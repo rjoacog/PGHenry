@@ -1,27 +1,46 @@
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { getProducts, orderByPrice, addCart } from "../actions/creates";
+import { getProducts, orderByPrice, addCart, getAllUsers } from "../actions/creates";
+import { clienteAxios } from "../config/clienteAxios";
 import Card from "./Card";
 import SildeBar from "./SildeBar";
 import "../css/Home.css";
-import { Select } from '@chakra-ui/react'
+import { Select, GridItem, Grid } from '@chakra-ui/react';
 import Paginado from './Paginado'
 import { Link } from "react-router-dom";
+import { useAuth0 } from "@auth0/auth0-react";
 
 function Home() {
   const dispatch = useDispatch();
   const products = useSelector((state) => state.products);
-  const [price, setPrice] = useState("")
+  const users = useSelector((state) => state.allUsers);
+  const [price, setPrice] = useState("");
+  const { user, isAuthenticated } = useAuth0();
   
   const [currentPage, setCurrentPage] = useState(1);
   const [productsPerPage] = useState(16);
   const indexOfLastProduct = currentPage * productsPerPage 
   const indexOfFirstProduct = indexOfLastProduct - productsPerPage 
   const currentProducts = products.slice(indexOfFirstProduct, indexOfLastProduct)
+
+  if(isAuthenticated) {
+    try {
+      const currentUser = users.filter((el) => el.email === user.email);
+      if(currentUser.length === 0) {
+        clienteAxios.post("/user", {
+          email: user.email
+        })
+      }
+    }
+    catch(error) {
+      console.log(error);
+    }
+  }
   
   useEffect(() => {
     dispatch(getProducts());
-    localStorage.setItem("allProduct", JSON.stringify(products))
+    localStorage.setItem("allProduct", JSON.stringify(products));
+    dispatch(getAllUsers());
   }, [dispatch]);
 
   const addToCart = (payload) => {
@@ -42,25 +61,25 @@ function Home() {
   return (
     <div className="containerHome">
 
-      <div className="containerPaginadoAndFilters">
+      <Grid templateColumns='repeat(2, 1fr)' >
 
-        <div className='selectPrice'>
-          <Select placeholder='Ordenar' width="150px" mt={"10"} mb="10" ml={"10"} onChange={handlePrice}>
+        <GridItem >
+          <Select placeholder='Ordenar' className="orderButton" width={"140px"} mt={"4"} mb="4" ml={"4"} variant="filled" onChange={handlePrice}>
               <option value='+P'>Mayor Precio</option>
               <option value='-P'>Menor Precio</option>
           </Select>
-        </div>
-
-        <div className="paginado">
+        </GridItem>
+        <GridItem >
           <Paginado
             productsPerPage={productsPerPage}
             allProducts={products.length}
             paginado={paginado}
-            />
-        </div>
-      </div>
+            currentPage={currentPage}
+          />
+        </GridItem>
+      </Grid>
 
-      <div style={{display:'flex', flexDirection:'row'}}>
+      <div style={{display:'flex', flexDirection:'row',}}>
         <SildeBar/>
         
         <div className="cards">        

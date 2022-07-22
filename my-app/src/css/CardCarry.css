@@ -1,43 +1,61 @@
 .containerCardCarry {
-    background-color: white;
-    width: 250px;
-    height: 460px;
+    background-color: goldenrod;
+    width: 300px;
+    height: 450px;
     transition: 0.3s;
-    margin: 1.8px;
-    margin-top: 20px;
-
+    margin: 1.5px;
+    margin-top: 40px;
     border: 1px solid transparent;
-
+    display: inline-block;
+    padding: 5px;
+    margin-bottom: 20px;
+    margin-left: 15px;
 }
+
 .removeCarry{
     display: flex;
     flex-direction: row;
     justify-content: center;
-    margin: 2px;
+    margin: 15px;
 }
 
-#deleteOne{
+.deleteOne{
     margin: 0 0 0 2px;
-    border: 1px solid rgba(0, 0, 0, 0.185);
+    border: 1px solid rgba(0, 0, 0, 0.8);
+    border-radius: 10px;
     padding: 5px;
-
+    color: goldenrod;
+    background-color: black;
 }
-#deleteAll{
-    margin: 0 0 0 20px;
-    border: 1px solid rgba(0, 0, 0, 0.185);
+
+.deleteOne:hover{
+    background-color: white;
+    color: goldenrod;
+}
+
+.deleteAll{
+    margin: 0 0 0 10px;
+    border: 1px solid rgba(0, 0, 0, 0.8);
+    border-radius: 10px;
     padding: 5px;
-
+    color: goldenrod;
+    background-color: black;
 }
+
+.deleteAll:hover{
+    background-color: white;
+    color: goldenrod;
+}
+
 .containerCardCarry:hover{
-    /* transform: perspective(200px) translateZ(10px);
+    transform: perspective(200px) translateZ(5px);
     box-shadow: 0 12px 16px rgba (0, 0, 0, 0.2);
     transition: all 400ms ease;
-    text-decoration: none; */
+    text-decoration: none;
     box-shadow: 0 4px 8px 0 rgb(238, 238, 238);
 } 
 
-
- .cardCarry img{
+.cardCarry img{
     border-top-left-radius: 2px;
     border-top-right-radius: 2px;
     margin-top:auto;
@@ -47,30 +65,21 @@
     display: center;
     align-self: center;
     text-decoration: none;
-
-
 }
 
 .detailCardCarry{
-    margin: 0 15px 0 15px
+    margin: 0 5px 0 5px
 }
 
 .cardCarry h2{
-    font-size: 17px;
-    color: #929292;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 16px;
+    text-transform: none;
+    color: black;
     margin-top: 1px;
     display: flex;
-    width: 100%;
-    margin: 5px 0 20px 0;
-    border-top: 1px solid black;
+    margin: 6px 0 6px 0;
+    letter-spacing: 1px;
+    border-top: 1px solid white;
     padding-top: 8px;
 }
-
-.cardCarry h3{
-    display: flex;
-    align-items:flex-start;
-    color: #929292;
-    font-size: 14px;
-    margin-top: 1px;
-}
-   

@@ -1,0 +1,77 @@
+.carry{
+    display: flex;
+    flex-direction: column;
+    max-height: 300ch ;
+}
+
+.carryContainer{
+    background-color: rgba(255, 255, 255);
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-self: center;
+    background-attachment: fixed;
+    background-size:cover; 
+}
+
+.products{
+    background-color: goldenrod;
+    width: 280px;
+    height: 380px;
+    transition: 0.3s;
+    margin: 1.5px;
+    margin-top: 40px;
+    border: 1px solid transparent;
+    padding: 5px;
+    margin-bottom: 20px;
+    margin-left: 15px;
+}
+
+.products h2{
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 15px;
+    text-transform: none;
+    color: black;
+    margin-top: 1px;
+    display: flex;
+    margin: 1px 0 5px 0;
+    letter-spacing: 1px;
+    border-top: 1px solid white;
+    padding-top: 6px;
+}
+
+.products h3{
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif ;
+    font-size: 15px;
+    text-transform: none;
+    text-align: left;
+    color: black;
+    display: flex;
+    margin: 1px 0 4px 0;
+    letter-spacing: 1px;
+}
+
+.products img{
+    width: 100%;
+    height: 30vh;
+    display: center;
+    align-self: center;
+    text-decoration: none;
+}
+
+.totalOrder{
+    background-color: goldenrod;
+    width: 310px;
+    height: 45px;
+    transition: 0.3s;
+    margin-top: 10px;
+    font-weight: bolder;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif ;
+    font-size: 3ch;
+    text-align: right;
+    color: black;
+    border: 2px solid black;
+    display: inline-block;
+    padding: 5px;
+    margin-bottom: 1px;
+}

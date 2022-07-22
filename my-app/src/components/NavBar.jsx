@@ -5,7 +5,6 @@ import {
   Button,
   Box,
   Flex,
-  MenuDivider,
   MenuItem,
   MenuList,
   Text,
@@ -20,32 +19,41 @@ import { Link } from "react-router-dom";
 import { useSelector } from "react-redux";
 import SearchBar from "../components/SearchBar";
 import { useAuth0 } from "@auth0/auth0-react";
+import sneakers from "../img/sneakers.png";
 
 export default function NavBar() {
   const { isAuthenticated, logout, loginWithRedirect, user } = useAuth0();
   const carry = useSelector((state => state.cart)) 
   const a = [];
+  
   {
     carry.map(c => {
       for(let i = 0; i < c.quantity; i++)
         a.push(c)
       })
   }
+  
   const item = a.length; 
   return (
     <div>
-      <Flex backgroundColor={"gray.100"}>
-        <Box p="4">
+      <Flex backgroundColor={"black"}>
+        <Box p="1"  ml={10}>
           <Link to="/">
-            <Heading size="md">logo de la app</Heading>
+            <img 
+              src={ sneakers } 
+              display="flex" 
+              width={40} 
+              alt=""
+            />
+            <Heading size="sm" mt={3} color={"goldenrod"}>Henry Shoes</Heading>
           </Link>
         </Box>
         <Spacer />
-        <Box p="4">
+        <Box p="4" color={"goldenrod"}>
           <SearchBar />
         </Box>
         <Link to="/shoppingcart">
-        <Box p="4" mt="2" mr="1" ml="1">
+        <Box p="4" mt="2" mr="1" ml="1" color={"goldenrod"}>
         <ShoppingCartIcon  />
         {item? item : null}
         </Box>
@@ -68,24 +76,17 @@ export default function NavBar() {
                         spacing="1px"
                         ml="2"
                       >
-                        <Text fontSize="sm">{user.name}</Text>
+                        <Text fontSize="sm" color="goldenrod">{user.name}</Text>
                       </VStack>
                     </HStack>
                   </MenuButton>
-                  <MenuList bg={"white"} borderColor={"gray.200"}>
-                    <Link to="/register">
-                      <MenuItem>Perfil</MenuItem>
-                    </Link>
-                    <Link to="/favourites">
-                      <MenuItem>Favoritos</MenuItem>
-                    </Link>
-                    <MenuDivider />
+                  <MenuList fontSize="sm" bg="black" color="goldenrod" borderColor="goldenrod">
                     <MenuItem
                       onClick={() =>
                         logout({ returnTo: window.location.origin })
                       }
                     >
-                      Cerrar sesión
+                      Log out
                     </MenuItem>
                   </MenuList>
                 </Menu>
@@ -95,6 +96,7 @@ export default function NavBar() {
             <>
               <Button
                 colorScheme="teal"
+                backgroundColor="goldenrod"
                 mr="4"
                 onClick={() =>
                   loginWithRedirect({
@@ -104,7 +106,7 @@ export default function NavBar() {
               >
                 Sign Up
               </Button>
-              <Button colorScheme="teal" onClick={() => loginWithRedirect()}>
+              <Button colorScheme="teal" backgroundColor={"goldenrod"} onClick={() => loginWithRedirect()}>
                 Log in
               </Button>
 

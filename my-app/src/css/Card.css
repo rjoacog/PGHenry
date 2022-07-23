@@ -25,10 +25,10 @@
     color: goldenrod;
 } 
 
-.card{
+/* .card{
     display: flex;
     flex-direction: row;
-}
+} */
 
 .card img{
     object-fit: cover;
